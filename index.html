@@ -77,7 +77,7 @@ video,canvas{width:100%;border-radius:12px;background:#000}
 .lang-switch{min-width:180px}
 /* Custom goals - UPDATED */
 .custom-goal-item{display:flex; gap:12px; align-items:center; padding:12px; border:1px solid #e5e7eb; border-radius:12px; margin-bottom:8px; background:#fafafa}
-.custom-goal-text{flex:1; font-size:16px; font-weight:bold}
+.custom-goal-text{flex:1; font-size:16px; font-weight:bold} /* Added font-weight:bold */
 .custom-goal-checkbox{width:24px; height:24px; border:2px solid #000; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center}
 .custom-goal-checkbox.checked{background:#000; color:#fff}
 .custom-goal-checkbox.checked::after{content:"✓"; font-size:16px; font-weight:bold}
@@ -104,23 +104,163 @@ video,canvas{width:100%;border-radius:12px;background:#000}
 .dish-ingredient-grid input {
   width: 100%;
 }
+
 /* Workout Styles */
-.workout-plan {background:#f9f9f9; padding:16px; border-radius:12px; margin:12px 0}
-.workout-day {background:white; padding:12px; border-radius:8px; margin-bottom:12px; border:1px solid #e5e7eb}
-.workout-exercise {display:flex; justify-content:space-between; align-items:center; padding:8px; border-bottom:1px solid #f0f0f0}
-.workout-exercise:last-child {border-bottom:none}
-.exercise-name {flex:2}
-.exercise-sets {flex:1; text-align:center}
-.exercise-action {flex:1}
-.workout-active {background:#000; color:#fff}
-.workout-set {display:flex; gap:8px; align-items:center; margin-bottom:8px; padding:8px; background:#f9f9f9; border-radius:8px}
-.set-number {min-width:30px; font-weight:bold}
-.set-inputs {display:flex; gap:8px; flex:1}
-.set-inputs input {flex:1}
-.workout-complete {background:#f0f0f0; padding:12px; border-radius:8px; margin-top:12px}
+.workout-plan {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 12px 0;
+  border: 1px solid #e5e7eb;
+}
+.workout-day {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.workout-exercise {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 6px;
+}
+.workout-exercise select,
+.workout-exercise input {
+  flex: 1;
+}
+.exercise-category {
+  margin-bottom: 20px;
+}
+.exercise-item {
+  padding: 8px 12px;
+  margin: 4px 0;
+  background: #f5f5f5;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+}
+.exercise-item:hover {
+  background: #e9e9e9;
+}
+
+/* Active Workout - Full Page */
+.active-workout-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.active-workout {
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 12px 0;
+  border: 2px solid #000;
+}
+.workout-set {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.workout-set-header {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.workout-set input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+.workout-history-item {
+  padding: 12px;
+  margin: 8px 0;
+  background: #f5f5f5;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Custom workout exercise with better spacing */
+.custom-workout-exercise {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.custom-workout-exercise select,
+.custom-workout-exercise input {
+  width: 100%;
+  padding: 8px;
+}
+
+/* Home Button - Always Visible */
+.home-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-button:hover {
+  transform: scale(1.05);
+}
+.home-button:active {
+  transform: scale(0.95);
+}
+
+/* Ensure navigation is always visible */
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
 </style>
 </head>
 <body>
+<!-- Home Button - Always Visible -->
+<button class="home-button" onclick="goHome()" title="Home">🏠</button>
+
 <div class="container">
   <div class="card">
     <div class="row" style="align-items:center">
@@ -135,8 +275,9 @@ video,canvas{width:100%;border-radius:12px;background:#000}
     </div>
   </div>
 
-  <nav id="nav" class="card hidden">
-    <button data-tab="home">Home</button>
+  <!-- Navigation Menu - ALWAYS VISIBLE -->
+  <nav id="nav" class="card main-nav">
+    <button data-tab="home" class="ok">Home</button>
     <button data-tab="goals">Daily Goals</button>
     <button data-tab="camera">Camera</button>
     <button data-tab="log">Food Log</button>
@@ -148,7 +289,7 @@ video,canvas{width:100%;border-radius:12px;background:#000}
   </nav>
 
   <!-- Onboarding Wizard -->
-  <div id="wizard" class="card">
+  <div id="wizard" class="card hidden">
     <div class="stepper">
       <div class="step active" id="s1"></div>
       <div class="step" id="s2"></div>
@@ -220,7 +361,7 @@ video,canvas{width:100%;border-radius:12px;background:#000}
   </div>
 
   <!-- Home / Dashboard -->
-  <div id="home" class="card hidden">
+  <div id="home" class="card">
     <h2 id="dashTitle">Dashboard</h2>
     <div class="kpi">
       <div class="card">
@@ -439,290 +580,106 @@ video,canvas{width:100%;border-radius:12px;background:#000}
   <div id="workout" class="card hidden">
     <h2>Workout Plans</h2>
     
-    <div class="workout-plan">
-      <h3>Choose Your Plan</h3>
-      <div class="toolbar">
-        <button id="selectPlan1" class="ok">3-Day PPL</button>
-        <button id="selectPlan2" class="ok">4-Day Upper/Lower</button>
-        <button id="selectPlan3" class="ghost">Custom Plan</button>
-      </div>
+    <div class="toolbar">
+      <button id="showPlans" class="ok">Pre-made Plans</button>
+      <button id="showCustom" class="ghost">Create Custom Plan</button>
+      <button id="showExercises" class="ghost">Exercise Library</button>
+      <button id="showHistory" class="ghost">Workout History</button>
     </div>
-
-    <!-- 3-Day PPL Plan -->
-    <div id="plan1" class="workout-plan hidden">
-      <h3>3-Day Push/Pull/Legs</h3>
+    
+    <!-- Pre-made Plans -->
+    <div id="workoutPlans" class="workout-plan">
+      <h3>Choose a Workout Plan</h3>
       
       <div class="workout-day">
-        <h4>Day 1 – Push</h4>
-        <div class="workout-exercise">
-          <div class="exercise-name">Incline Bench Press – 4×6–8</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Incline Bench Press" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Overhead Press – 3×6–8</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Overhead Press" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Flat Dumbbell Press – 3×8–10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Flat Dumbbell Press" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Dumbbell Lateral Raise – 4×12–15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Dumbbell Lateral Raise" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Cable Triceps Pushdown – 3×12–15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Cable Triceps Pushdown" data-sets="3">Start Workout</button>
-          </div>
+        <h4>Push/Pull/Legs (PPL)</h4>
+        <div class="small">3-day split focusing on movement patterns</div>
+        <div class="toolbar">
+          <button class="ok" onclick="selectWorkoutPlan('ppl')">Select PPL Plan</button>
         </div>
       </div>
-
-      <div class="workout-day">
-        <h4>Day 2 – Pull</h4>
-        <div class="workout-exercise">
-          <div class="exercise-name">Barbell Row – 4×6–8</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Barbell Row" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Chest-Supported Row – 3×8–10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Chest-Supported Row" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Lat Pulldown – 4×8–12</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Lat Pulldown" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Face Pull – 3×12–15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Face Pull" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Incline Dumbbell Curl – 3×10–12</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Incline Dumbbell Curl" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="workout-day">
-        <h4>Day 3 – Legs</h4>
-        <div class="workout-exercise">
-          <div class="exercise-name">Back Squat – 4×6–8</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Back Squat" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Romanian Deadlift – 3×8–10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Romanian Deadlift" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Walking Lunge – 3×10/leg</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Walking Lunge" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Leg Press – 3×10–12</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Leg Press" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Standing Calf Raise – 4×12–15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Standing Calf Raise" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4-Day Upper/Lower Plan -->
-    <div id="plan2" class="workout-plan hidden">
-      <h3>4-Day Upper/Lower Split</h3>
       
       <div class="workout-day">
-        <h4>Day 1 – Upper (Strength)</h4>
-        <div class="workout-exercise">
-          <div class="exercise-name">Incline Bench Press – 4×6</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Incline Bench Press" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Barbell Row – 4×6–8</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Barbell Row" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Overhead Press – 3×6–8</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Overhead Press" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Lat Pulldown – 3×8–10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Lat Pulldown" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">EZ Curl + Skull Crusher – 3×10–12</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="EZ Curl + Skull Crusher" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="workout-day">
-        <h4>Day 2 – Lower (Strength)</h4>
-        <div class="workout-exercise">
-          <div class="exercise-name">Back Squat – 4×6</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Back Squat" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Bulgarian Split Squat – 3×10/leg</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Bulgarian Split Squat" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Hip Thrust – 3×8–10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Hip Thrust" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Calf Raise – 4×12–15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Calf Raise" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Weighted Plank – 3×45 sec</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Weighted Plank" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Additional days for 4-day plan -->
-      <div class="workout-day">
-        <h4>Day 3 – Upper (Hypertrophy)</h4>
-        <div class="workout-exercise">
-          <div class="exercise-name">Flat Dumbbell Press – 4×8–10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Flat Dumbbell Press" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Chest-Supported Row – 4×8–10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Chest-Supported Row" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">DB Shoulder Press – 3×10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="DB Shoulder Press" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Lat Pulldown – 3×10–12</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Lat Pulldown" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Lateral Raise – 3×12–15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Lateral Raise" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">DB Curl + Rope Pushdown – 3×12</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="DB Curl + Rope Pushdown" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="workout-day">
-        <h4>Day 4 – Lower (Hypertrophy)</h4>
-        <div class="workout-exercise">
-          <div class="exercise-name">Front Squat – 4×8</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Front Squat" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Walking Lunge – 3×12/leg</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Walking Lunge" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Leg Curl – 3×12–15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Leg Curl" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Hip Thrust – 3×8–10</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Hip Thrust" data-sets="3">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Seated Calf Raise – 4×15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Seated Calf Raise" data-sets="4">Start Workout</button>
-          </div>
-        </div>
-        <div class="workout-exercise">
-          <div class="exercise-name">Hanging Leg Raise – 3×12–15</div>
-          <div class="exercise-action">
-            <button class="start-workout" data-exercise="Hanging Leg Raise" data-sets="3">Start Workout</button>
-          </div>
+        <h4>Upper/Lower Split</h4>
+        <div class="small">4-day split with strength and hypertrophy focus</div>
+        <div class="toolbar">
+          <button class="ok" onclick="selectWorkoutPlan('upperLower')">Select Upper/Lower Plan</button>
         </div>
       </div>
     </div>
-
-    <!-- Active Workout Session -->
-    <div id="activeWorkout" class="workout-plan hidden">
-      <h3 id="activeExerciseName">Workout Session</h3>
-      <div id="workoutSets"></div>
+    
+    <!-- Custom Plan Creation -->
+    <div id="customWorkoutPlan" class="workout-plan hidden">
+      <h3>Create Custom Workout Plan</h3>
+      
+      <div class="row">
+        <div class="col">
+          <label>Plan Name</label>
+          <input type="text" id="customPlanName" placeholder="My Custom Workout Plan">
+        </div>
+        <div class="col">
+          <label>Days per Week</label>
+          <select id="customPlanDays">
+            <option value="3">3 Days</option>
+            <option value="4">4 Days</option>
+            <option value="5">5 Days</option>
+            <option value="6">6 Days</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="customPlanDaysContainer"></div>
+      
       <div class="toolbar">
-        <button id="completeWorkout" class="ok">Complete Workout</button>
-        <button id="cancelWorkout" class="ghost">Cancel</button>
+        <button id="saveCustomPlan" class="ok">Save Custom Plan</button>
       </div>
     </div>
-
+    
+    <!-- Exercise Library -->
+    <div id="exerciseLibrary" class="workout-plan hidden">
+      <h3>Exercise Library</h3>
+      
+      <div class="exercise-category">
+        <h4>🟥 Chest</h4>
+        <div id="chestExercises"></div>
+      </div>
+      
+      <div class="exercise-category">
+        <h4>🟦 Back</h4>
+        <div id="backExercises"></div>
+      </div>
+      
+      <div class="exercise-category">
+        <h4>🟩 Shoulders</h4>
+        <div id="shoulderExercises"></div>
+      </div>
+      
+      <div class="exercise-category">
+        <h4>🟨 Arms</h4>
+        <div id="armExercises"></div>
+      </div>
+      
+      <div class="exercise-category">
+        <h4>🟧 Legs</h4>
+        <div id="legExercises"></div>
+      </div>
+      
+      <div class="exercise-category">
+        <h4>🟪 Core</h4>
+        <div id="coreExercises"></div>
+      </div>
+    </div>
+    
     <!-- Workout History -->
-    <div class="workout-plan">
+    <div id="workoutHistory" class="workout-plan hidden">
       <h3>Workout History</h3>
-      <div id="workoutHistory"></div>
+      <div id="workoutHistoryList"></div>
+    </div>
+    
+    <!-- Saved Workout Plans -->
+    <div id="savedWorkoutPlans">
+      <h3>Your Workout Plans</h3>
+      <div id="workoutPlansList"></div>
     </div>
   </div>
 
@@ -743,6 +700,20 @@ video,canvas{width:100%;border-radius:12px;background:#000}
   <footer>© 2025 — MVP built for you. Monochrome edition.</footer>
 </div>
 
+<!-- Active Workout Page (Full Screen) -->
+<div id="activeWorkoutPage" class="active-workout-page hidden">
+  <div class="container">
+    <div class="card">
+      <h2 id="activeWorkoutName">Active Workout</h2>
+      <div id="activeWorkoutExercises"></div>
+      <div class="toolbar">
+        <button id="finishWorkout" class="ok">Finish Workout</button>
+        <button id="cancelWorkout" class="danger">Cancel Workout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- TF.js & MobileNet -->
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.12.0/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
@@ -750,10 +721,10 @@ video,canvas{width:100%;border-radius:12px;background:#000}
 <script>
 // ====== i18n (expanded & usable) ======
 const I18N = {
-  en:{title:"AI Calorie & Macro Tracker", next:"Next", back:"Back", finish:"Finish", home:"Home", goals:"Daily Goals", camera:"Camera", log:"Food Log", dishes:"Make a Dish", water:"Water", profile:"Profile", about:"About", chooseLang:"Choose Language", language:"Language", hint:"Examples: rice, chicken breast, apple, pizza"},
-  ar:{title:"حساب السعرات والماكروز بالذكاء الاصطناعي", next:"التالي", back:"رجوع", finish:"إنهاء", home:"الرئيسية", goals:"الأهداف اليومية", camera:"الكاميرا", log:"سجل الأكل", dishes:"اصنع طبق", water:"الماء", profile:"الملف", about:"عن التطبيق", chooseLang:"اختر اللغة", language:"اللغة", hint:"أمثلة: أرز، صدر دجاج، تفاح، بيتزا"},
-  fr:{title:"Suivi Calories & Macros IA", next:"Suivant", back:"Retour", finish:"Terminer", home:"Accueil", goals:"Objectifs", camera:"Caméra", log:"Journal", dishes:"Créer un Plat", water:"Eau", profile:"Profil", about:"À propos", chooseLang:"Choisir la langue", language:"Langue", hint:"Exemples : riz, blanc de poulet, pomme, pizza"},
-  es:{title:"Contador de Calorías y Macros IA", next:"Siguiente", back:"Atrás", finish:"Finalizar", home:"Inicio", goals:"Objetivos", camera:"Cámara", log:"Registro", dishes:"Crear Plato", water:"Agua", profile:"Perfil", about:"Acerca de", chooseLang:"Elegir idioma", language:"Idioma", hint:"Ejemplos: arroz, pechuga de pollo, manzana, pizza"}
+  en:{title:"AI Calorie & Macro Tracker", next:"Next", back:"Back", finish:"Finish", home:"Home", goals:"Daily Goals", camera:"Camera", log:"Food Log", dishes:"Make a Dish", water:"Water", workout:"Workout", profile:"Profile", about:"About", chooseLang:"Choose Language", language:"Language", hint:"Examples: rice, chicken breast, apple, pizza"},
+  ar:{title:"حساب السعرات والماكروز بالذكاء الاصطناعي", next:"التالي", back:"رجوع", finish:"إنهاء", home:"الرئيسية", goals:"الأهداف اليومية", camera:"الكاميرا", log:"سجل الأكل", dishes:"اصنع طبق", water:"الماء", workout:"التدريب", profile:"الملف", about:"عن التطبيق", chooseLang:"اختر اللغة", language:"اللغة", hint:"أمثلة: أرز، صدر دجاج، تفاح، بيتزا"},
+  fr:{title:"Suivi Calories & Macros IA", next:"Suivant", back:"Retour", finish:"Terminer", home:"Accueil", goals:"Objectifs", camera:"Caméra", log:"Journal", dishes:"Créer un Plat", water:"Eau", workout:"Entraînement", profile:"Profil", about:"À propos", chooseLang:"Choisir la langue", language:"Langue", hint:"Exemples : riz, blanc de poulet, pomme, pizza"},
+  es:{title:"Contador de Calorías y Macros IA", next:"Siguiente", back:"Atrás", finish:"Finalizar", home:"Inicio", goals:"Objetivos", camera:"Cámara", log:"Registro", dishes:"Crear Plato", water:"Agua", workout:"Entrenamiento", profile:"Perfil", about:"Acerca de", chooseLang:"Elegir idioma", language:"Idioma", hint:"Ejemplos: arroz, pechuga de pollo, manzana, pizza"}
 };
 const LANGS = [
   {k:'ar',label:'العربية'}, {k:'en',label:'English'}, {k:'fr',label:'Français'}, {k:'es',label:'Español'}
@@ -805,7 +776,7 @@ if (!state.daysData) state.daysData = {};
 if (!state.foods) state.foods = [];
 if (!state.dishes) state.dishes = [];
 if (!state.customGoals) state.customGoals = {};
-if (!state.workouts) state.workouts = [];
+if (!state.workoutPlans) state.workoutPlans = [];
 if (!state.workoutHistory) state.workoutHistory = [];
 
 function save(){ 
@@ -865,483 +836,1271 @@ document.getElementById('back3').onclick = ()=>{
 document.getElementById('finish').onclick = ()=>{
   state.days = +document.getElementById('days').value;
   state.goal = document.getElementById('goal').value;
-  calcGoalsFromProfile();
+  state.onboarded = true;
+  state.goals = calcGoals();
   save();
   document.getElementById('wizard').classList.add('hidden');
-  document.getElementById('nav').classList.remove('hidden');
   showTab('home');
 };
 
-// ====== Tabs ======
-const tabs = ['home','goals','camera','log','dishes','water','workout','profile','about'];
-document.getElementById('nav').addEventListener('click', (e)=>{
-  if(e.target.tagName!=='BUTTON') return;
-  showTab(e.target.dataset.tab);
-});
-
+// ====== Main UI ======
 function showTab(id){
-  tabs.forEach(t=>document.getElementById(t).classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-  if(id==='home') refreshDashboard();
-  if(id==='log') refreshLog();
-  if(id==='water') refreshWaterUI();
-  if(id==='profile') renderProfile();
-  if(id==='goals') refreshCustomGoals();
-  if(id==='dishes') refreshDishes();
-  if(id==='workout') refreshWorkout();
-}
-
-document.getElementById('toCamera').onclick=()=>showTab('camera');
-document.getElementById('toLog').onclick=()=>showTab('log');
-
-// ====== Calculations ======
-function activityFactor(days){
-  if(days<=0) return 1.2;
-  if(days<=2) return 1.375;
-  if(days<=4) return 1.55;
-  if(days<=6) return 1.725;
-  return 1.9;
-}
-
-function calcTDEE(){
-  const w=state.weight||70, h=state.height||175, a=state.age||25, s=state.sex||'male', d=state.days||3;
-  const bmr = (s==='male') ? (10*w + 6.25*h - 5*a + 5) : (10*w + 6.25*h - 5*a - 161);
-  let tdee = bmr * activityFactor(d);
-  if(state.goal==='cut') tdee *= 0.85;
-  if(state.goal==='bulk') tdee *= 1.10;
-  return Math.round(tdee);
-}
-
-function calcMacros(){
-  const kcal = calcTDEE();
-  const prot = Math.round((state.weight||70) * 1.8); // g
-  const fat = Math.round((state.weight||70) * 0.9); // g
-  let restK = kcal - (prot*4 + fat*9);
-  const carb = Math.max(0, Math.round(restK/4));
-  return {kcal, prot, fat, carb};
-}
-
-function calcGoalsFromProfile(){
-  const m = calcMacros();
-  state.goals = m; 
-  save();
-  fillGoals();
-}
-
-// ====== Goals UI ======
-function fillGoals(){
-  const g = state.goals || calcMacros();
-  ['kcal','prot','fat','carb'].forEach(k=>{ 
-    document.getElementById('g_'+k).value = g[k]; 
-  });
-  refreshDashboard();
-}
-
-document.getElementById('saveGoals').onclick = ()=>{
-  state.goals = {
-    kcal:+document.getElementById('g_kcal').value,
-    prot:+document.getElementById('g_prot').value,
-    fat:+document.getElementById('g_fat').value,
-    carb:+document.getElementById('g_carb').value
-  };
-  save(); 
-  refreshDashboard();
-};
-
-document.getElementById('recalcGoals').onclick = ()=>{ 
-  calcGoalsFromProfile(); 
-};
-
-// ====== Dashboard ======
-function todayKey(){ 
-  const d=new Date(); 
-  return d.toISOString().slice(0,10); 
-}
-
-function getDay(day=todayKey()){ 
-  if (!state.daysData[day]) {
-    state.daysData[day] = {meals:[], water:0};
-  }
-  return state.daysData[day]; 
-}
-
-function sumDay(day=todayKey()){ 
-  const obj = getDay(day); 
-  return obj.meals.reduce((acc,m)=>{ 
-    acc.kcal += m.kcal; 
-    acc.prot += m.prot; 
-    acc.fat += m.fat; 
-    acc.carb += m.carb; 
-    return acc; 
-  }, {kcal:0,prot:0,fat:0,carb:0}); 
-}
-
-function refreshDashboard(){
-  const g = state.goals || calcMacros();
-  const s = sumDay();
-  document.getElementById('kcalToday').textContent = Math.round(s.kcal);
-  document.getElementById('protToday').textContent = Math.round(s.prot);
-  document.getElementById('fatToday').textContent = Math.round(s.fat);
-  document.getElementById('carbToday').textContent = Math.round(s.carb);
-  document.getElementById('kcalTarget').textContent = g.kcal;
-  document.getElementById('protTarget').textContent = g.prot;
-  document.getElementById('fatTarget').textContent = g.fat;
-  document.getElementById('carbTarget').textContent = g.carb;
-  document.getElementById('kcalProg').value = Math.min(100, (s.kcal/g.kcal)*100);
-  document.getElementById('protProg').value = Math.min(100, (s.prot/g.prot)*100);
-  document.getElementById('fatProg').value = Math.min(100, (s.fat/g.fat)*100);
-  document.getElementById('carbProg').value = Math.min(100, (s.carb/g.carb)*100);
-  updateStreak();
-}
-
-// ====== FOODS DB - 1000+ ITEMS (Optimized) ======
-// Due to character limits, I'll include a representative sample and the structure
-// The complete database would be loaded from an external file in a real application
-const SEED_FOODS = [
-  // Grains & Cereals (100 items)
-  {name:"white rice", ar:"رز أبيض", kcal:130, prot:2.4, fat:0.3, carb:28.7},
-  {name:"brown rice", ar:"رز بني", kcal:123, prot:2.7, fat:1.0, carb:25.6},
-  {name:"basmati rice", ar:"رز بسمتي", kcal:121, prot:3.0, fat:0.4, carb:25.2},
-  {name:"jasmine rice", ar:"رز ياسمين", kcal:129, prot:2.7, fat:0.3, carb:28.2},
-  {name:"wild rice", ar:"رز بري", kcal:101, prot:4.0, fat:0.3, carb:21.3},
-  {name:"quinoa", ar:"كينوا", kcal:120, prot:4.4, fat:1.9, carb:21.3},
-  {name:"oats", ar:"شوفان", kcal:389, prot:17, fat:7, carb:66},
-  {name:"steel cut oats", ar:"شوفان مقطع", kcal:170, prot:7, fat:3, carb:29},
-  {name:"whole wheat bread", ar:"خبز قمح كامل", kcal:265, prot:13, fat:4.4, carb:48},
-  {name:"white bread", ar:"خبز أبيض", kcal:265, prot:9, fat:3.2, carb:49},
-  // ... 90 more grain items
-
-  // Meats & Poultry (150 items)
-  {name:"chicken breast", ar:"صدر دجاج", kcal:165, prot:31, fat:3.6, carb:0},
-  {name:"chicken thigh", ar:"فخذ دجاج", kcal:209, prot:26, fat:11, carb:0},
-  {name:"chicken wing", ar:"جناح دجاج", kcal:203, prot:30, fat:8, carb:0},
-  {name:"ground chicken", ar:"دجاج مفروم", kcal:143, prot:17, fat:8, carb:0},
-  {name:"turkey breast", ar:"صدر ديك رومي", kcal:135, prot:30, fat:1, carb:0},
-  {name:"duck breast", ar:"صدر بطة", kcal:201, prot:24, fat:11, carb:0},
-  {name:"beef steak", ar:"ستيك لحم بقري", kcal:271, prot:26, fat:18, carb:0},
-  {name:"beef sirloin", ar:"لحم بقري صافي", kcal:205, prot:29, fat:9, carb:0},
-  {name:"ground beef 80/20", ar:"لحم بقري مفروم 80/20", kcal:254, prot:17, fat:20, carb:0},
-  {name:"ground beef 90/10", ar:"لحم بقري مفروم 90/10", kcal:176, prot:20, fat:10, carb:0},
-  // ... 140 more meat items
-
-  // Fish & Seafood (120 items)
-  {name:"salmon", ar:"سلمون", kcal:208, prot:20, fat:13, carb:0},
-  {name:"tuna", ar:"تونة", kcal:184, prot:30, fat:6, carb:0},
-  {name:"cod", ar:"قد", kcal:82, prot:18, fat:0.7, carb:0},
-  {name:"haddock", ar:"حدوق", kcal:82, prot:18, fat:0.5, carb:0},
-  {name:"halibut", ar:"هلبوت", kcal:91, prot:19, fat:1.3, carb:0},
-  {name:"mackerel", ar:"ماكريل", kcal:205, prot:19, fat:14, carb:0},
-  {name:"sardines", ar:"سردين", kcal:208, prot:25, fat:11, carb:0},
-  {name:"anchovies", ar:"أنشوفة", kcal:131, prot:20, fat:4.8, carb:0},
-  {name:"trout", ar:"تراوت", kcal:148, prot:21, fat:6.6, carb:0},
-  {name:"bass", ar:"قاروص", kcal:97, prot:19, fat:2.0, carb:0},
-  // ... 110 more seafood items
-
-  // Dairy & Eggs (80 items)
-  {name:"whole milk", ar:"حليب كامل الدسم", kcal:61, prot:3.2, fat:3.3, carb:4.8},
-  {name:"skim milk", ar:"حليب خالي الدسم", kcal:34, prot:3.4, fat:0.1, carb:5.0},
-  {name:"almond milk", ar:"حليب لوز", kcal:17, prot:0.4, fat:1.5, carb:0.6},
-  {name:"soy milk", ar:"حليب صويا", kcal:54, prot:3.3, fat:1.8, carb:6.3},
-  {name:"oat milk", ar:"حليب شوفان", kcal:45, prot:1.0, fat:1.5, carb:6.7},
-  {name:"coconut milk", ar:"حليب جوز الهند", kcal:230, prot:2.3, fat:24, carb:6},
-  {name:"yogurt", ar:"زبادي", kcal:59, prot:10, fat:0.4, carb:3.6},
-  {name:"greek yogurt", ar:"زبادي يوناني", kcal:59, prot:10, fat:0.4, carb:3.6},
-  {name:"cottage cheese", ar:"جبنة قريش", kcal:98, prot:11, fat:4.3, carb:3.4},
-  {name:"cream cheese", ar:"جبنة كريمية", kcal:342, prot:6, fat:34, carb:4.1},
-  // ... 70 more dairy items
-
-  // Vegetables (200 items)
-  {name:"broccoli", ar:"بروكلي", kcal:34, prot:2.8, fat:0.4, carb:7},
-  {name:"spinach", ar:"سبانخ", kcal:23, prot:2.9, fat:0.4, carb:3.6},
-  {name:"kale", ar:"كرنب", kcal:49, prot:4.3, fat:0.9, carb:9},
-  {name:"lettuce", ar:"خس", kcal:15, prot:1.4, fat:0.2, carb:2.9},
-  {name:"cabbage", ar:"ملفوف", kcal:25, prot:1.3, fat:0.1, carb:6},
-  {name:"cauliflower", ar:"قرنبيط", kcal:25, prot:1.9, fat:0.3, carb:5},
-  {name:"brussels sprouts", ar:"كرنب بروكسل", kcal:43, prot:3.4, fat:0.3, carb:9},
-  {name:"asparagus", ar:"هليون", kcal:20, prot:2.2, fat:0.1, carb:3.9},
-  {name:"artichoke", ar:"خرشوف", kcal:47, prot:3.3, fat:0.2, carb:11},
-  {name:"celery", ar:"كرفس", kcal:16, prot:0.7, fat:0.2, carb:3},
-  // ... 190 more vegetable items
-
-  // Fruits (150 items)
-  {name:"apple", ar:"تفاح", kcal:52, prot:0.3, fat:0.2, carb:14},
-  {name:"banana", ar:"موز", kcal:89, prot:1.1, fat:0.3, carb:23},
-  {name:"orange", ar:"برتقال", kcal:47, prot:0.9, fat:0.1, carb:12},
-  {name:"grapefruit", ar:"جريب فروت", kcal:42, prot:0.8, fat:0.1, carb:11},
-  {name:"lemon", ar:"ليمون", kcal:29, prot:1.1, fat:0.3, carb:9},
-  {name:"lime", ar:"لايم", kcal:30, prot:0.7, fat:0.2, carb:11},
-  {name:"grape", ar:"عنب", kcal:69, prot:0.7, fat:0.2, carb:18},
-  {name:"strawberry", ar:"فراولة", kcal:32, prot:0.7, fat:0.3, carb:7.7},
-  {name:"blueberry", ar:"توت أزرق", kcal:57, prot:0.7, fat:0.3, carb:14},
-  {name:"raspberry", ar:"توت العليق", kcal:52, prot:1.2, fat:0.7, carb:12},
-  // ... 140 more fruit items
-
-  // Nuts & Seeds (80 items)
-  {name:"almonds", ar:"لوز", kcal:579, prot:21, fat:50, carb:22},
-  {name:"walnuts", ar:"جوز", kcal:654, prot:15, fat:65, carb:14},
-  {name:"cashews", ar:"كاجو", kcal:553, prot:18, fat:44, carb:30},
-  {name:"peanuts", ar:"فول سوداني", kcal:567, prot:26, fat:49, carb:16},
-  {name:"pecans", ar:"بيكان", kcal:691, prot:9, fat:72, carb:14},
-  {name:"pistachios", ar:"فستق", kcal:560, prot:21, fat:45, carb:28},
-  {name:"hazelnuts", ar:"بندق", kcal:628, prot:15, fat:61, carb:17},
-  {name:"macadamia", ar:"مكاديميا", kcal:718, prot:8, fat:76, carb:14},
-  {name:"brazil nuts", ar:"جوز البرازيل", kcal:659, prot:14, fat:67, carb:12},
-  {name:"pine nuts", ar:"صنوبر", kcal:673, prot:14, fat:68, carb:13},
-  // ... 70 more nut/seed items
-
-  // Legumes (60 items)
-  {name:"lentils", ar:"عدس", kcal:116, prot:9, fat:0.4, carb:20},
-  {name:"chickpeas", ar:"حمص", kcal:139, prot:7, fat:2.8, carb:22},
-  {name:"black beans", ar:"فاصوليا سوداء", kcal:132, prot:9, fat:0.5, carb:24},
-  {name:"kidney beans", ar:"فاصوليا حمراء", kcal:127, prot:9, fat:0.5, carb:23},
-  {name:"pinto beans", ar:"فاصوليا بينتو", kcal:143, prot:9, fat:0.9, carb:26},
-  {name:"navy beans", ar:"فاصوليا بيضاء", kcal:140, prot:8, fat:0.6, carb:26},
-  {name:"soybeans", ar:"فول الصويا", kcal:173, prot:17, fat:9, carb:10},
-  {name:"tofu", ar:"توفو", kcal:76, prot:8, fat:4.8, carb:1.9},
-  {name:"tempeh", ar:"تمبه", kcal:193, prot:19, fat:11, carb:9},
-  {name:"edamame", ar:"إدامامي", kcal:122, prot:11, fat:5.2, carb:10},
-  // ... 50 more legume items
-
-  // Oils & Fats (40 items)
-  {name:"olive oil", ar:"زيت زيتون", kcal:884, prot:0, fat:100, carb:0},
-  {name:"coconut oil", ar:"زيت جوز الهند", kcal:862, prot:0, fat:100, carb:0},
-  {name:"avocado oil", ar:"زيت أفوكادو", kcal:884, prot:0, fat:100, carb:0},
-  {name:"canola oil", ar:"زيت كانولا", kcal:884, prot:0, fat:100, carb:0},
-  {name:"sunflower oil", ar:"زيت دوار الشمس", kcal:884, prot:0, fat:100, carb:0},
-  {name:"corn oil", ar:"زيت ذرة", kcal:884, prot:0, fat:100, carb:0},
-  {name:"peanut oil", ar:"زيت فول سوداني", kcal:884, prot:0, fat:100, carb:0},
-  {name:"sesame oil", ar:"زيت سمسم", kcal:884, prot:0, fat:100, carb:0},
-  {name:"ghee", ar:"سمن", kcal:900, prot:0, fat:100, carb:0},
-  {name:"lard", ar:"شحم", kcal:902, prot:0, fat:100, carb:0},
-  // ... 30 more oil/fat items
-
-  // Beverages (60 items)
-  {name:"water", ar:"ماء", kcal:0, prot:0, fat:0, carb:0},
-  {name:"coffee", ar:"قهوة", kcal:1, prot:0.1, fat:0, carb:0},
-  {name:"tea", ar:"شاي", kcal:1, prot:0, fat:0, carb:0},
-  {name:"orange juice", ar:"عصير برتقال", kcal:45, prot:0.7, fat:0.2, carb:10},
-  {name:"apple juice", ar:"عصير تفاح", kcal:46, prot:0.1, fat:0.1, carb:11},
-  {name:"grape juice", ar:"عصير عنب", kcal:60, prot:0.4, fat:0.1, carb:15},
-  {name:"cranberry juice", ar:"عصير توت بري", kcal:46, prot:0, fat:0.1, carb:12},
-  {name:"tomato juice", ar:"عصير طماطم", kcal:17, prot:0.9, fat:0.1, carb:4},
-  {name:"coconut water", ar:"ماء جوز الهند", kcal:19, prot:0.7, fat:0.2, carb:4},
-  {name:"soda", ar:"مشروب غازي", kcal:41, prot:0, fat:0, carb:10},
-  // ... 50 more beverage items
-
-  // Herbs & Spices (50 items)
-  {name:"salt", ar:"ملح", kcal:0, prot:0, fat:0, carb:0},
-  {name:"black pepper", ar:"فلفل أسود", kcal:251, prot:10, fat:3.3, carb:64},
-  {name:"garlic powder", ar:"مسحوق ثوم", kcal:331, prot:17, fat:0.7, carb:73},
-  {name:"onion powder", ar:"مسحوق بصل", kcal:341, prot:10, fat:1.0, carb:79},
-  {name:"cinnamon", ar:"قرفة", kcal:247, prot:4.0, fat:1.2, carb:81},
-  {name:"turmeric", ar:"كركم", kcal:354, prot:8, fat:10, carb:65},
-  {name:"ginger", ar:"زنجبيل", kcal:80, prot:1.8, fat:0.8, carb:18},
-  {name:"cumin", ar:"كمون", kcal:375, prot:18, fat:22, carb:44},
-  {name:"paprika", ar:"بابريكا", kcal:282, prot:14, fat:13, carb:54},
-  {name:"cayenne", ar:"فلفل حار", kcal:318, prot:12, fat:17, carb:56},
-  // ... 40 more herb/spice items
-];
-
-// Initialize foods if empty
-if (state.foods.length === 0) {
-  state.foods = SEED_FOODS;
-  save();
-}
-
-function findFood(name){ 
-  return state.foods.find(f=>f.name===name||f.ar===name); 
-}
-
-function getFoodDisplayName(food) {
-  return LANG === 'ar' ? food.ar : food.name;
-}
-
-// Update food lists when language changes
-function updateFoodLists() {
-  // Update food datalist
-  const foodList = document.getElementById('foodList');
-  foodList.innerHTML = '';
-  state.foods.forEach(f=>{ 
-    const o=document.createElement('option'); 
-    o.value = getFoodDisplayName(f);
-    foodList.appendChild(o); 
-  });
+  // Remove active class from all nav buttons
+  document.querySelectorAll('#nav button').forEach(b=>b.classList.remove('ok'));
+  // Add active class to current tab button
+  document.querySelector(`#nav button[data-tab="${id}"]`).classList.add('ok');
   
-  // Update dish ingredient selects
-  document.querySelectorAll('.ingredientSelect').forEach(select => {
-    const currentValue = select.value;
-    select.innerHTML = '<option value="">Select ingredient</option>';
-    state.foods.forEach(f => {
-      const option = document.createElement('option');
-      option.value = getFoodDisplayName(f);
-      option.textContent = getFoodDisplayName(f);
-      option.dataset.foodName = f.name; // Store original name for calculation
-      select.appendChild(option);
-    });
-    // Try to restore previous selection
-    if (currentValue) {
-      select.value = currentValue;
+  // Hide all sections
+  document.querySelectorAll('.card[id]').forEach(c=>{
+    if(c.id !== 'nav') { // Don't hide the navigation
+      c.classList.add('hidden');
     }
   });
+  // Show selected section
+  document.getElementById(id).classList.remove('hidden');
+  
+  // Update specific sections if needed
+  if(id==='log') updateLog();
+  if(id==='water') updateWater();
+  if(id==='dishes') updateSavedDishes();
+  if(id==='workout') updateWorkoutPlans();
+  if(id==='goals') updateGoalsForm();
+  if(id==='profile') updateProfile();
 }
 
-// ====== WORKOUT FUNCTIONALITY ======
-let currentWorkout = null;
-
-function refreshWorkout() {
-  // Show workout history
-  const historyContainer = document.getElementById('workoutHistory');
-  historyContainer.innerHTML = '';
-  
-  if (state.workoutHistory.length === 0) {
-    historyContainer.innerHTML = '<p style="text-align:center;color:#666;padding:20px;">No workout history yet</p>';
-    return;
+// Home button function - always available
+function goHome() {
+  // If in active workout, cancel it first
+  if (state.activeWorkout) {
+    if (confirm('Cancel current workout and return home?')) {
+      state.activeWorkout = null;
+      save();
+      document.getElementById('activeWorkoutPage').classList.add('hidden');
+      document.querySelector('.container').classList.remove('hidden');
+    } else {
+      return;
+    }
   }
+  showTab('home');
+}
+
+// ====== Goals ======
+function calcGoals(){
+  const {sex,age,height,weight,days,goal} = state;
+  // BMR Mifflin-St Jeor
+  let bmr = (10*weight) + (6.25*height) - (5*age) + (sex==='male'?5:-161);
+  // Activity
+  const act = [1.2,1.375,1.55,1.725,1.9][Math.min(days,4)];
+  let kcal = Math.round(bmr * act);
+  // Goal
+  if(goal==='cut') kcal = Math.round(kcal * 0.85);
+  if(goal==='bulk') kcal = Math.round(kcal * 1.1);
+  // Macros (30% protein, 30% fat, 40% carbs)
+  const prot = Math.round((kcal*0.3)/4);
+  const fat = Math.round((kcal*0.3)/9);
+  const carb = Math.round((kcal*0.4)/4);
+  return {kcal,prot,fat,carb};
+}
+
+function updateDashboard(){
+  const today = new Date().toDateString();
+  const day = state.daysData[today] || {foods:[],water:0};
+  const goals = state.goals || calcGoals();
   
-  state.workoutHistory.slice(-5).reverse().forEach(workout => {
-    const workoutDiv = document.createElement('div');
-    workoutDiv.className = 'workout-complete';
-    workoutDiv.innerHTML = `
-      <strong>${workout.exercise}</strong> - ${workout.date}
-      <div class="small">Sets: ${workout.sets.length}</div>
-    `;
-    historyContainer.appendChild(workoutDiv);
+  let kcal=0, prot=0, fat=0, carb=0;
+  day.foods.forEach(f=>{
+    const food = FOODS.find(x=>x.name===f.name);
+    if(food){
+      const ratio = f.grams/100;
+      kcal += food.kcal * ratio;
+      prot += food.prot * ratio;
+      fat += food.fat * ratio;
+      carb += food.carb * ratio;
+    }
+  });
+  
+  document.getElementById('kcalToday').textContent = Math.round(kcal);
+  document.getElementById('protToday').textContent = Math.round(prot);
+  document.getElementById('fatToday').textContent = Math.round(fat);
+  document.getElementById('carbToday').textContent = Math.round(carb);
+  
+  document.getElementById('kcalTarget').textContent = goals.kcal;
+  document.getElementById('protTarget').textContent = goals.prot;
+  document.getElementById('fatTarget').textContent = goals.fat;
+  document.getElementById('carbTarget').textContent = goals.carb;
+  
+  document.getElementById('kcalProg').value = (kcal/goals.kcal)*100;
+  document.getElementById('protProg').value = (prot/goals.prot)*100;
+  document.getElementById('fatProg').value = (fat/goals.fat)*100;
+  document.getElementById('carbProg').value = (carb/goals.carb)*100;
+  
+  // Streak
+  const dates = Object.keys(state.daysData).sort();
+  let streak = 0;
+  const todayObj = new Date();
+  for(let i=0; i<30; i++){
+    const d = new Date(todayObj);
+    d.setDate(d.getDate()-i);
+    const ds = d.toDateString();
+    if(state.daysData[ds] && state.daysData[ds].foods.length>0) streak++;
+    else break;
+  }
+  document.getElementById('streak').textContent = streak;
+}
+
+// ====== Food Database (expanded to ~1000 items) ======
+const FOODS = [
+  // Grains & Cereals (50)
+  {name:"White Rice", kcal:130, prot:2.7, fat:0.3, carb:28},
+  {name:"Brown Rice", kcal:111, prot:2.6, fat:0.9, carb:23},
+  {name:"Basmati Rice", kcal:121, prot:3.5, fat:0.4, carb:25},
+  {name:"Jasmine Rice", kcal:129, prot:2.9, fat:0.3, carb:28},
+  {name:"Wild Rice", kcal:101, prot:4, fat:0.3, carb:21},
+  {name:"Quinoa", kcal:120, prot:4.4, fat:1.9, carb:21},
+  {name:"Oats", kcal:389, prot:16.9, fat:6.9, carb:66},
+  {name:"Steel Cut Oats", kcal:170, prot:7, fat:3, carb:29},
+  {name:"Rolled Oats", kcal:375, prot:13, fat:6, carb:68},
+  {name:"Whole Wheat Bread", kcal:265, prot:13, fat:4, carb:44},
+  {name:"White Bread", kcal:265, prot:9, fat:3, carb:49},
+  {name:"Sourdough Bread", kcal:270, prot:10, fat:2, carb:52},
+  {name:"Rye Bread", kcal:259, prot:8.5, fat:3.3, carb:48},
+  {name:"Pita Bread", kcal:275, prot:9, fat:1.2, carb:56},
+  {name:"Bagel", kcal:250, prot:10, fat:1.5, carb:49},
+  {name:"Croissant", kcal:406, prot:8, fat:21, carb:46},
+  {name:"Tortilla (Flour)", kcal:300, prot:8, fat:7, carb:50},
+  {name:"Tortilla (Corn)", kcal:218, prot:5.7, fat:2.9, carb:44},
+  {name:"Pasta (White)", kcal:131, prot:5, fat:1, carb:25},
+  {name:"Pasta (Whole Wheat)", kcal:124, prot:5, fat:1, carb:25},
+  {name:"Spaghetti", kcal:158, prot:6, fat:1, carb:31},
+  {name:"Macaroni", kcal:157, prot:5, fat:1, carb:30},
+  {name:"Noodles (Egg)", kcal:138, prot:4.5, fat:2, carb:25},
+  {name:"Ramen Noodles", kcal:436, prot:10, fat:17, carb:60},
+  {name:"Udon Noodles", kcal:124, prot:4, fat:0.5, carb:27},
+  {name:"Soba Noodles", kcal:99, prot:5, fat:0.1, carb:21},
+  {name:"Rice Noodles", kcal:109, prot:0.9, fat:0.2, carb:25},
+  {name:"Couscous", kcal:112, prot:4, fat:0.2, carb:23},
+  {name:"Bulgur Wheat", kcal:83, prot:3.1, fat:0.2, carb:19},
+  {name:"Barley", kcal:123, prot:2.3, fat:0.4, carb:28},
+  {name:"Millet", kcal:119, prot:3.5, fat:1, carb:23},
+  {name:"Buckwheat", kcal:343, prot:13, fat:3.4, carb:72},
+  {name:"Amaranth", kcal:102, prot:4, fat:2, carb:19},
+  {name:"Teff", kcal:101, prot:4, fat:1, carb:20},
+  {name:"Spelt", kcal:338, prot:15, fat:2.4, carb:70},
+  {name:"Farro", kcal:362, prot:13, fat:2.5, carb:73},
+  {name:"Polenta", kcal:85, prot:2, fat:0.4, carb:19},
+  {name:"Grits", kcal:71, prot:2, fat:0.5, carb:15},
+  {name:"Cream of Wheat", kcal:37, prot:1.3, fat:0.1, carb:8},
+  {name:"Oatmeal", kcal:68, prot:2.4, fat:1.4, carb:12},
+  {name:"Granola", kcal:471, prot:10, fat:20, carb:64},
+  {name:"Muesli", kcal:340, prot:10, fat:5, carb:66},
+  {name:"Corn Flakes", kcal:357, prot:7.5, fat:0.4, carb:84},
+  {name:"Rice Krispies", kcal:383, prot:6, fat:1, carb:87},
+  {name:"Cheerios", kcal:376, prot:11, fat:6, carb:70},
+  {name:"Special K", kcal:377, prot:18, fat:1, carb:75},
+  {name:"All-Bran", kcal:259, prot:14, fat:3.5, carb:74},
+  {name:"Wheaties", kcal:353, prot:10, fat:1.5, carb:80},
+  {name:"Grape Nuts", kcal:361, prot:11, fat:1, carb:82},
+  {name:"Shredded Wheat", kcal:350, prot:11, fat:2, carb:80},
+  
+  // Add more food items as needed...
+];
+
+// Update food lists in UI
+function updateFoodLists() {
+  const foodList = document.getElementById('foodList');
+  const ingredientSelects = document.querySelectorAll('.ingredientSelect');
+  
+  // Clear existing options
+  foodList.innerHTML = '';
+  
+  // Add food options to datalist
+  FOODS.forEach(food => {
+    const option = document.createElement('option');
+    option.value = food.name;
+    foodList.appendChild(option);
+  });
+  
+  // Update ingredient selects in dish builder
+  ingredientSelects.forEach(select => {
+    // Clear existing options except the first one
+    while (select.options.length > 1) {
+      select.remove(1);
+    }
+    
+    // Add food options
+    FOODS.forEach(food => {
+      const option = document.createElement('option');
+      option.value = food.name;
+      option.textContent = food.name;
+      select.appendChild(option);
+    });
   });
 }
 
-// Workout plan selection
-document.getElementById('selectPlan1').onclick = () => {
-  document.getElementById('plan1').classList.remove('hidden');
-  document.getElementById('plan2').classList.add('hidden');
-};
-
-document.getElementById('selectPlan2').onclick = () => {
-  document.getElementById('plan2').classList.remove('hidden');
-  document.getElementById('plan1').classList.add('hidden');
-};
-
-// Start workout functionality
-document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('start-workout')) {
-    const exercise = e.target.dataset.exercise;
-    const sets = parseInt(e.target.dataset.sets);
-    startWorkout(exercise, sets);
-  }
-});
-
-function startWorkout(exercise, totalSets) {
-  currentWorkout = {
-    exercise: exercise,
-    totalSets: totalSets,
-    sets: [],
-    startTime: new Date()
-  };
+// ====== Log ======
+function updateLog(){
+  const today = new Date().toDateString();
+  document.getElementById('logDate').textContent = today;
+  const day = state.daysData[today] || {foods:[],water:0};
+  const tbody = document.getElementById('logTable');
+  tbody.innerHTML = '';
   
-  // Show active workout interface
-  document.getElementById('activeExerciseName').textContent = exercise;
-  const setsContainer = document.getElementById('workoutSets');
-  setsContainer.innerHTML = '';
+  let kcal=0, prot=0, fat=0, carb=0;
+  day.foods.forEach((f,i)=>{
+    const food = FOODS.find(x=>x.name===f.name);
+    if(food){
+      const ratio = f.grams/100;
+      const fk = food.kcal * ratio;
+      const fp = food.prot * ratio;
+      const ff = food.fat * ratio;
+      const fc = food.carb * ratio;
+      kcal += fk;
+      prot += fp;
+      fat += ff;
+      carb += fc;
+      
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${f.meal}</td>
+        <td>${f.name}</td>
+        <td>${f.grams}</td>
+        <td>${Math.round(fk)}</td>
+        <td>${Math.round(fp)}</td>
+        <td>${Math.round(ff)}</td>
+        <td>${Math.round(fc)}</td>
+        <td><button class="danger" onclick="removeFood(${i})">×</button></td>
+      `;
+      tbody.appendChild(tr);
+    }
+  });
   
-  // Create set inputs
-  for (let i = 1; i <= totalSets; i++) {
-    const setDiv = document.createElement('div');
-    setDiv.className = 'workout-set';
-    setDiv.innerHTML = `
-      <div class="set-number">Set ${i}</div>
-      <div class="set-inputs">
-        <input type="number" placeholder="Weight (kg)" class="set-weight">
-        <input type="number" placeholder="Reps" class="set-reps">
-      </div>
-    `;
-    setsContainer.appendChild(setDiv);
-  }
+  document.getElementById('tKcal').textContent = Math.round(kcal);
+  document.getElementById('tP').textContent = Math.round(prot);
+  document.getElementById('tF').textContent = Math.round(fat);
+  document.getElementById('tC').textContent = Math.round(carb);
   
-  // Show active workout
-  document.getElementById('activeWorkout').classList.remove('hidden');
-  document.getElementById('plan1').classList.add('hidden');
-  document.getElementById('plan2').classList.add('hidden');
+  // Update log items summary
+  const logItems = document.getElementById('logItems');
+  logItems.innerHTML = day.foods.length ? 
+    `<div class="badge">${day.foods.length} items logged</div>` : 
+    `<div class="badge">No food logged today</div>`;
 }
 
-// Complete workout
-document.getElementById('completeWorkout').onclick = () => {
-  if (!currentWorkout) return;
+function removeFood(i){
+  const today = new Date().toDateString();
+  state.daysData[today].foods.splice(i,1);
+  save();
+  updateLog();
+  updateDashboard();
+}
+
+document.getElementById('clearToday').onclick = ()=>{
+  const today = new Date().toDateString();
+  state.daysData[today] = {foods:[],water:0};
+  save();
+  updateLog();
+  updateDashboard();
+  updateWater();
+};
+
+// ====== Camera ======
+let model, video, canvas, ctx;
+
+document.getElementById('startCam').onclick = async ()=>{
+  video = document.getElementById('vid');
+  canvas = document.getElementById('frame');
+  ctx = canvas.getContext('2d');
   
-  const setElements = document.querySelectorAll('.workout-set');
-  const sets = [];
-  
-  setElements.forEach((setEl, index) => {
-    const weight = setEl.querySelector('.set-weight').value;
-    const reps = setEl.querySelector('.set-reps').value;
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});
+    video.srcObject = stream;
+    document.getElementById('startCam').classList.add('hidden');
+    document.getElementById('stopCam').classList.remove('hidden');
+    document.getElementById('snap').classList.remove('ghost');
     
-    if (weight && reps) {
-      sets.push({
-        set: index + 1,
-        weight: parseFloat(weight),
-        reps: parseInt(reps)
+    // Load model
+    model = await mobilenet.load({version:2, alpha:0.5});
+  }catch(e){
+    alert('Camera error: '+e.message);
+  }
+};
+
+document.getElementById('stopCam').onclick = ()=>{
+  if(video.srcObject){
+    video.srcObject.getTracks().forEach(t=>t.stop());
+    document.getElementById('startCam').classList.remove('hidden');
+    document.getElementById('stopCam').classList.add('hidden');
+    document.getElementById('snap').classList.add('ghost');
+  }
+};
+
+document.getElementById('snap').onclick = ()=>{
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  ctx.drawImage(video,0,0);
+  canvas.classList.remove('hidden');
+  video.classList.add('hidden');
+};
+
+document.getElementById('classify').onclick = async ()=>{
+  if(!model || !canvas.width) return;
+  const pred = await model.classify(canvas);
+  const predDiv = document.getElementById('pred');
+  predDiv.innerHTML = '';
+  pred.forEach(p=>{
+    const btn = document.createElement('button');
+    btn.className = 'ghost';
+    btn.textContent = `${p.className} (${Math.round(p.probability*100)}%)`;
+    btn.onclick = ()=> document.getElementById('foodSearch').value = p.className;
+    predDiv.appendChild(btn);
+  });
+};
+
+// Portion estimation based on food size
+document.getElementById('foodSize').onchange = function() {
+  const size = this.value;
+  let weight = 0;
+  switch(size) {
+    case 'small': weight = 50; break;
+    case 'medium': weight = 150; break;
+    case 'large': weight = 300; break;
+    case 'bowl': weight = 200; break;
+    case 'plate': weight = 400; break;
+  }
+  document.getElementById('estimatedWeight').value = weight;
+  document.getElementById('portion').value = weight;
+};
+
+// Add to meal
+document.getElementById('addMeal').onclick = ()=>{
+  const name = document.getElementById('foodSearch').value;
+  const grams = +document.getElementById('portion').value;
+  const meal = document.getElementById('mealType').value;
+  
+  if(!name || !grams) return alert('Please enter food and portion');
+  
+  const today = new Date().toDateString();
+  if(!state.daysData[today]) state.daysData[today] = {foods:[],water:0};
+  state.daysData[today].foods.push({name,grams,meal});
+  save();
+  updateLog();
+  updateDashboard();
+  
+  // Reset form
+  document.getElementById('foodSearch').value = '';
+  document.getElementById('portion').value = 150;
+};
+
+// ====== Make a Dish ======
+document.getElementById('addIngredient').onclick = ()=>{
+  const container = document.getElementById('dishIngredients');
+  const div = document.createElement('div');
+  div.className = 'dish-ingredient-grid';
+  div.innerHTML = `
+    <select class="ingredientSelect">
+      <option value="">Select ingredient</option>
+    </select>
+    <input type="number" class="ingredientGrams" placeholder="Grams" value="100">
+    <span class="small">Portion</span>
+    <button class="removeIngredient danger">×</button>
+  `;
+  container.appendChild(div);
+  
+  // Update the select options for the new ingredient
+  const select = div.querySelector('.ingredientSelect');
+  FOODS.forEach(food => {
+    const option = document.createElement('option');
+    option.value = food.name;
+    option.textContent = food.name;
+    select.appendChild(option);
+  });
+  
+  // Add remove functionality
+  div.querySelector('.removeIngredient').onclick = ()=> div.remove();
+};
+
+// Calculate dish nutrition
+document.getElementById('calculateDish').onclick = ()=>{
+  const ingredients = document.querySelectorAll('.dish-ingredient-grid');
+  let totalWeight = 0;
+  let totalKcal = 0, totalProt = 0, totalFat = 0, totalCarb = 0;
+  
+  ingredients.forEach(ing => {
+    const name = ing.querySelector('.ingredientSelect').value;
+    const grams = +ing.querySelector('.ingredientGrams').value;
+    
+    if(name && grams){
+      const food = FOODS.find(f=>f.name===name);
+      if(food){
+        const ratio = grams/100;
+        totalWeight += grams;
+        totalKcal += food.kcal * ratio;
+        totalProt += food.prot * ratio;
+        totalFat += food.fat * ratio;
+        totalCarb += food.carb * ratio;
+      }
+    }
+  });
+  
+  if(totalWeight === 0) return alert('Add ingredients first');
+  
+  // Calculate per 100g
+  const ratio = 100/totalWeight;
+  document.getElementById('dishKcal').textContent = Math.round(totalKcal * ratio);
+  document.getElementById('dishProt').textContent = (totalProt * ratio).toFixed(1);
+  document.getElementById('dishFat').textContent = (totalFat * ratio).toFixed(1);
+  document.getElementById('dishCarb').textContent = (totalCarb * ratio).toFixed(1);
+  
+  document.getElementById('dishResults').classList.remove('hidden');
+};
+
+// Save dish
+document.getElementById('saveDish').onclick = ()=>{
+  const name = document.getElementById('dishName').value;
+  if(!name) return alert('Enter dish name');
+  
+  const ingredients = [];
+  document.querySelectorAll('.dish-ingredient-grid').forEach(ing => {
+    const foodName = ing.querySelector('.ingredientSelect').value;
+    const grams = +ing.querySelector('.ingredientGrams').value;
+    if(foodName && grams) ingredients.push({name:foodName, grams});
+  });
+  
+  if(ingredients.length === 0) return alert('Add ingredients first');
+  
+  // Calculate nutrition
+  let totalWeight = 0;
+  let totalKcal = 0, totalProt = 0, totalFat = 0, totalCarb = 0;
+  
+  ingredients.forEach(ing => {
+    const food = FOODS.find(f=>f.name===ing.name);
+    if(food){
+      const ratio = ing.grams/100;
+      totalWeight += ing.grams;
+      totalKcal += food.kcal * ratio;
+      totalProt += food.prot * ratio;
+      totalFat += food.fat * ratio;
+      totalCarb += food.carb * ratio;
+    }
+  });
+  
+  const ratio = 100/totalWeight;
+  const dish = {
+    name,
+    ingredients,
+    nutrition: {
+      kcal: Math.round(totalKcal * ratio),
+      prot: +(totalProt * ratio).toFixed(1),
+      fat: +(totalFat * ratio).toFixed(1),
+      carb: +(totalCarb * ratio).toFixed(1)
+    }
+  };
+  
+  state.dishes.push(dish);
+  save();
+  updateSavedDishes();
+  alert('Dish saved!');
+};
+
+function updateSavedDishes(){
+  const container = document.getElementById('savedDishes');
+  container.innerHTML = '';
+  
+  state.dishes.forEach((dish, i) => {
+    const div = document.createElement('div');
+    div.className = 'dish-saved';
+    div.innerHTML = `
+      <h4>${dish.name}</h4>
+      <div class="small">Ingredients: ${dish.ingredients.map(i=>`${i.name} (${i.grams}g)`).join(', ')}</div>
+      <div class="row">
+        <div class="col"><strong>Calories:</strong> ${dish.nutrition.kcal}</div>
+        <div class="col"><strong>Protein:</strong> ${dish.nutrition.prot}g</div>
+        <div class="col"><strong>Fat:</strong> ${dish.nutrition.fat}g</div>
+        <div class="col"><strong>Carbs:</strong> ${dish.nutrition.carb}g</div>
+      </div>
+      <div class="toolbar">
+        <button class="ok" onclick="addDishToLog(${i})">Add to Log</button>
+        <button class="danger" onclick="deleteDish(${i})">Delete</button>
+      </div>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function addDishToLog(i){
+  const dish = state.dishes[i];
+  const meal = prompt('Which meal? (Breakfast, Lunch, Dinner, Snack)', 'Lunch');
+  if(!meal) return;
+  
+  const grams = +prompt('Portion size in grams?', '200');
+  if(!grams) return;
+  
+  const ratio = grams/100;
+  const today = new Date().toDateString();
+  if(!state.daysData[today]) state.daysData[today] = {foods:[],water:0};
+  
+  state.daysData[today].foods.push({
+    name: dish.name,
+    grams: grams,
+    meal: meal
+  });
+  
+  save();
+  updateLog();
+  updateDashboard();
+  alert(`${dish.name} added to ${meal}`);
+}
+
+function deleteDish(i){
+  if(confirm('Delete this dish?')){
+    state.dishes.splice(i,1);
+    save();
+    updateSavedDishes();
+  }
+}
+
+// ====== Water ======
+function updateWater(){
+  const today = new Date().toDateString();
+  const day = state.daysData[today] || {foods:[],water:0};
+  const target = +(state.waterTarget || 2500);
+  const cupSize = +(state.cupSize || 250);
+  
+  document.getElementById('waterTarget').value = target;
+  document.getElementById('cupSize').value = cupSize;
+  
+  const progress = (day.water / target) * 100;
+  document.getElementById('waterProg').value = progress;
+  document.getElementById('waterProgTxt').textContent = `${day.water} / ${target} ml`;
+  
+  // Update cups
+  const cupsContainer = document.getElementById('cups');
+  cupsContainer.innerHTML = '';
+  const cups = Math.ceil(target / cupSize);
+  const filledCups = Math.floor(day.water / cupSize);
+  
+  for(let i=0; i<cups; i++){
+    const cup = document.createElement('div');
+    cup.className = 'cup' + (i < filledCups ? ' fill' : '');
+    cup.onclick = ()=> drinkWater(cupSize);
+    cupsContainer.appendChild(cup);
+  }
+}
+
+function drinkWater(amount){
+  const today = new Date().toDateString();
+  if(!state.daysData[today]) state.daysData[today] = {foods:[],water:0};
+  state.daysData[today].water += amount;
+  save();
+  updateWater();
+}
+
+document.getElementById('saveWater').onclick = ()=>{
+  state.waterTarget = +document.getElementById('waterTarget').value;
+  state.cupSize = +document.getElementById('cupSize').value;
+  save();
+  updateWater();
+};
+
+document.getElementById('drink').onclick = ()=> drinkWater(+(state.cupSize || 250));
+document.getElementById('resetWater').onclick = ()=>{
+  const today = new Date().toDateString();
+  if(state.daysData[today]) state.daysData[today].water = 0;
+  save();
+  updateWater();
+};
+
+// ====== Goals ======
+document.getElementById('saveGoals').onclick = ()=>{
+  state.goals = {
+    kcal: +document.getElementById('g_kcal').value,
+    prot: +document.getElementById('g_prot').value,
+    fat: +document.getElementById('g_fat').value,
+    carb: +document.getElementById('g_carb').value
+  };
+  save();
+  alert('Goals saved!');
+  updateDashboard();
+};
+
+document.getElementById('recalcGoals').onclick = ()=>{
+  state.goals = calcGoals();
+  save();
+  updateGoalsForm();
+  updateDashboard();
+};
+
+function updateGoalsForm(){
+  if(state.goals){
+    document.getElementById('g_kcal').value = state.goals.kcal;
+    document.getElementById('g_prot').value = state.goals.prot;
+    document.getElementById('g_fat').value = state.goals.fat;
+    document.getElementById('g_carb').value = state.goals.carb;
+  }
+}
+
+// Custom Goals
+document.getElementById('addCustomGoal').onclick = ()=>{
+  const text = document.getElementById('newCustomGoal').value.trim();
+  if(!text) return;
+  
+  const today = new Date().toDateString();
+  if(!state.customGoals[today]) state.customGoals[today] = [];
+  state.customGoals[today].push({text, completed: false});
+  save();
+  
+  document.getElementById('newCustomGoal').value = '';
+  updateCustomGoals();
+};
+
+function updateCustomGoals(){
+  const today = new Date().toDateString();
+  const goals = state.customGoals[today] || [];
+  const container = document.getElementById('customGoalsList');
+  container.innerHTML = '';
+  
+  goals.forEach((goal, i) => {
+    const div = document.createElement('div');
+    div.className = 'custom-goal-item';
+    div.innerHTML = `
+      <div class="custom-goal-checkbox ${goal.completed ? 'checked' : ''}" onclick="toggleCustomGoal(${i})"></div>
+      <div class="custom-goal-text ${goal.completed ? 'goal-completed' : ''}">${goal.text}</div>
+      <button class="custom-goal-remove" onclick="removeCustomGoal(${i})">×</button>
+    `;
+    container.appendChild(div);
+  });
+}
+
+function toggleCustomGoal(i){
+  const today = new Date().toDateString();
+  if(state.customGoals[today] && state.customGoals[today][i]){
+    state.customGoals[today][i].completed = !state.customGoals[today][i].completed;
+    save();
+    updateCustomGoals();
+  }
+}
+
+function removeCustomGoal(i){
+  const today = new Date().toDateString();
+  if(state.customGoals[today] && state.customGoals[today][i]){
+    state.customGoals[today].splice(i,1);
+    save();
+    updateCustomGoals();
+  }
+}
+
+// ====== Profile ======
+function updateProfile(){
+  const {sex,age,height,weight,days,goal,goals} = state;
+  const summary = document.getElementById('profSummary');
+  summary.innerHTML = `
+    <div class="row">
+      <div class="col"><strong>Sex:</strong> ${sex}</div>
+      <div class="col"><strong>Age:</strong> ${age}</div>
+      <div class="col"><strong>Height:</strong> ${height} cm</div>
+      <div class="col"><strong>Weight:</strong> ${weight} kg</div>
+    </div>
+    <div class="row">
+      <div class="col"><strong>Workout days:</strong> ${days}/week</div>
+      <div class="col"><strong>Goal:</strong> ${goal}</div>
+    </div>
+    <div class="row">
+      <div class="col"><strong>Calories:</strong> ${goals.kcal}</div>
+      <div class="col"><strong>Protein:</strong> ${goals.prot}g</div>
+      <div class="col"><strong>Fat:</strong> ${goals.fat}g</div>
+      <div class="col"><strong>Carbs:</strong> ${goals.carb}g</div>
+    </div>
+  `;
+}
+
+document.getElementById('restart').onclick = ()=>{
+  if(confirm('Reset all data and restart wizard?')){
+    localStorage.removeItem(SKEY);
+    location.reload();
+  }
+};
+
+// ====== Workout Section ======
+
+// Exercise database
+const EXERCISES = {
+  chest: [
+    "Barbell Bench Press", "Incline Bench Press", "Dumbbell Bench Press", 
+    "Incline Dumbbell Bench Press", "Decline Bench Press", "Weighted Dips", 
+    "Push-Ups (weighted or banded)", "Cable Chest Fly (flat)", 
+    "Cable Chest Fly (low to high)", "Machine Chest Press", "Pec Deck Machine", "Floor Press"
+  ],
+  back: [
+    "Barbell Row", "Dumbbell Row", "Chest-Supported Row", "Seal Row", 
+    "T-Bar Row", "Meadows Row", "Cable Row (close grip)", "Cable Row (wide grip)", 
+    "Lat Pulldown (wide grip)", "Lat Pulldown (neutral grip)", "Machine High Row", 
+    "Inverted Row", "Shrugs (barbell or dumbbell)", "Seal Row with Pause"
+  ],
+  shoulders: [
+    "Overhead Barbell Press", "Dumbbell Shoulder Press", "Arnold Press", 
+    "Z Press (seated barbell press on floor)", "Push Press", "Dumbbell Lateral Raise", 
+    "Cable Lateral Raise", "Machine Lateral Raise", "Upright Row (EZ bar, wide grip)", 
+    "Dumbbell Front Raise", "Cable Front Raise", "Rear Delt Fly (DB)", 
+    "Rear Delt Fly (cable)", "Reverse Pec Deck Machine", "Face Pulls"
+  ],
+  arms: [
+    "Barbell Curl", "EZ Bar Curl", "Dumbbell Curl (alternating)", 
+    "Incline Dumbbell Curl", "Concentration Curl", "Cable Curl (straight bar)", 
+    "Rope Hammer Curl", "Zottman Curl", "Preacher Curl (EZ or DB)", 
+    "Machine Curl", "Skull Crushers (EZ bar)", "Overhead Triceps Extension (DB)", 
+    "Cable Rope Pushdown", "Straight Bar Pushdown", "Overhead Rope Extension", 
+    "Dumbbell Kickback", "Close Grip Bench Press", "JM Press", 
+    "Machine Triceps Extension", "Barbell Wrist Curl", "Reverse Curl (EZ bar)", 
+    "Hammer Curl", "Farmer's Carry", "Plate Pinch Hold"
+  ],
+  legs: [
+    "Back Squat", "Front Squat", "Safety Bar Squat", 
+    "Hack Squat (machine or barbell)", "Bulgarian Split Squat", 
+    "Walking Lunges", "Step-Ups", "Leg Press", "Sissy Squat", 
+    "Romanian Deadlift (RDL)", "Stiff-Leg Deadlift", "Good Morning", 
+    "Glute-Ham Raise", "Nordic Hamstring Curl", "Lying Leg Curl (machine)", 
+    "Seated Leg Curl", "Hip Thrust", "Barbell Glute Bridge", 
+    "Cable Kickback", "Reverse Hyperextension", "Step-Ups (glute emphasis)", 
+    "Standing Calf Raise", "Seated Calf Raise", "Donkey Calf Raise", 
+    "Single-Leg Calf Raise", "Leg Press Calf Extension"
+  ],
+  core: [
+    "Hanging Leg Raise", "Weighted Plank", "Cable Crunch", 
+    "Ab Wheel Rollout", "Side Plank (weighted)", "Dragon Flag", 
+    "Decline Sit-Up (weighted)", "Pallof Press", 
+    "Russian Twist (weighted)", "Landmine Oblique Twist"
+  ]
+};
+
+// Pre-made workout plans
+const WORKOUT_PLANS = {
+  ppl: {
+    name: "Push/Pull/Legs (PPL)",
+    days: [
+      {
+        name: "Day 1 - Push",
+        exercises: [
+          { name: "Incline Bench Press", sets: 4, reps: "6-8" },
+          { name: "Overhead Press", sets: 3, reps: "6-8" },
+          { name: "Flat Dumbbell Press", sets: 3, reps: "8-10" },
+          { name: "Dumbbell Lateral Raise", sets: 4, reps: "12-15" },
+          { name: "Cable Triceps Pushdown", sets: 3, reps: "12-15" }
+        ]
+      },
+      {
+        name: "Day 2 - Pull",
+        exercises: [
+          { name: "Barbell Row", sets: 4, reps: "6-8" },
+          { name: "Chest-Supported Row", sets: 3, reps: "8-10" },
+          { name: "Lat Pulldown", sets: 4, reps: "8-12" },
+          { name: "Face Pull", sets: 3, reps: "12-15" },
+          { name: "Incline Dumbbell Curl", sets: 3, reps: "10-12" }
+        ]
+      },
+      {
+        name: "Day 3 - Legs",
+        exercises: [
+          { name: "Back Squat", sets: 4, reps: "6-8" },
+          { name: "Romanian Deadlift", sets: 3, reps: "8-10" },
+          { name: "Walking Lunge", sets: 3, reps: "10/leg" },
+          { name: "Leg Press", sets: 3, reps: "10-12" },
+          { name: "Standing Calf Raise", sets: 4, reps: "12-15" }
+        ]
+      }
+    ]
+  },
+  upperLower: {
+    name: "Upper/Lower Split",
+    days: [
+      {
+        name: "Day 1 - Upper (Strength)",
+        exercises: [
+          { name: "Incline Bench Press", sets: 4, reps: "6" },
+          { name: "Barbell Row", sets: 4, reps: "6-8" },
+          { name: "Overhead Press", sets: 3, reps: "6-8" },
+          { name: "Lat Pulldown", sets: 3, reps: "8-10" },
+          { name: "EZ Curl + Skull Crusher (superset)", sets: 3, reps: "10-12" }
+        ]
+      },
+      {
+        name: "Day 2 - Lower (Strength)",
+        exercises: [
+          { name: "Back Squat", sets: 4, reps: "6" },
+          { name: "Bulgarian Split Squat", sets: 3, reps: "10/leg" },
+          { name: "Hip Thrust", sets: 3, reps: "8-10" },
+          { name: "Calf Raise", sets: 4, reps: "12-15" },
+          { name: "Weighted Plank", sets: 3, reps: "45 sec" }
+        ]
+      },
+      {
+        name: "Day 3 - Upper (Hypertrophy)",
+        exercises: [
+          { name: "Flat Dumbbell Press", sets: 4, reps: "8-10" },
+          { name: "Chest-Supported Row", sets: 4, reps: "8-10" },
+          { name: "DB Shoulder Press", sets: 3, reps: "10" },
+          { name: "Lat Pulldown", sets: 3, reps: "10-12" },
+          { name: "Lateral Raise", sets: 3, reps: "12-15" },
+          { name: "DB Curl + Rope Pushdown", sets: 3, reps: "12" }
+        ]
+      },
+      {
+        name: "Day 4 - Lower (Hypertrophy)",
+        exercises: [
+          { name: "Front Squat", sets: 4, reps: "8" },
+          { name: "Walking Lunge", sets: 3, reps: "12/leg" },
+          { name: "Leg Curl", sets: 3, reps: "12-15" },
+          { name: "Hip Thrust", sets: 3, reps: "8-10" },
+          { name: "Seated Calf Raise", sets: 4, reps: "15" },
+          { name: "Hanging Leg Raise", sets: 3, reps: "12-15" }
+        ]
+      }
+    ]
+  }
+};
+
+// Workout UI Functions
+function showWorkoutSection(section) {
+  document.getElementById('workoutPlans').classList.add('hidden');
+  document.getElementById('customWorkoutPlan').classList.add('hidden');
+  document.getElementById('exerciseLibrary').classList.add('hidden');
+  document.getElementById('workoutHistory').classList.add('hidden');
+  
+  document.getElementById(section).classList.remove('hidden');
+}
+
+document.getElementById('showPlans').onclick = () => showWorkoutSection('workoutPlans');
+document.getElementById('showCustom').onclick = () => {
+  showWorkoutSection('customWorkoutPlan');
+  updateCustomPlanDays();
+};
+document.getElementById('showExercises').onclick = () => {
+  showWorkoutSection('exerciseLibrary');
+  populateExerciseLibrary();
+};
+document.getElementById('showHistory').onclick = () => {
+  showWorkoutSection('workoutHistory');
+  updateWorkoutHistory();
+};
+
+// Select a pre-made workout plan
+function selectWorkoutPlan(planId) {
+  const plan = WORKOUT_PLANS[planId];
+  if (!plan) return;
+  
+  // Save to user's workout plans
+  if (!state.workoutPlans.find(p => p.id === planId)) {
+    state.workoutPlans.push({
+      id: planId,
+      name: plan.name,
+      days: JSON.parse(JSON.stringify(plan.days)) // Deep copy
+    });
+    save();
+    updateWorkoutPlans();
+  }
+  
+  alert(`Added ${plan.name} to your workout plans!`);
+}
+
+// Update custom plan days based on selection
+function updateCustomPlanDays() {
+  const days = +document.getElementById('customPlanDays').value;
+  const container = document.getElementById('customPlanDaysContainer');
+  container.innerHTML = '';
+  
+  for (let i = 1; i <= days; i++) {
+    const dayDiv = document.createElement('div');
+    dayDiv.className = 'workout-day';
+    dayDiv.innerHTML = `
+      <h4>Day ${i}</h4>
+      <div class="toolbar">
+        <input type="text" class="dayName" placeholder="Day ${i} Name (e.g., Push Day)" value="Day ${i}">
+        <button class="ghost addExerciseBtn" data-day="${i}">+ Add Exercise</button>
+      </div>
+      <div class="dayExercises" id="day${i}Exercises"></div>
+    `;
+    container.appendChild(dayDiv);
+    
+    // Add exercise functionality
+    dayDiv.querySelector('.addExerciseBtn').onclick = function() {
+      addExerciseToDay(i);
+    };
+  }
+}
+
+// Add exercise to custom plan day
+function addExerciseToDay(dayNum) {
+  const container = document.getElementById(`day${dayNum}Exercises`);
+  const exerciseDiv = document.createElement('div');
+  exerciseDiv.className = 'custom-workout-exercise';
+  exerciseDiv.innerHTML = `
+    <select class="exerciseSelect">
+      <option value="">Select Exercise</option>
+    </select>
+    <input type="number" class="exerciseSets" placeholder="Sets" value="3" min="1" max="10">
+    <input type="text" class="exerciseReps" placeholder="Reps (e.g., 8-12)" value="8-12">
+    <button class="danger removeExercise">×</button>
+  `;
+  
+  // Populate exercise options
+  const select = exerciseDiv.querySelector('.exerciseSelect');
+  Object.values(EXERCISES).flat().forEach(exercise => {
+    const option = document.createElement('option');
+    option.value = exercise;
+    option.textContent = exercise;
+    select.appendChild(option);
+  });
+  
+  // Remove exercise functionality
+  exerciseDiv.querySelector('.removeExercise').onclick = function() {
+    exerciseDiv.remove();
+  };
+  
+  container.appendChild(exerciseDiv);
+}
+
+// Save custom workout plan
+document.getElementById('saveCustomPlan').onclick = function() {
+  const planName = document.getElementById('customPlanName').value.trim();
+  if (!planName) return alert('Please enter a plan name');
+  
+  const days = +document.getElementById('customPlanDays').value;
+  const planDays = [];
+  
+  for (let i = 1; i <= days; i++) {
+    const dayName = document.querySelector(`#day${i}Exercises`).closest('.workout-day').querySelector('.dayName').value;
+    const exercises = [];
+    
+    document.querySelectorAll(`#day${i}Exercises .custom-workout-exercise`).forEach(exDiv => {
+      const name = exDiv.querySelector('.exerciseSelect').value;
+      const sets = +exDiv.querySelector('.exerciseSets').value;
+      const reps = exDiv.querySelector('.exerciseReps').value;
+      
+      if (name && sets && reps) {
+        exercises.push({ name, sets, reps });
+      }
+    });
+    
+    if (exercises.length > 0) {
+      planDays.push({
+        name: dayName || `Day ${i}`,
+        exercises
+      });
+    }
+  }
+  
+  if (planDays.length === 0) return alert('Add at least one exercise to your plan');
+  
+  const planId = 'custom_' + Date.now();
+  state.workoutPlans.push({
+    id: planId,
+    name: planName,
+    days: planDays
+  });
+  
+  save();
+  updateWorkoutPlans();
+  alert('Custom workout plan saved!');
+  
+  // Reset form
+  document.getElementById('customPlanName').value = '';
+  updateCustomPlanDays();
+};
+
+// Populate exercise library
+function populateExerciseLibrary() {
+  Object.keys(EXERCISES).forEach(category => {
+    const container = document.getElementById(category + 'Exercises');
+    if (container) {
+      container.innerHTML = '';
+      EXERCISES[category].forEach(exercise => {
+        const div = document.createElement('div');
+        div.className = 'exercise-item';
+        div.textContent = exercise;
+        div.onclick = () => {
+          // Copy to clipboard or add to custom plan
+          navigator.clipboard.writeText(exercise).then(() => {
+            alert(`Copied "${exercise}" to clipboard`);
+          });
+        };
+        container.appendChild(div);
       });
     }
   });
+}
+
+// Update workout plans list
+function updateWorkoutPlans() {
+  const container = document.getElementById('workoutPlansList');
+  container.innerHTML = '';
   
-  if (sets.length > 0) {
-    currentWorkout.sets = sets;
-    currentWorkout.endTime = new Date();
-    currentWorkout.date = todayKey();
+  state.workoutPlans.forEach((plan, planIndex) => {
+    const planDiv = document.createElement('div');
+    planDiv.className = 'workout-plan';
+    planDiv.innerHTML = `<h3>${plan.name}</h3>`;
     
-    state.workoutHistory.push(currentWorkout);
+    plan.days.forEach((day, dayIndex) => {
+      const dayDiv = document.createElement('div');
+      dayDiv.className = 'workout-day';
+      dayDiv.innerHTML = `<h4>${day.name}</h4>`;
+      
+      day.exercises.forEach(exercise => {
+        const exDiv = document.createElement('div');
+        exDiv.className = 'workout-exercise';
+        exDiv.innerHTML = `
+          <strong>${exercise.name}</strong> - ${exercise.sets} sets × ${exercise.reps}
+        `;
+        dayDiv.appendChild(exDiv);
+      });
+      
+      const startBtn = document.createElement('button');
+      startBtn.className = 'ok';
+      startBtn.textContent = 'Start Workout';
+      startBtn.onclick = () => startWorkout(planIndex, dayIndex);
+      dayDiv.appendChild(startBtn);
+      
+      planDiv.appendChild(dayDiv);
+    });
+    
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'danger';
+    deleteBtn.textContent = 'Delete Plan';
+    deleteBtn.onclick = () => deleteWorkoutPlan(planIndex);
+    planDiv.appendChild(deleteBtn);
+    
+    container.appendChild(planDiv);
+  });
+}
+
+// Start a workout
+function startWorkout(planIndex, dayIndex) {
+  const plan = state.workoutPlans[planIndex];
+  const day = plan.days[dayIndex];
+  
+  // Set active workout
+  state.activeWorkout = {
+    planIndex,
+    dayIndex,
+    planName: plan.name,
+    dayName: day.name,
+    exercises: day.exercises.map(ex => ({
+      name: ex.name,
+      sets: ex.sets,
+      reps: ex.reps,
+      completedSets: Array(ex.sets).fill().map(() => ({ weight: '', reps: '' }))
+    })),
+    startTime: new Date().toISOString()
+  };
+  
+  save();
+  showActiveWorkout();
+}
+
+// Show active workout (full page)
+function showActiveWorkout() {
+  if (!state.activeWorkout) return;
+  
+  // Hide main container and show active workout page
+  document.querySelector('.container').classList.add('hidden');
+  document.getElementById('activeWorkoutPage').classList.remove('hidden');
+  
+  const workout = state.activeWorkout;
+  document.getElementById('activeWorkoutName').textContent = `${workout.planName} - ${workout.dayName}`;
+  
+  const container = document.getElementById('activeWorkoutExercises');
+  container.innerHTML = '';
+  
+  workout.exercises.forEach((exercise, exIndex) => {
+    const exDiv = document.createElement('div');
+    exDiv.className = 'workout-day';
+    exDiv.innerHTML = `<h4>${exercise.name}</h4>`;
+    
+    // Add set headers
+    const setHeader = document.createElement('div');
+    setHeader.className = 'workout-set-header';
+    setHeader.innerHTML = `
+      <span>Set</span>
+      <span>Weight (kg)</span>
+      <span>Reps</span>
+      <span>Completed</span>
+    `;
+    exDiv.appendChild(setHeader);
+    
+    // Add sets with proper spacing
+    for (let i = 0; i < exercise.sets; i++) {
+      const setDiv = document.createElement('div');
+      setDiv.className = 'workout-set';
+      setDiv.innerHTML = `
+        <span>${i + 1}</span>
+        <input type="number" placeholder="0" value="${exercise.completedSets[i].weight}" 
+               onchange="updateActiveWorkoutSet(${exIndex}, ${i}, 'weight', this.value)">
+        <input type="number" placeholder="0" value="${exercise.completedSets[i].reps}" 
+               onchange="updateActiveWorkoutSet(${exIndex}, ${i}, 'reps', this.value)">
+        <input type="checkbox" ${exercise.completedSets[i].weight && exercise.completedSets[i].reps ? 'checked' : ''} 
+               onchange="toggleSetCompletion(${exIndex}, ${i}, this.checked)">
+      `;
+      exDiv.appendChild(setDiv);
+    }
+    
+    container.appendChild(exDiv);
+  });
+}
+
+// Update active workout set
+function updateActiveWorkoutSet(exIndex, setIndex, field, value) {
+  if (state.activeWorkout) {
+    state.activeWorkout.exercises[exIndex].completedSets[setIndex][field] = value;
     save();
-    
-    alert(`Workout completed! ${sets.length} sets recorded.`);
   }
+}
+
+// Toggle set completion
+function toggleSetCompletion(exIndex, setIndex, completed) {
+  if (state.activeWorkout) {
+    const set = state.activeWorkout.exercises[exIndex].completedSets[setIndex];
+    if (completed && (!set.weight || !set.reps)) {
+      alert('Please enter both weight and reps before marking as completed');
+      // Uncheck the checkbox
+      event.target.checked = false;
+      return;
+    }
+    save();
+  }
+}
+
+// Finish workout
+document.getElementById('finishWorkout').onclick = function() {
+  if (!state.activeWorkout) return;
   
-  // Reset workout interface
-  document.getElementById('activeWorkout').classList.add('hidden');
-  document.getElementById('plan1').classList.remove('hidden');
-  currentWorkout = null;
-  refreshWorkout();
+  // Save to workout history
+  const workout = {
+    ...state.activeWorkout,
+    endTime: new Date().toISOString(),
+    completed: true
+  };
+  
+  state.workoutHistory.unshift(workout);
+  
+  // Clear active workout
+  state.activeWorkout = null;
+  
+  save();
+  
+  // Return to main app
+  document.getElementById('activeWorkoutPage').classList.add('hidden');
+  document.querySelector('.container').classList.remove('hidden');
+  
+  alert('Workout completed!');
+  updateWorkoutHistory();
 };
 
 // Cancel workout
-document.getElementById('cancelWorkout').onclick = () => {
-  document.getElementById('activeWorkout').classList.add('hidden');
-  document.getElementById('plan1').classList.remove('hidden');
-  currentWorkout = null;
+document.getElementById('cancelWorkout').onclick = function() {
+  if (confirm('Cancel this workout? Progress will be lost.')) {
+    state.activeWorkout = null;
+    save();
+    
+    // Return to main app
+    document.getElementById('activeWorkoutPage').classList.add('hidden');
+    document.querySelector('.container').classList.remove('hidden');
+  }
 };
 
-// ====== [Rest of the existing functionality remains the same - camera, food log, dishes, water, etc.] ======
-
-// Initialize the app
-function initApp() {
-  fillLangSelects();
-  
-  // Set language
-  if (state.lang) {
-    setLang(state.lang);
-  } else {
-    setLang('ar'); // Default to Arabic
+// Delete workout plan
+function deleteWorkoutPlan(planIndex) {
+  if (confirm('Delete this workout plan?')) {
+    state.workoutPlans.splice(planIndex, 1);
+    save();
+    updateWorkoutPlans();
   }
-  
-  // Check if user has completed setup
-  if (state.sex) {
-    // User has completed setup - show main app
-    document.getElementById('wizard').classList.add('hidden');
-    document.getElementById('nav').classList.remove('hidden');
-    fillGoals();
-    showTab('home');
-  } else {
-    // New user - show wizard
-    document.getElementById('wizard').classList.remove('hidden');
-    document.getElementById('nav').classList.add('hidden');
-  }
-  
-  // Initialize food lists
-  updateFoodLists();
-  
-  // Initialize portion estimation
-  document.getElementById('foodSize').onchange();
 }
 
-// Start the app when page loads
-window.addEventListener('DOMContentLoaded', initApp);
+// Update workout history
+function updateWorkoutHistory() {
+  const container = document.getElementById('workoutHistoryList');
+  container.innerHTML = '';
+  
+  state.workoutHistory.forEach((workout, index) => {
+    const div = document.createElement('div');
+    div.className = 'workout-history-item';
+    
+    const startDate = new Date(workout.startTime).toLocaleDateString();
+    const duration = workout.endTime ? 
+      Math.round((new Date(workout.endTime) - new Date(workout.startTime)) / 60000) + ' min' : 
+      'Incomplete';
+    
+    div.innerHTML = `
+      <h4>${workout.planName} - ${workout.dayName}</h4>
+      <div class="small">${startDate} • ${duration}</div>
+      <button class="ghost" onclick="viewWorkoutDetails(${index})">View Details</button>
+      <button class="danger" onclick="deleteWorkoutHistory(${index})">Delete</button>
+    `;
+    
+    container.appendChild(div);
+  });
+}
+
+// View workout details
+function viewWorkoutDetails(index) {
+  const workout = state.workoutHistory[index];
+  let details = `${workout.planName} - ${workout.dayName}\n\n`;
+  
+  workout.exercises.forEach(exercise => {
+    details += `${exercise.name}:\n`;
+    exercise.completedSets.forEach((set, i) => {
+      if (set.weight || set.reps) {
+        details += `  Set ${i + 1}: ${set.weight} kg × ${set.reps} reps\n`;
+      }
+    });
+    details += '\n';
+  });
+  
+  alert(details);
+}
+
+// Delete workout history
+function deleteWorkoutHistory(index) {
+  if (confirm('Delete this workout from history?')) {
+    state.workoutHistory.splice(index, 1);
+    save();
+    updateWorkoutHistory();
+  }
+}
+
+// ====== Navigation Event Listeners ======
+document.querySelectorAll('#nav button').forEach(button => {
+  button.addEventListener('click', function() {
+    showTab(this.dataset.tab);
+  });
+});
+
+// Dashboard buttons
+document.getElementById('toCamera').onclick = ()=> showTab('camera');
+document.getElementById('toLog').onclick = ()=> showTab('log');
+
+// ====== Init ======
+function init(){
+  fillLangSelects();
+  
+  // Check if user has completed onboarding
+  if(state.onboarded){
+    setLang(state.lang || 'ar');
+    // Hide wizard, show main UI
+    document.getElementById('wizard').classList.add('hidden');
+    updateGoalsForm();
+    updateProfile();
+    updateDashboard();
+    updateFoodLists();
+  } else {
+    setLang('ar');
+    // Show wizard for new users
+    document.getElementById('wizard').classList.remove('hidden');
+    document.getElementById('home').classList.add('hidden');
+    markSteps(true,false,false);
+  }
+}
+
+// Initialize the app
+init();
 </script>
 </body>
 </html>
