@@ -6,7 +6,6 @@
 <title>AI Calorie & Macro Tracker (MVP) — Monochrome</title>
 <style>
 :root{
-  /* Monochrome palette */
   --bg:#ffffff; --card:#ffffff; --ink:#000000; --sub:#444444;
   --brand:#000000; --ok:#000000; --warn:#000000; --danger:#000000;
   --muted:#d0d0d0;
@@ -60,36 +59,29 @@ progress{width:100%; height:16px}
 .meal-item strong{flex:1}
 .meal-item input{width:90px}
 footer{padding:24px 0;color:#666;text-align:center}
-/* Camera */
 .camera{background:#fff;color:#000;border-radius:16px;padding:12px;border:1px solid #dcdcdc}
 video,canvas{width:100%;border-radius:12px;background:#000}
 .pred{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-/* Wizard steps */
 .stepper{display:flex;gap:8px;align-items:center;margin-bottom:8px}
 .step{flex:1;height:6px;background:#e2e2e2;border-radius:99px;position:relative}
 .step.done{background:#9e9e9e}
 .step.active{background:#000}
-/* Water tracker */
 .cups{display:flex;gap:6px;flex-wrap:wrap}
 .cup{width:44px;height:60px;border:2px solid #000;border-radius:10px;position:relative;overflow:hidden;cursor:pointer;background:#fff}
 .cup.fill::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:70%;background:#000}
-/* Utility */
 .lang-switch{min-width:180px}
-/* Custom goals - UPDATED */
 .custom-goal-item{display:flex; gap:12px; align-items:center; padding:12px; border:1px solid #e5e7eb; border-radius:12px; margin-bottom:8px; background:#fafafa}
-.custom-goal-text{flex:1; font-size:16px; font-weight:bold} /* Added font-weight:bold */
+.custom-goal-text{flex:1; font-size:16px; font-weight:bold}
 .custom-goal-checkbox{width:24px; height:24px; border:2px solid #000; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center}
 .custom-goal-checkbox.checked{background:#000; color:#fff}
 .custom-goal-checkbox.checked::after{content:"✓"; font-size:16px; font-weight:bold}
 .custom-goal-remove{background:transparent; border:none; color:#666; cursor:pointer; font-size:18px}
 .goal-completed{text-decoration:line-through; opacity:0.6}
-/* Make a Dish - UPDATED */
 .dish-builder{background:#f9f9f9; padding:16px; border-radius:12px; margin:12px 0}
 .dish-ingredient{display:flex; gap:8px; align-items:center; margin-bottom:8px; padding:8px; background:white; border-radius:8px}
 .dish-ingredient select,.dish-ingredient input{flex:1}
 .dish-saved{background:#f0f0f0; padding:12px; border-radius:8px; margin:8px 0}
 .dish-saved h4{margin:0 0 8px 0}
-/* Added space for portion in Make a Dish section */
 .dish-ingredient-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr auto;
@@ -104,6 +96,23 @@ video,canvas{width:100%;border-radius:12px;background:#000}
 .dish-ingredient-grid input {
   width: 100%;
 }
+.workout-plan {background:#f9f9f9; padding:16px; border-radius:12px; margin:12px 0}
+.workout-day {margin-bottom:20px; padding:12px; border:1px solid #e5e7eb; border-radius:12px}
+.workout-exercise {display:flex; justify-content:space-between; align-items:center; padding:10px; margin:8px 0; background:white; border-radius:8px; border:1px solid #e5e7eb}
+.workout-exercise-info {flex:1}
+.workout-exercise-name {font-weight:bold; margin-bottom:4px}
+.workout-exercise-meta {font-size:14px; color:#666}
+.exercise-tutorial {color:#000; text-decoration:underline; cursor:pointer}
+.exercise-tutorial:hover {text-decoration:none}
+.workout-actions {display:flex; gap:8px}
+.workout-completed .workout-exercise-name {text-decoration: line-through; opacity:0.7}
+.workout-option {padding:20px; border:2px solid #000; border-radius:12px; text-align:center; cursor:pointer; margin:10px 0}
+.workout-option:hover {background:#f5f5f5}
+.plan-selection {display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0}
+.exercise-selector {max-height:300px; overflow-y:auto; border:1px solid #e5e7eb; border-radius:8px; padding:8px}
+.exercise-option {padding:8px; border-bottom:1px solid #e5e7eb; cursor:pointer}
+.exercise-option:hover {background:#f5f5f5}
+.exercise-option.selected {background:#000; color:#fff}
 </style>
 </head>
 <body>
@@ -124,9 +133,10 @@ video,canvas{width:100%;border-radius:12px;background:#000}
   <nav id="nav" class="card hidden">
     <button data-tab="home">Home</button>
     <button data-tab="goals">Daily Goals</button>
-    <button data-tab="camera">Camera</button>
+    <button data-tab="food">Your Food</button>
     <button data-tab="log">Food Log</button>
     <button data-tab="dishes">Make a Dish</button>
+    <button data-tab="workout">Workout</button>
     <button data-tab="water">Water</button>
     <button data-tab="profile">Profile</button>
     <button data-tab="about">About</button>
@@ -238,7 +248,7 @@ video,canvas{width:100%;border-radius:12px;background:#000}
         <div class="badge">Streak: <span id="streak">0</span> 🔥</div>
       </div>
       <div class="col center">
-        <button id="toCamera">Open Camera</button>
+        <button id="toFood">Your Food</button>
       </div>
       <div class="col center">
         <button class="ghost" id="toLog">Open Food Log</button>
@@ -270,9 +280,9 @@ video,canvas{width:100%;border-radius:12px;background:#000}
     <div id="customGoalsList"></div>
   </div>
 
-  <!-- Camera Page -->
-  <div id="camera" class="card hidden">
-    <h2>Camera (Beta)</h2>
+  <!-- Your Food Page -->
+  <div id="food" class="card hidden">
+    <h2>Your Food</h2>
     <div class="camera">
       <video id="vid" autoplay playsinline muted></video>
       <div class="toolbar">
@@ -392,6 +402,134 @@ video,canvas{width:100%;border-radius:12px;background:#000}
     <div id="savedDishes"></div>
   </div>
 
+  <!-- Workout Section -->
+  <div id="workout" class="card hidden">
+    <!-- Main Workout Selection -->
+    <div id="workoutMain">
+      <h2>Workout Plans</h2>
+      <p>Choose your workout plan type:</p>
+      
+      <div class="plan-selection">
+        <div class="workout-option" onclick="showWorkoutType('custom')">
+          <h3>Custom Plan</h3>
+          <p>Create your own workout plan</p>
+        </div>
+        <div class="workout-option" onclick="showWorkoutType('ready')">
+          <h3>Ready-Made Plans</h3>
+          <p>Choose from pre-built plans</p>
+        </div>
+      </div>
+      
+      <div id="currentPlanDisplay" class="hidden">
+        <hr>
+        <h3>Your Current Plan</h3>
+        <div id="currentPlanInfo"></div>
+        <div class="toolbar">
+          <button class="ok" onclick="showCurrentPlan()">View Plan</button>
+          <button class="danger" onclick="clearWorkoutPlan()">Clear Plan</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ready-Made Plan Selection -->
+    <div id="workoutReady" class="hidden">
+      <h2>Ready-Made Plans</h2>
+      <div class="plan-selection">
+        <div class="workout-option" onclick="showWorkoutPlan('gym')">
+          <h3>Gym Plans</h3>
+          <p>PPL & Upper/Lower splits</p>
+        </div>
+        <div class="workout-option" onclick="showWorkoutPlan('home')">
+          <h3>Home Plans</h3>
+          <p>Weighted bag workouts</p>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button class="ghost" onclick="backToWorkoutMain()">← Back</button>
+      </div>
+    </div>
+
+    <!-- Gym Plan Selection -->
+    <div id="workoutGym" class="hidden">
+      <h2>Gym Workout Plans</h2>
+      <div class="plan-selection">
+        <div class="workout-option" onclick="selectReadyPlan('ppl')">
+          <h3>PPL (Push/Pull/Legs)</h3>
+          <p>6-day split focusing on muscle groups</p>
+        </div>
+        <div class="workout-option" onclick="selectReadyPlan('upperLower')">
+          <h3>Upper/Lower Split</h3>
+          <p>4-day upper and lower body focus</p>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button class="ghost" onclick="backToReadyPlans()">← Back</button>
+      </div>
+    </div>
+
+    <!-- Home Plan Selection -->
+    <div id="workoutHome" class="hidden">
+      <h2>Home Workout Plans</h2>
+      <div class="workout-option" onclick="selectReadyPlan('homePPL')">
+        <h3>Home PPL with Weighted Bag</h3>
+        <p>Push, Pull, Legs using weighted bag</p>
+      </div>
+      <div class="toolbar">
+        <button class="ghost" onclick="backToReadyPlans()">← Back</button>
+      </div>
+    </div>
+
+    <!-- Custom Plan Builder -->
+    <div id="workoutCustom" class="hidden">
+      <h2>Create Custom Plan</h2>
+      <div class="row">
+        <div class="col">
+          <label>Plan Name</label>
+          <input type="text" id="customPlanName" placeholder="Enter plan name">
+        </div>
+        <div class="col">
+          <label>Number of Days</label>
+          <select id="customPlanDays">
+            <option value="1">1 Day</option>
+            <option value="2">2 Days</option>
+            <option value="3">3 Days</option>
+            <option value="4">4 Days</option>
+            <option value="5">5 Days</option>
+            <option value="6">6 Days</option>
+            <option value="7">7 Days</option>
+          </select>
+        </div>
+      </div>
+      
+      <div id="customDaysContainer"></div>
+      
+      <div class="toolbar">
+        <button class="ghost" onclick="backToWorkoutMain()">← Back</button>
+        <button class="ok" onclick="saveCustomPlan()">Save Plan</button>
+      </div>
+    </div>
+
+    <!-- Exercise Selector -->
+    <div id="exerciseSelector" class="hidden">
+      <h3>Select Exercises</h3>
+      <div class="exercise-selector" id="exerciseList"></div>
+      <div class="toolbar">
+        <button class="ghost" onclick="backToCustomPlan()">← Back</button>
+        <button class="ok" onclick="addSelectedExercises()">Add Selected</button>
+      </div>
+    </div>
+
+    <!-- Plan Display -->
+    <div id="workoutPlanDisplay" class="hidden">
+      <h2 id="planDisplayTitle">Workout Plan</h2>
+      <div id="planDisplayContent"></div>
+      <div class="toolbar">
+        <button class="ghost" onclick="backToWorkoutMain()">← Back to Plans</button>
+        <button class="ok" onclick="startWorkout()">Start Workout</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Water -->
   <div id="water" class="card hidden">
     <h2>Water Tracker</h2>
@@ -442,12 +580,12 @@ video,canvas{width:100%;border-radius:12px;background:#000}
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@2.1.0"></script>
 
 <script>
-// ====== i18n (expanded & usable) ======
+// ====== i18n ======
 const I18N = {
-  en:{title:"AI Calorie & Macro Tracker", next:"Next", back:"Back", finish:"Finish", home:"Home", goals:"Daily Goals", camera:"Camera", log:"Food Log", dishes:"Make a Dish", water:"Water", profile:"Profile", about:"About", chooseLang:"Choose Language", language:"Language", hint:"Examples: rice, chicken breast, apple, pizza"},
-  ar:{title:"حساب السعرات والماكروز بالذكاء الاصطناعي", next:"التالي", back:"رجوع", finish:"إنهاء", home:"الرئيسية", goals:"الأهداف اليومية", camera:"الكاميرا", log:"سجل الأكل", dishes:"اصنع طبق", water:"الماء", profile:"الملف", about:"عن التطبيق", chooseLang:"اختر اللغة", language:"اللغة", hint:"أمثلة: أرز، صدر دجاج، تفاح، بيتزا"},
-  fr:{title:"Suivi Calories & Macros IA", next:"Suivant", back:"Retour", finish:"Terminer", home:"Accueil", goals:"Objectifs", camera:"Caméra", log:"Journal", dishes:"Créer un Plat", water:"Eau", profile:"Profil", about:"À propos", chooseLang:"Choisir la langue", language:"Langue", hint:"Exemples : riz, blanc de poulet, pomme, pizza"},
-  es:{title:"Contador de Calorías y Macros IA", next:"Siguiente", back:"Atrás", finish:"Finalizar", home:"Inicio", goals:"Objetivos", camera:"Cámara", log:"Registro", dishes:"Crear Plato", water:"Agua", profile:"Perfil", about:"Acerca de", chooseLang:"Elegir idioma", language:"Idioma", hint:"Ejemplos: arroz, pechuga de pollo, manzana, pizza"}
+  en:{title:"AI Calorie & Macro Tracker", next:"Next", back:"Back", finish:"Finish", home:"Home", goals:"Daily Goals", food:"Your Food", log:"Food Log", dishes:"Make a Dish", workout:"Workout", water:"Water", profile:"Profile", about:"About", chooseLang:"Choose Language", language:"Language", hint:"Examples: rice, chicken breast, apple, pizza"},
+  ar:{title:"حساب السعرات والماكروز بالذكاء الاصطناعي", next:"التالي", back:"رجوع", finish:"إنهاء", home:"الرئيسية", goals:"الأهداف اليومية", food:"طعامك", log:"سجل الأكل", dishes:"اصنع طبق", workout:"تمارين", water:"الماء", profile:"الملف", about:"عن التطبيق", chooseLang:"اختر اللغة", language:"اللغة", hint:"أمثلة: أرز، صدر دجاج، تفاح، بيتزا"},
+  fr:{title:"Suivi Calories & Macros IA", next:"Suivant", back:"Retour", finish:"Terminer", home:"Accueil", goals:"Objectifs", food:"Votre Nourriture", log:"Journal", dishes:"Créer un Plat", workout:"Entraînement", water:"Eau", profile:"Profil", about:"À propos", chooseLang:"Choisir la langue", language:"Langue", hint:"Exemples : riz, blanc de poulet, pomme, pizza"},
+  es:{title:"Contador de Calorías y Macros IA", next:"Siguiente", back:"Atrás", finish:"Finalizar", home:"Inicio", goals:"Objetivos", food:"Tu Comida", log:"Registro", dishes:"Crear Plato", workout:"Entrenamiento", water:"Agua", profile:"Perfil", about:"Acerca de", chooseLang:"Elegir idioma", language:"Idioma", hint:"Ejemplos: arroz, pechuga de pollo, manzana, pizza"}
 };
 const LANGS = [
   {k:'ar',label:'العربية'}, {k:'en',label:'English'}, {k:'fr',label:'Français'}, {k:'es',label:'Español'}
@@ -479,14 +617,10 @@ function setLang(k){
     if(T[key]) b.textContent=T[key]; 
   });
   document.getElementById('foodHint').textContent = T.hint;
-  // dir
   document.documentElement.dir = (k==='ar') ? 'rtl' : 'ltr';
   document.documentElement.lang = k;
-  // set selects
   document.getElementById('langSelect').value = k;
   document.getElementById('wLangSelect').value = k;
-  
-  // Update food lists when language changes
   updateFoodLists();
 }
 
@@ -494,11 +628,16 @@ function setLang(k){
 const SKEY = 'mvp_tracker_state_v2_mono';
 let state = JSON.parse(localStorage.getItem(SKEY) || '{}');
 
-// Initialize state with defaults if empty
 if (!state.daysData) state.daysData = {};
 if (!state.foods) state.foods = [];
 if (!state.dishes) state.dishes = [];
 if (!state.customGoals) state.customGoals = {};
+if (!state.workoutPlan) state.workoutPlan = null;
+if (!state.workoutHistory) state.workoutHistory = {};
+
+if (!state.persistentGoals) {
+  state.persistentGoals = state.goals || calcMacros();
+}
 
 function save(){ 
   localStorage.setItem(SKEY, JSON.stringify(state)); 
@@ -565,7 +704,7 @@ document.getElementById('finish').onclick = ()=>{
 };
 
 // ====== Tabs ======
-const tabs = ['home','goals','camera','log','dishes','water','profile','about'];
+const tabs = ['home','goals','food','log','dishes','workout','water','profile','about'];
 document.getElementById('nav').addEventListener('click', (e)=>{
   if(e.target.tagName!=='BUTTON') return;
   showTab(e.target.dataset.tab);
@@ -580,9 +719,10 @@ function showTab(id){
   if(id==='profile') renderProfile();
   if(id==='goals') refreshCustomGoals();
   if(id==='dishes') refreshDishes();
+  if(id==='workout') refreshWorkoutUI();
 }
 
-document.getElementById('toCamera').onclick=()=>showTab('camera');
+document.getElementById('toFood').onclick=()=>showTab('food');
 document.getElementById('toLog').onclick=()=>showTab('log');
 
 // ====== Calculations ======
@@ -605,8 +745,8 @@ function calcTDEE(){
 
 function calcMacros(){
   const kcal = calcTDEE();
-  const prot = Math.round((state.weight||70) * 1.8); // g
-  const fat = Math.round((state.weight||70) * 0.9); // g
+  const prot = Math.round((state.weight||70) * 1.8);
+  const fat = Math.round((state.weight||70) * 0.9);
   let restK = kcal - (prot*4 + fat*9);
   const carb = Math.max(0, Math.round(restK/4));
   return {kcal, prot, fat, carb};
@@ -614,6 +754,7 @@ function calcMacros(){
 
 function calcGoalsFromProfile(){
   const m = calcMacros();
+  state.persistentGoals = m;
   state.goals = m; 
   save();
   fillGoals();
@@ -621,422 +762,100 @@ function calcGoalsFromProfile(){
 
 // ====== Goals UI ======
 function fillGoals(){
-  const g = state.goals || calcMacros();
-  ['kcal','prot','fat','carb'].forEach(k=>{ 
-    document.getElementById('g_'+k).value = g[k]; 
-  });
-  refreshDashboard();
+  const g = state.persistentGoals || {};
+  document.getElementById('g_kcal').value = g.kcal || '';
+  document.getElementById('g_prot').value = g.prot || '';
+  document.getElementById('g_fat').value = g.fat || '';
+  document.getElementById('g_carb').value = g.carb || '';
 }
 
 document.getElementById('saveGoals').onclick = ()=>{
-  state.goals = {
-    kcal:+document.getElementById('g_kcal').value,
-    prot:+document.getElementById('g_prot').value,
-    fat:+document.getElementById('g_fat').value,
-    carb:+document.getElementById('g_carb').value
+  state.persistentGoals = {
+    kcal: +document.getElementById('g_kcal').value,
+    prot: +document.getElementById('g_prot').value,
+    fat: +document.getElementById('g_fat').value,
+    carb: +document.getElementById('g_carb').value
   };
-  save(); 
-  refreshDashboard();
-};
-
-document.getElementById('recalcGoals').onclick = ()=>{ 
-  calcGoalsFromProfile(); 
-};
-
-// ====== Dashboard ======
-function todayKey(){ 
-  const d=new Date(); 
-  return d.toISOString().slice(0,10); 
-}
-
-function getDay(day=todayKey()){ 
-  if (!state.daysData[day]) {
-    state.daysData[day] = {meals:[], water:0};
-  }
-  return state.daysData[day]; 
-}
-
-function sumDay(day=todayKey()){ 
-  const obj = getDay(day); 
-  return obj.meals.reduce((acc,m)=>{ 
-    acc.kcal += m.kcal; 
-    acc.prot += m.prot; 
-    acc.fat += m.fat; 
-    acc.carb += m.carb; 
-    return acc; 
-  }, {kcal:0,prot:0,fat:0,carb:0}); 
-}
-
-function refreshDashboard(){
-  const g = state.goals || calcMacros();
-  const s = sumDay();
-  document.getElementById('kcalToday').textContent = Math.round(s.kcal);
-  document.getElementById('protToday').textContent = Math.round(s.prot);
-  document.getElementById('fatToday').textContent = Math.round(s.fat);
-  document.getElementById('carbToday').textContent = Math.round(s.carb);
-  document.getElementById('kcalTarget').textContent = g.kcal;
-  document.getElementById('protTarget').textContent = g.prot;
-  document.getElementById('fatTarget').textContent = g.fat;
-  document.getElementById('carbTarget').textContent = g.carb;
-  document.getElementById('kcalProg').value = Math.min(100, (s.kcal/g.kcal)*100);
-  document.getElementById('protProg').value = Math.min(100, (s.prot/g.prot)*100);
-  document.getElementById('fatProg').value = Math.min(100, (s.fat/g.fat)*100);
-  document.getElementById('carbProg').value = Math.min(100, (s.carb/g.carb)*100);
-  updateStreak();
-}
-
-// ====== Foods DB ======
-const SEED_FOODS = [
-  {name:"white rice", ar:"رز أبيض مطبوخ", kcal:130, prot:2.4, fat:0.3, carb:28.7},
-  {name:"brown rice", ar:"رز بني", kcal:123, prot:2.7, fat:1.0, carb:25.6},
-  {name:"grilled chicken breast", ar:"صدر دجاج مشوي", kcal:165, prot:31, fat:3.6, carb:0},
-  {name:"beef steak lean", ar:"ستيك بقري قليل الدهن", kcal:187, prot:27, fat:8, carb:0},
-  {name:"ground beef 80/20", ar:"لحمة مفرومة 20% دهن", kcal:254, prot:17, fat:20, carb:0},
-  {name:"lamb", ar:"لحم ضأن", kcal:258, prot:25, fat:17, carb:0},
-  {name:"salmon", ar:"سالمون", kcal:208, prot:20, fat:13, carb:0},
-  {name:"tuna canned water", ar:"تونة معلبة", kcal:132, prot:29, fat:1, carb:0},
-  {name:"eggs", ar:"بيض", kcal:155, prot:13, fat:11, carb:1.1},
-  {name:"egg whites", ar:"بياض بيض", kcal:52, prot:11, fat:0.2, carb:0.7},
-  {name:"whole milk", ar:"حليب كامل الدسم", kcal:61, prot:3.2, fat:3.3, carb:4.8},
-  {name:"yogurt plain", ar:"زبادي طبيعي", kcal:61, prot:3.5, fat:3.3, carb:4.7},
-  {name:"feta cheese", ar:"جبنة فيتا", kcal:264, prot:14, fat:21, carb:4.1},
-  {name:"cheddar cheese", ar:"جبنة شيدر", kcal:404, prot:23, fat:33, carb:1.3},
-  {name:"bread white", ar:"خبز أبيض", kcal:265, prot:9, fat:3.2, carb:49},
-  {name:"bread whole wheat", ar:"خبز قمح كامل", kcal:265, prot:13, fat:4.4, carb:48},
-  {name:"pasta cooked", ar:"مكرونة مسلوقة", kcal:131, prot:5, fat:1, carb:25},
-  {name:"lentils cooked", ar:"عدس مطبوخ", kcal:116, prot:9, fat:0.4, carb:20},
-  {name:"chickpeas cooked", ar:"حمص مطبوخ", kcal:139, prot:7, fat:2.8, carb:22},
-  {name:"potato baked", ar:"بطاطس مشوية", kcal:93, prot:2.5, fat:0.1, carb:21},
-  {name:"sweet potato baked", ar:"بطاطا حلوة مشوية", kcal:90, prot:2, fat:0.2, carb:21},
-  {name:"broccoli steamed", ar:"بروكلي مطبوخ", kcal:35, prot:2.4, fat:0.4, carb:7},
-  {name:"spinach raw", ar:"سبانخ طازجة", kcal:23, prot:2.9, fat:0.4, carb:3.6},
-  {name:"carrots raw", ar:"جزر طازج", kcal:41, prot:0.9, fat:0.2, carb:10},
-  {name:"tomato", ar:"طماطم", kcal:18, prot:0.9, fat:0.2, carb:3.9},
-  {name:"cucumber", ar:"خيار", kcal:15, prot:0.7, fat:0.1, carb:3.6},
-  {name:"lettuce", ar:"خس", kcal:15, prot:1.4, fat:0.2, carb:2.9},
-  {name:"onion", ar:"بصل", kcal:40, prot:1.1, fat:0.1, carb:9.3},
-  {name:"apple", ar:"تفاح", kcal:52, prot:0.3, fat:0.2, carb:14},
-  {name:"banana", ar:"موز", kcal:89, prot:1.1, fat:0.3, carb:23},
-  {name:"orange", ar:"برتقال", kcal:47, prot:0.9, fat:0.1, carb:12},
-  {name:"strawberries", ar:"فراولة", kcal:32, prot:0.7, fat:0.3, carb:7.7},
-  {name:"avocado", ar:"أفوكادو", kcal:160, prot:2, fat:15, carb:9},
-  {name:"olive oil", ar:"زيت زيتون", kcal:884, prot:0, fat:100, carb:0},
-  {name:"butter", ar:"زبدة", kcal:717, prot:0.9, fat:81, carb:0.1},
-  {name:"sugar", ar:"سكر", kcal:387, prot:0, fat:0, carb:100},
-  {name:"honey", ar:"عسل", kcal:304, prot:0.3, fat:0, carb:82},
-  {name:"pizza cheese", ar:"بيتزا بالجبن", kcal:268, prot:11, fat:9.8, carb:33},
-  {name:"burger with bun", ar:"برجر بالخبز", kcal:295, prot:16, fat:13, carb:28},
-  {name:"french fries", ar:"بطاطس مقلية", kcal:312, prot:3.4, fat:15, carb:41},
-  {name:"cola", ar:"كولا", kcal:41, prot:0, fat:0, carb:10},
-  {name:"coffee black", ar:"قهوة سوداء", kcal:1, prot:0.1, fat:0, carb:0},
-  {name:"tea no sugar", ar:"شاي بدون سكر", kcal:1, prot:0, fat:0, carb:0},
-  {name:"water", ar:"ماء", kcal:0, prot:0, fat:0, carb:0}
-];
-
-// Initialize foods if empty
-if (!state.foods || state.foods.length === 0) {
-  state.foods = SEED_FOODS;
   save();
-}
-
-function updateFoodLists() {
-  const foodList = document.getElementById('foodList');
-  const ingredientSelects = document.querySelectorAll('.ingredientSelect');
-  
-  // Clear existing options
-  foodList.innerHTML = '';
-  ingredientSelects.forEach(select => {
-    select.innerHTML = '<option value="">Select ingredient</option>';
-  });
-  
-  // Add foods based on current language
-  state.foods.forEach(food => {
-    // Add to datalist
-    const option = document.createElement('option');
-    option.value = food[LANG] || food.name;
-    option.setAttribute('data-name', food.name);
-    foodList.appendChild(option);
-    
-    // Add to ingredient selects
-    ingredientSelects.forEach(select => {
-      const option2 = document.createElement('option');
-      option2.value = food.name;
-      option2.textContent = food[LANG] || food.name;
-      select.appendChild(option2);
-    });
-  });
-}
-
-// ====== Camera & AI ======
-let model, stream, video, canvas, ctx;
-
-document.getElementById('startCam').onclick = async ()=>{
-  video = document.getElementById('vid');
-  canvas = document.getElementById('frame');
-  ctx = canvas.getContext('2d');
-  stream = await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});
-  video.srcObject = stream;
-  document.getElementById('stopCam').classList.remove('hidden');
-  document.getElementById('snap').classList.remove('ghost');
-  document.getElementById('classify').classList.remove('ghost');
+  alert('Goals saved!');
 };
 
-document.getElementById('stopCam').onclick = ()=>{
-  if(stream) stream.getTracks().forEach(t=>t.stop());
-  document.getElementById('stopCam').classList.add('hidden');
-  document.getElementById('snap').classList.add('ghost');
-  document.getElementById('classify').classList.add('ghost');
-};
-
-document.getElementById('snap').onclick = ()=>{
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  ctx.drawImage(video,0,0);
-  canvas.classList.remove('hidden');
-  video.classList.add('hidden');
-};
-
-document.getElementById('classify').onclick = async ()=>{
-  if(!model) model = await mobilenet.load({version:2, alpha:1.0});
-  const pred = await model.classify(canvas);
-  const predDiv = document.getElementById('pred');
-  predDiv.innerHTML = '';
-  pred.forEach((p,i)=>{
-    const b = document.createElement('button');
-    b.className = 'tag';
-    b.textContent = `${p.className} (${Math.round(p.probability*100)}%)`;
-    b.onclick = ()=> document.getElementById('foodSearch').value = p.className;
-    predDiv.appendChild(b);
-  });
-};
-
-// Portion estimation based on food size
-document.getElementById('foodSize').onchange = function() {
-  const size = this.value;
-  let weight = 100;
-  if (size === 'small') weight = 50;
-  if (size === 'medium') weight = 150;
-  if (size === 'large') weight = 250;
-  if (size === 'bowl') weight = 300;
-  if (size === 'plate') weight = 500;
-  document.getElementById('estimatedWeight').value = weight;
-  document.getElementById('portion').value = weight;
-};
-
-// ====== Add to Meal ======
-document.getElementById('addMeal').onclick = ()=>{
-  const foodName = document.getElementById('foodSearch').value;
-  const portion = +document.getElementById('portion').value;
-  const meal = document.getElementById('mealType').value;
-  
-  // Find food in database
-  const food = state.foods.find(f => 
-    f.name === foodName || f[LANG] === foodName
-  );
-  
-  if(!food) {
-    alert('Food not found. Please select from list or add to database first.');
-    return;
-  }
-  
-  const factor = portion / 100;
-  const mealItem = {
-    food: food[LANG] || food.name,
-    meal,
-    grams: portion,
-    kcal: Math.round(food.kcal * factor),
-    prot: Math.round(food.prot * factor * 10) / 10,
-    fat: Math.round(food.fat * factor * 10) / 10,
-    carb: Math.round(food.carb * factor * 10) / 10
-  };
-  
-  const day = getDay();
-  day.meals.push(mealItem);
-  save();
-  refreshDashboard();
-  refreshLog();
-  
-  // Reset form
-  document.getElementById('foodSearch').value = '';
-  document.getElementById('portion').value = 150;
-};
-
-// ====== Log ======
-function refreshLog(){
-  const day = getDay();
-  const s = sumDay();
-  document.getElementById('logDate').textContent = todayKey();
-  document.getElementById('tKcal').textContent = Math.round(s.kcal);
-  document.getElementById('tP').textContent = Math.round(s.prot);
-  document.getElementById('tF').textContent = Math.round(s.fat);
-  document.getElementById('tC').textContent = Math.round(s.carb);
-  
-  const tbody = document.getElementById('logTable');
-  tbody.innerHTML = '';
-  day.meals.forEach((m,i)=>{
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${m.meal}</td>
-      <td>${m.food}</td>
-      <td>${m.grams}</td>
-      <td>${m.kcal}</td>
-      <td>${m.prot}</td>
-      <td>${m.fat}</td>
-      <td>${m.carb}</td>
-      <td><button class="danger" onclick="removeMeal(${i})">×</button></td>
-    `;
-    tbody.appendChild(tr);
-  });
-}
-
-function removeMeal(i){
-  const day = getDay();
-  day.meals.splice(i,1);
-  save();
-  refreshLog();
-  refreshDashboard();
-}
-
-document.getElementById('clearToday').onclick = ()=>{
-  if(confirm('Clear all meals for today?')){
-    const day = getDay();
-    day.meals = [];
-    save();
-    refreshLog();
-    refreshDashboard();
-  }
-};
-
-// ====== Streak ======
-function updateStreak(){
-  const today = todayKey();
-  const days = Object.keys(state.daysData).sort();
-  let streak = 0;
-  let last = new Date(today);
-  
-  for(let i=days.length-1; i>=0; i--){
-    const d = new Date(days[i]);
-    const diff = (last - d) / (1000*60*60*24);
-    if(diff > 1) break;
-    if(state.daysData[days[i]].meals.length > 0){
-      streak++;
-      last = new Date(d.setDate(d.getDate()-1));
-    }
-  }
-  
-  document.getElementById('streak').textContent = streak;
-}
-
-// ====== Water Tracker ======
-function refreshWaterUI(){
-  const day = getDay();
-  const target = +(state.waterTarget || 2500);
-  const cup = +(state.cupSize || 250);
-  const current = day.water || 0;
-  const cups = Math.ceil(target / cup);
-  
-  document.getElementById('waterTarget').value = target;
-  document.getElementById('cupSize').value = cup;
-  document.getElementById('waterProgTxt').textContent = `${current} / ${target} ml`;
-  document.getElementById('waterProg').value = (current / target) * 100;
-  
-  const cupsDiv = document.getElementById('cups');
-  cupsDiv.innerHTML = '';
-  for(let i=0; i<cups; i++){
-    const c = document.createElement('div');
-    c.className = 'cup' + (i < Math.floor(current/cup) ? ' fill' : '');
-    c.onclick = ()=> drinkWater(cup);
-    cupsDiv.appendChild(c);
-  }
-}
-
-function drinkWater(amt){
-  const day = getDay();
-  day.water = (day.water || 0) + amt;
-  save();
-  refreshWaterUI();
-}
-
-document.getElementById('saveWater').onclick = ()=>{
-  state.waterTarget = +document.getElementById('waterTarget').value;
-  state.cupSize = +document.getElementById('cupSize').value;
-  save();
-  refreshWaterUI();
-};
-
-document.getElementById('drink').onclick = ()=>{
-  const cup = +(state.cupSize || 250);
-  drinkWater(cup);
-};
-
-document.getElementById('resetWater').onclick = ()=>{
-  const day = getDay();
-  day.water = 0;
-  save();
-  refreshWaterUI();
-};
-
-// ====== Profile ======
-function renderProfile(){
-  const s = state;
-  const html = `
-    <div class="row">
-      <div class="col"><strong>Sex:</strong> ${s.sex||'?'}</div>
-      <div class="col"><strong>Age:</strong> ${s.age||'?'}</div>
-    </div>
-    <div class="row">
-      <div class="col"><strong>Height:</strong> ${s.height||'?'} cm</div>
-      <div class="col"><strong>Weight:</strong> ${s.weight||'?'} kg</div>
-    </div>
-    <div class="row">
-      <div class="col"><strong>Workout days:</strong> ${s.days||'?'}/week</div>
-      <div class="col"><strong>Goal:</strong> ${s.goal||'?'}</div>
-    </div>
-    <div class="row">
-      <div class="col"><strong>TDEE:</strong> ${calcTDEE()} kcal</div>
-    </div>
-  `;
-  document.getElementById('profSummary').innerHTML = html;
-}
-
-document.getElementById('restart').onclick = ()=>{
-  document.getElementById('wizard').classList.remove('hidden');
-  document.getElementById('nav').classList.add('hidden');
-};
+document.getElementById('recalcGoals').onclick = calcGoalsFromProfile;
 
 // ====== Custom Goals ======
 function refreshCustomGoals() {
-  const list = document.getElementById('customGoalsList');
-  list.innerHTML = '';
+  const today = new Date().toDateString();
+  const container = document.getElementById('customGoalsList');
+  container.innerHTML = '';
   
-  const today = todayKey();
-  const todayGoals = state.customGoals[today] || [];
+  if (!state.customGoals[today]) {
+    state.customGoals[today] = [];
+  }
   
-  todayGoals.forEach((goal, index) => {
-    const goalItem = document.createElement('div');
-    goalItem.className = 'custom-goal-item';
-    
-    const checkbox = document.createElement('div');
-    checkbox.className = `custom-goal-checkbox ${goal.completed ? 'checked' : ''}`;
-    checkbox.onclick = () => toggleCustomGoal(index);
-    
-    const text = document.createElement('div');
-    text.className = `custom-goal-text ${goal.completed ? 'goal-completed' : ''}`;
-    text.textContent = goal.text;
-    
-    const removeBtn = document.createElement('button');
-    removeBtn.className = 'custom-goal-remove';
-    removeBtn.innerHTML = '×';
-    removeBtn.onclick = (e) => {
-      e.stopPropagation();
-      removeCustomGoal(index);
-    };
-    
-    goalItem.appendChild(checkbox);
-    goalItem.appendChild(text);
-    goalItem.appendChild(removeBtn);
-    list.appendChild(goalItem);
+  const persistentGoals = state.persistentCustomGoals || [];
+  
+  if (persistentGoals.length === 0) {
+    container.innerHTML = '<p>No custom goals yet. Add some above!</p>';
+    return;
+  }
+  
+  persistentGoals.forEach((goal, index) => {
+    const isCompleted = state.customGoals[today].includes(index);
+    const goalEl = document.createElement('div');
+    goalEl.className = `custom-goal-item ${isCompleted ? 'goal-completed' : ''}`;
+    goalEl.innerHTML = `
+      <div class="custom-goal-checkbox ${isCompleted ? 'checked' : ''}" data-index="${index}"></div>
+      <div class="custom-goal-text">${goal}</div>
+      <button class="custom-goal-remove" data-index="${index}">×</button>
+    `;
+    container.appendChild(goalEl);
   });
+  
+  container.querySelectorAll('.custom-goal-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('click', toggleCustomGoal);
+  });
+  
+  container.querySelectorAll('.custom-goal-remove').forEach(button => {
+    button.addEventListener('click', removeCustomGoal);
+  });
+}
+
+function toggleCustomGoal(e) {
+  const index = parseInt(e.target.dataset.index);
+  const today = new Date().toDateString();
+  
+  if (!state.customGoals[today]) {
+    state.customGoals[today] = [];
+  }
+  
+  const goalIndex = state.customGoals[today].indexOf(index);
+  if (goalIndex > -1) {
+    state.customGoals[today].splice(goalIndex, 1);
+  } else {
+    state.customGoals[today].push(index);
+  }
+  
+  save();
+  refreshCustomGoals();
+}
+
+function removeCustomGoal(e) {
+  const index = parseInt(e.target.dataset.index);
+  const persistentGoals = state.persistentCustomGoals || [];
+  
+  if (index >= 0 && index < persistentGoals.length) {
+    persistentGoals.splice(index, 1);
+    state.persistentCustomGoals = persistentGoals;
+    
+    Object.keys(state.customGoals).forEach(date => {
+      state.customGoals[date] = state.customGoals[date]
+        .filter(i => i !== index)
+        .map(i => i > index ? i - 1 : i);
+    });
+    
+    save();
+    refreshCustomGoals();
+  }
 }
 
 document.getElementById('addCustomGoal').onclick = () => {
@@ -1045,59 +864,375 @@ document.getElementById('addCustomGoal').onclick = () => {
   
   if (!text) return;
   
-  const today = todayKey();
-  if (!state.customGoals[today]) {
-    state.customGoals[today] = [];
+  if (!state.persistentCustomGoals) {
+    state.persistentCustomGoals = [];
   }
   
-  state.customGoals[today].push({
-    text: text,
-    completed: false
-  });
-  
+  state.persistentCustomGoals.push(text);
+  input.value = '';
   save();
   refreshCustomGoals();
-  input.value = '';
 };
 
-function toggleCustomGoal(index) {
-  const today = todayKey();
-  if (state.customGoals[today] && state.customGoals[today][index]) {
-    state.customGoals[today][index].completed = !state.customGoals[today][index].completed;
-    save();
-    refreshCustomGoals();
+// ====== Dashboard ======
+function refreshDashboard(){
+  const today = new Date().toDateString();
+  const dayData = state.daysData[today] || {foods:[]};
+  const totals = dayData.foods.reduce((a,f)=>({
+    kcal: a.kcal + f.kcal, prot: a.prot + f.prot, 
+    fat: a.fat + f.fat, carb: a.carb + f.carb
+  }), {kcal:0, prot:0, fat:0, carb:0});
+  
+  const goals = state.persistentGoals || {};
+  
+  document.getElementById('kcalToday').textContent = totals.kcal;
+  document.getElementById('protToday').textContent = totals.prot;
+  document.getElementById('fatToday').textContent = totals.fat;
+  document.getElementById('carbToday').textContent = totals.carb;
+  
+  document.getElementById('kcalTarget').textContent = goals.kcal || 0;
+  document.getElementById('protTarget').textContent = goals.prot || 0;
+  document.getElementById('fatTarget').textContent = goals.fat || 0;
+  document.getElementById('carbTarget').textContent = goals.carb || 0;
+  
+  document.getElementById('kcalProg').value = goals.kcal ? Math.min(100, (totals.kcal/goals.kcal)*100) : 0;
+  document.getElementById('protProg').value = goals.prot ? Math.min(100, (totals.prot/goals.prot)*100) : 0;
+  document.getElementById('fatProg').value = goals.fat ? Math.min(100, (totals.fat/goals.fat)*100) : 0;
+  document.getElementById('carbProg').value = goals.carb ? Math.min(100, (totals.carb/goals.carb)*100) : 0;
+  
+  const dates = Object.keys(state.daysData).sort();
+  let streak = 0;
+  const oneDay = 24*60*60*1000;
+  let prev = new Date();
+  for(let i=dates.length-1; i>=0; i--){
+    const d = new Date(dates[i]);
+    if(prev - d <= oneDay) streak++; else break;
+    prev = d;
+  }
+  document.getElementById('streak').textContent = streak;
+}
+
+// ====== Food Database ======
+const FOOD_DB = {
+  "rice": {kcal:130, prot:2.7, fat:0.3, carb:28, ar:"أرز"},
+  "chicken breast": {kcal:165, prot:31, fat:3.6, carb:0, ar:"صدر دجاج"},
+  "apple": {kcal:52, prot:0.3, fat:0.2, carb:14, ar:"تفاح"},
+  "pizza": {kcal:266, prot:11, fat:10, carb:33, ar:"بيتزا"},
+  "egg": {kcal:155, prot:13, fat:11, carb:1.1, ar:"بيض"},
+  "bread": {kcal:265, prot:9, fat:3.2, carb:49, ar:"خبز"},
+  "milk": {kcal:42, prot:3.4, fat:1, carb:5, ar:"حليب"},
+  "banana": {kcal:89, prot:1.1, fat:0.3, carb:23, ar:"موز"},
+  "pasta": {kcal:131, prot:5, fat:1.1, carb:25, ar:"معكرونة"},
+  "beef": {kcal:250, prot:26, fat:15, carb:0, ar:"لحم بقري"},
+  "fish": {kcal:206, prot:22, fat:13, carb:0, ar:"سمك"},
+  "cheese": {kcal:402, prot:25, fat:33, carb:1.3, ar:"جبن"},
+  "yogurt": {kcal:59, prot:3.5, fat:1.5, carb:4.7, ar:"زبادي"},
+  "potato": {kcal:77, prot:2, fat:0.1, carb:17, ar:"بطاطس"},
+  "tomato": {kcal:18, prot:0.9, fat:0.2, carb:3.9, ar:"طماطم"},
+  "cucumber": {kcal:15, prot:0.7, fat:0.1, carb:3.6, ar:"خيار"},
+  "carrot": {kcal:41, prot:0.9, fat:0.2, carb:10, ar:"جزر"},
+  "onion": {kcal:40, prot:1.1, fat:0.1, carb:9, ar:"بصل"},
+  "orange": {kcal:47, prot:0.9, fat:0.1, carb:12, ar:"برتقال"},
+  "strawberry": {kcal:32, prot:0.7, fat:0.3, carb:8, ar:"فراولة"},
+  "watermelon": {kcal:30, prot:0.6, fat:0.2, carb:8, ar:"بطيخ"},
+  "grape": {kcal:69, prot:0.7, fat:0.2, carb:18, ar:"عنب"},
+  "peach": {kcal:39, prot:0.9, fat:0.3, carb:10, ar:"خوخ"},
+  "pear": {kcal:57, prot:0.4, fat:0.1, carb:15, ar:"كمثرى"},
+  "avocado": {kcal:160, prot:2, fat:15, carb:9, ar:"أفوكادو"},
+  "broccoli": {kcal:34, prot:2.8, fat:0.4, carb:7, ar:"بروكلي"},
+  "spinach": {kcal:23, prot:2.9, fat:0.4, carb:3.6, ar:"سبانخ"},
+  "lettuce": {kcal:15, prot:1.4, fat:0.2, carb:2.9, ar:"خس"},
+  "olive oil": {kcal:884, prot:0, fat:100, carb:0, ar:"زيت زيتون"},
+  "butter": {kcal:717, prot:0.9, fat:81, carb:0.1, ar:"زبدة"},
+  "sugar": {kcal:387, prot:0, fat:0, carb:100, ar:"سكر"},
+  "honey": {kcal:304, prot:0.3, fat:0, carb:82, ar:"عسل"},
+  "almond": {kcal:579, prot:21, fat:50, carb:22, ar:"لوز"},
+  "peanut": {kcal:567, prot:26, fat:49, carb:16, ar:"فول سوداني"},
+  "walnut": {kcal:654, prot:15, fat:65, carb:14, ar:"جوز"},
+  "chicken thigh": {kcal:209, prot:26, fat:11, carb:0, ar:"فخذ دجاج"},
+  "salmon": {kcal:208, prot:20, fat:13, carb:0, ar:"سلمون"},
+  "tuna": {kcal:132, prot:29, fat:1, carb:0, ar:"تونة"},
+  "shrimp": {kcal:85, prot:18, fat:0.9, carb:0.2, ar:"جمبري"},
+  "lamb": {kcal:294, prot:25, fat:21, carb:0, ar:"لحم ضأن"},
+  "pork": {kcal:242, prot:25, fat:14, carb:0, ar:"لحم خنزير"},
+  "tofu": {kcal:76, prot:8, fat:4.8, carb:1.9, ar:"توفو"},
+  "lentil": {kcal:116, prot:9, fat:0.4, carb:20, ar:"عدس"},
+  "chickpea": {kcal:139, prot:7, fat:2.1, carb:22, ar:"حمص"},
+  "bean": {kcal:127, prot:9, fat:0.5, carb:23, ar:"فاصوليا"},
+  "corn": {kcal:86, prot:3.3, fat:1.4, carb:19, ar:"ذرة"},
+  "pea": {kcal:81, prot:5, fat:0.4, carb:14, ar:"بازلاء"},
+  "bell pepper": {kcal:31, prot:1, fat:0.3, carb:6, ar:"فلفل رومي"},
+  "mushroom": {kcal:22, prot:3.1, fat:0.3, carb:3.3, ar:"فطر"},
+  "garlic": {kcal:149, prot:6.4, fat:0.5, carb:33, ar:"ثوم"},
+  "ginger": {kcal:80, prot:1.8, fat:0.8, carb:18, ar:"زنجبيل"},
+  "lemon": {kcal:29, prot:1.1, fat:0.3, carb:9, ar:"ليمون"},
+  "pineapple": {kcal:50, prot:0.5, fat:0.1, carb:13, ar:"أناناس"},
+  "mango": {kcal:60, prot:0.8, fat:0.4, carb:15, ar:"مانجو"},
+  "kiwi": {kcal:61, prot:1.1, fat:0.5, carb:15, ar:"كيوي"},
+  "pomegranate": {kcal:83, prot:1.7, fat:1.2, carb:19, ar:"رمان"},
+  "fig": {kcal:74, prot:0.8, fat:0.3, carb:19, ar:"تين"},
+  "date": {kcal:282, prot:2.5, fat:0.4, carb:75, ar:"تمر"},
+  "coconut": {kcal:354, prot:3.3, fat:33, carb:15, ar:"جوز الهند"},
+  "cashew": {kcal:553, prot:18, fat:44, carb:30, ar:"كاجو"},
+  "pistachio": {kcal:562, prot:20, fat:45, carb:28, ar:"فستق"},
+  "sunflower seed": {kcal:584, prot:21, fat:51, carb:20, ar:"بذور دوار الشمس"},
+  "pumpkin seed": {kcal:559, prot:30, fat:49, carb:11, ar:"بذور قرع"},
+  "flax seed": {kcal:534, prot:18, fat:42, carb:29, ar:"بذور الكتان"},
+  "chia seed": {kcal:486, prot:17, fat:31, carb:42, ar:"بذور الشيا"},
+  "quinoa": {kcal:120, prot:4.4, fat:1.9, carb:21, ar:"كينوا"},
+  "oatmeal": {kcal:68, prot:2.4, fat:1.4, carb:12, ar:"شوفان"},
+  "couscous": {kcal:112, prot:4, fat:0.2, carb:23, ar:"كسكس"},
+  "bulgur": {kcal:83, prot:3.1, fat:0.2, carb:18, ar:"برغل"},
+  "soy milk": {kcal:54, prot:3.3, fat:1.8, carb:6, ar:"حليب الصويا"},
+  "almond milk": {kcal:17, prot:0.6, fat:1.5, carb:0.6, ar:"حليب اللوز"},
+  "coconut milk": {kcal:230, prot:2.3, fat:24, carb:6, ar:"حليب جوز الهند"},
+  "yogurt greek": {kcal:59, prot:10, fat:0.4, carb:3.6, ar:"زبادي يوناني"},
+  "cottage cheese": {kcal:98, prot:11, fat:4.3, carb:3.4, ar:"جبنة قريش"},
+  "mozzarella": {kcal:280, prot:28, fat:17, carb:3.1, ar:"موزاريلا"},
+  "parmesan": {kcal:431, prot:38, fat:29, carb:4.1, ar:"بارميزان"},
+  "feta": {kcal:264, prot:14, fat:21, carb:4.1, ar:"جبنة فيتا"},
+  "cream cheese": {kcal:342, prot:6, fat:34, carb:4.1, ar:"جبنة كريمية"},
+  "sour cream": {kcal:198, prot:2.1, fat:20, carb:4.1, ar:"قشدة حامضة"},
+  "mayonnaise": {kcal:700, prot:1, fat:77, carb:2.6, ar:"مايونيز"},
+  "ketchup": {kcal:101, prot:1, fat:0.1, carb:25, ar:"كاتشب"},
+  "mustard": {kcal:66, prot:4.4, fat:3.3, carb:6, ar:"خردل"},
+  "soy sauce": {kcal:53, prot:8, fat:0.1, carb:5, ar:"صلصة الصويا"},
+  "vinegar": {kcal:18, prot:0, fat:0, carb:0.9, ar:"خل"},
+  "salt": {kcal:0, prot:0, fat:0, carb:0, ar:"ملح"},
+  "pepper": {kcal:251, prot:10, fat:3.3, carb:64, ar:"فلفل أسود"},
+  "paprika": {kcal:282, prot:14, fat:13, carb:54, ar:"بابريكا"},
+  "cinnamon": {kcal:247, prot:4, fat:1.2, carb:81, ar:"قرفة"},
+  "turmeric": {kcal:354, prot:8, fat:10, carb:65, ar:"كركم"},
+  "cumin": {kcal:375, prot:18, fat:22, carb:44, ar:"كمون"},
+  "coriander": {kcal:23, prot:2.1, fat:0.5, carb:4, ar:"كزبرة"},
+  "basil": {kcal:22, prot:3.2, fat:0.6, carb:3, ar:"ريحان"},
+  "parsley": {kcal:36, prot:3, fat:0.8, carb:6, ar:"بقدونس"},
+  "mint": {kcal:44, prot:3.3, fat:0.7, carb:8, ar:"نعناع"},
+  "thyme": {kcal:101, prot:5.6, fat:1.7, carb:24, ar:"زعتر"},
+  "rosemary": {kcal:131, prot:3.3, fat:5.9, carb:21, ar:"إكليل الجبل"},
+  "oregano": {kcal:265, prot:9, fat:4.3, carb:69, ar:"أوريجانو"},
+  "sage": {kcal:315, prot:11, fat:13, carb:61, ar:"المريمية"},
+  "dill": {kcal:43, prot:3.5, fat:1.1, carb:7, ar:"شبت"},
+  "chive": {kcal:30, prot:3.3, fat:0.7, carb:4.4, ar:"الثوم المعمر"},
+  "shallot": {kcal:72, prot:2.5, fat:0.1, carb:17, ar:"كراث"}
+};
+
+function updateFoodLists() {
+  const foodList = document.getElementById('foodList');
+  foodList.innerHTML = '';
+  
+  Object.keys(FOOD_DB).forEach(food => {
+    const option = document.createElement('option');
+    option.value = food;
+    foodList.appendChild(option);
+  });
+  
+  document.querySelectorAll('.ingredientSelect').forEach(select => {
+    const currentValue = select.value;
+    select.innerHTML = '<option value="">Select ingredient</option>';
+    
+    Object.keys(FOOD_DB).forEach(food => {
+      const option = document.createElement('option');
+      option.value = food;
+      option.textContent = food;
+      select.appendChild(option);
+    });
+    
+    select.value = currentValue;
+  });
+}
+
+// ====== Camera & AI ======
+let model, video, canvas, ctx;
+
+async function loadModel(){
+  try{
+    model = await mobilenet.load({version:2, alpha:1.0});
+    console.log('Model loaded');
+  }catch(e){
+    console.error('Model load failed:', e);
   }
 }
 
-function removeCustomGoal(index) {
-  const today = todayKey();
-  if (state.customGoals[today] && state.customGoals[today][index]) {
-    state.customGoals[today].splice(index, 1);
-    save();
-    refreshCustomGoals();
+document.getElementById('startCam').onclick = async ()=>{
+  video = document.getElementById('vid');
+  canvas = document.getElementById('frame');
+  ctx = canvas.getContext('2d');
+  
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});
+    video.srcObject = stream;
+    document.getElementById('startCam').classList.add('hidden');
+    document.getElementById('stopCam').classList.remove('hidden');
+  }catch(e){
+    alert('Camera error: '+e.message);
   }
+};
+
+document.getElementById('stopCam').onclick = ()=>{
+  if(video.srcObject){
+    video.srcObject.getTracks().forEach(t=>t.stop());
+    video.srcObject = null;
+  }
+  document.getElementById('startCam').classList.remove('hidden');
+  document.getElementById('stopCam').classList.add('hidden');
+};
+
+document.getElementById('snap').onclick = ()=>{
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  ctx.drawImage(video, 0, 0);
+  canvas.classList.remove('hidden');
+};
+
+document.getElementById('classify').onclick = async ()=>{
+  if(!model) await loadModel();
+  if(!video.srcObject) return alert('Start camera first');
+  
+  const preds = await model.classify(video);
+  const container = document.getElementById('pred');
+  container.innerHTML = '';
+  
+  preds.forEach(p=>{
+    const btn = document.createElement('button');
+    btn.className = 'ghost';
+    btn.textContent = `${p.className} (${Math.round(p.probability*100)}%)`;
+    btn.onclick = ()=> document.getElementById('foodSearch').value = p.className;
+    container.appendChild(btn);
+  });
+};
+
+// Portion estimation based on food size
+document.getElementById('foodSize').onchange = (e)=>{
+  const size = e.target.value;
+  let weight = 100;
+  
+  switch(size){
+    case 'small': weight = 50; break;
+    case 'medium': weight = 150; break;
+    case 'large': weight = 250; break;
+    case 'bowl': weight = 300; break;
+    case 'plate': weight = 500; break;
+  }
+  
+  document.getElementById('estimatedWeight').value = weight;
+  document.getElementById('portion').value = weight;
+};
+
+// ====== Add to Meal ======
+document.getElementById('addMeal').onclick = ()=>{
+  const food = document.getElementById('foodSearch').value.trim().toLowerCase();
+  const portion = +document.getElementById('portion').value;
+  const meal = document.getElementById('mealType').value;
+  
+  if(!food || !FOOD_DB[food]){
+    alert('Please select a valid food from the list');
+    return;
+  }
+  
+  const info = FOOD_DB[food];
+  const factor = portion / 100;
+  
+  const item = {
+    food, portion, meal,
+    kcal: Math.round(info.kcal * factor),
+    prot: Math.round(info.prot * factor * 10)/10,
+    fat: Math.round(info.fat * factor * 10)/10,
+    carb: Math.round(info.carb * factor * 10)/10,
+    id: Date.now()
+  };
+  
+  const today = new Date().toDateString();
+  if(!state.daysData[today]) state.daysData[today] = {foods:[]};
+  state.daysData[today].foods.push(item);
+  save();
+  
+  document.getElementById('foodSearch').value = '';
+  document.getElementById('portion').value = 150;
+  
+  alert(`Added ${portion}g of ${food} to ${meal}`);
+  refreshDashboard();
+  if(document.getElementById('log').classList.contains('hidden')===false) refreshLog();
+};
+
+// ====== Food Log ======
+function refreshLog(){
+  const today = new Date().toDateString();
+  const dayData = state.daysData[today] || {foods:[]};
+  const tbody = document.getElementById('logTable');
+  const dateEl = document.getElementById('logDate');
+  
+  dateEl.textContent = today;
+  tbody.innerHTML = '';
+  
+  let tKcal=0, tP=0, tF=0, tC=0;
+  
+  dayData.foods.forEach((f,i)=>{
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${f.meal}</td>
+      <td>${f.food}</td>
+      <td>${f.portion}</td>
+      <td>${f.kcal}</td>
+      <td>${f.prot}</td>
+      <td>${f.fat}</td>
+      <td>${f.carb}</td>
+      <td><button class="danger" data-id="${f.id}">×</button></td>
+    `;
+    tbody.appendChild(tr);
+    
+    tKcal += f.kcal;
+    tP += f.prot;
+    tF += f.fat;
+    tC += f.carb;
+  });
+  
+  document.getElementById('tKcal').textContent = tKcal;
+  document.getElementById('tP').textContent = Math.round(tP*10)/10;
+  document.getElementById('tF').textContent = Math.round(tF*10)/10;
+  document.getElementById('tC').textContent = Math.round(tC*10)/10;
+  
+  // Remove item handlers
+  tbody.querySelectorAll('button').forEach(b=>{
+    b.onclick = ()=>{
+      const id = +b.dataset.id;
+      state.daysData[today].foods = state.daysData[today].foods.filter(x=>x.id!==id);
+      save();
+      refreshLog();
+      refreshDashboard();
+    };
+  });
 }
+
+document.getElementById('clearToday').onclick = ()=>{
+  if(confirm('Clear all food entries for today?')){
+    const today = new Date().toDateString();
+    state.daysData[today] = {foods:[]};
+    save();
+    refreshLog();
+    refreshDashboard();
+  }
+};
 
 // ====== Make a Dish ======
 function refreshDishes() {
-  // Update ingredient selects
   updateFoodLists();
   
-  // Display saved dishes
-  const savedDishesDiv = document.getElementById('savedDishes');
-  savedDishesDiv.innerHTML = '';
+  const savedContainer = document.getElementById('savedDishes');
+  savedContainer.innerHTML = '';
+  
+  if (!state.dishes || state.dishes.length === 0) {
+    savedContainer.innerHTML = '<p>No saved dishes yet.</p>';
+    return;
+  }
   
   state.dishes.forEach((dish, index) => {
-    const dishDiv = document.createElement('div');
-    dishDiv.className = 'dish-saved';
-    
-    dishDiv.innerHTML = `
+    const dishEl = document.createElement('div');
+    dishEl.className = 'dish-saved';
+    dishEl.innerHTML = `
       <h4>${dish.name}</h4>
-      <div class="small">Ingredients: ${dish.ingredients.map(i => 
-        `${i.ingredient} (${i.grams}g)`
-      ).join(', ')}</div>
       <div class="row">
-        <div class="col"><strong>Calories:</strong> ${dish.kcal}/100g</div>
+        <div class="col"><strong>Calories:</strong> ${dish.kcal} per 100g</div>
         <div class="col"><strong>Protein:</strong> ${dish.prot}g</div>
         <div class="col"><strong>Fat:</strong> ${dish.fat}g</div>
         <div class="col"><strong>Carbs:</strong> ${dish.carb}g</div>
@@ -1107,17 +1242,15 @@ function refreshDishes() {
         <button class="danger" onclick="deleteDish(${index})">Delete</button>
       </div>
     `;
-    
-    savedDishesDiv.appendChild(dishDiv);
+    savedContainer.appendChild(dishEl);
   });
 }
 
-// Add ingredient row
 document.getElementById('addIngredient').onclick = () => {
   const container = document.getElementById('dishIngredients');
-  const newRow = document.createElement('div');
-  newRow.className = 'dish-ingredient-grid';
-  newRow.innerHTML = `
+  const newIngredient = document.createElement('div');
+  newIngredient.className = 'dish-ingredient-grid';
+  newIngredient.innerHTML = `
     <select class="ingredientSelect">
       <option value="">Select ingredient</option>
     </select>
@@ -1125,56 +1258,40 @@ document.getElementById('addIngredient').onclick = () => {
     <span class="small">Portion</span>
     <button class="removeIngredient danger">×</button>
   `;
-  container.appendChild(newRow);
-  
-  // Update the new select with foods
+  container.appendChild(newIngredient);
   updateFoodLists();
   
-  // Add remove functionality
-  newRow.querySelector('.removeIngredient').onclick = () => {
-    if (container.children.length > 1) {
-      newRow.remove();
-    }
+  // Add event listener to remove button
+  newIngredient.querySelector('.removeIngredient').onclick = () => {
+    container.removeChild(newIngredient);
   };
 };
 
-// Calculate dish nutrition
 document.getElementById('calculateDish').onclick = () => {
-  const ingredients = [];
+  const ingredients = Array.from(document.querySelectorAll('.dish-ingredient-grid'));
   let totalWeight = 0;
+  let totalKcal = 0, totalProt = 0, totalFat = 0, totalCarb = 0;
   
-  // Collect all ingredients
-  document.querySelectorAll('.dish-ingredient-grid').forEach(row => {
-    const select = row.querySelector('.ingredientSelect');
-    const grams = +row.querySelector('.ingredientGrams').value;
+  for (let ing of ingredients) {
+    const food = ing.querySelector('.ingredientSelect').value;
+    const grams = +ing.querySelector('.ingredientGrams').value;
     
-    if (select.value && grams > 0) {
-      const food = state.foods.find(f => f.name === select.value);
-      if (food) {
-        ingredients.push({
-          food,
-          grams
-        });
-        totalWeight += grams;
-      }
-    }
-  });
+    if (!food || !FOOD_DB[food]) continue;
+    
+    totalWeight += grams;
+    const info = FOOD_DB[food];
+    const factor = grams / 100;
+    
+    totalKcal += info.kcal * factor;
+    totalProt += info.prot * factor;
+    totalFat += info.fat * factor;
+    totalCarb += info.carb * factor;
+  }
   
-  if (ingredients.length === 0) {
+  if (totalWeight === 0) {
     alert('Please add at least one ingredient');
     return;
   }
-  
-  // Calculate totals
-  let totalKcal = 0, totalProt = 0, totalFat = 0, totalCarb = 0;
-  
-  ingredients.forEach(ing => {
-    const factor = ing.grams / 100;
-    totalKcal += ing.food.kcal * factor;
-    totalProt += ing.food.prot * factor;
-    totalFat += ing.food.fat * factor;
-    totalCarb += ing.food.carb * factor;
-  });
   
   // Calculate per 100g
   const factor = 100 / totalWeight;
@@ -1183,37 +1300,36 @@ document.getElementById('calculateDish').onclick = () => {
   const dishFat = Math.round(totalFat * factor * 10) / 10;
   const dishCarb = Math.round(totalCarb * factor * 10) / 10;
   
-  // Display results
   document.getElementById('dishKcal').textContent = dishKcal;
   document.getElementById('dishProt').textContent = dishProt;
   document.getElementById('dishFat').textContent = dishFat;
   document.getElementById('dishCarb').textContent = dishCarb;
-  document.getElementById('dishResults').classList.remove('hidden');
   
-  // Store calculated dish data temporarily
-  window.currentDish = {
-    name: document.getElementById('dishName').value || 'Unnamed Dish',
-    ingredients: ingredients.map(ing => ({
-      ingredient: ing.food.name,
-      grams: ing.grams
-    })),
-    totalWeight,
+  document.getElementById('dishResults').classList.remove('hidden');
+};
+
+document.getElementById('saveDish').onclick = () => {
+  const dishName = document.getElementById('dishName').value.trim();
+  if (!dishName) {
+    alert('Please enter a dish name');
+    return;
+  }
+  
+  const dishKcal = +document.getElementById('dishKcal').textContent;
+  const dishProt = +document.getElementById('dishProt').textContent;
+  const dishFat = +document.getElementById('dishFat').textContent;
+  const dishCarb = +document.getElementById('dishCarb').textContent;
+  
+  if (!state.dishes) state.dishes = [];
+  
+  state.dishes.push({
+    name: dishName,
     kcal: dishKcal,
     prot: dishProt,
     fat: dishFat,
     carb: dishCarb
-  };
-};
-
-// Save dish
-document.getElementById('saveDish').onclick = () => {
-  if (!window.currentDish) {
-    alert('Please calculate the dish first');
-    return;
-  }
+  });
   
-  if (!state.dishes) state.dishes = [];
-  state.dishes.push(window.currentDish);
   save();
   refreshDishes();
   
@@ -1231,62 +1347,581 @@ document.getElementById('saveDish').onclick = () => {
   `;
   document.getElementById('dishResults').classList.add('hidden');
   updateFoodLists();
-  
-  alert('Dish saved successfully!');
 };
 
-// Add dish to log
-function addDishToLog(dishIndex) {
-  const dish = state.dishes[dishIndex];
-  const portion = prompt(`Enter portion size in grams for "${dish.name}" (total weight: ${dish.totalWeight}g):`, "100");
+function addDishToLog(index) {
+  const dish = state.dishes[index];
+  const portion = prompt(`Enter portion size in grams for ${dish.name}:`, "200");
   
-  if (!portion || isNaN(portion)) return;
+  if (!portion) return;
   
-  const factor = portion / 100;
-  const mealItem = {
+  const grams = +portion;
+  const factor = grams / 100;
+  
+  const item = {
     food: dish.name,
-    meal: 'Lunch', // Default to lunch
-    grams: +portion,
+    portion: grams,
+    meal: 'Lunch', // Default meal
     kcal: Math.round(dish.kcal * factor),
     prot: Math.round(dish.prot * factor * 10) / 10,
     fat: Math.round(dish.fat * factor * 10) / 10,
-    carb: Math.round(dish.carb * factor * 10) / 10
+    carb: Math.round(dish.carb * factor * 10) / 10,
+    id: Date.now()
   };
   
-  const day = getDay();
-  day.meals.push(mealItem);
+  const today = new Date().toDateString();
+  if (!state.daysData[today]) state.daysData[today] = { foods: [] };
+  state.daysData[today].foods.push(item);
   save();
+  
+  alert(`Added ${grams}g of ${dish.name} to today's log`);
   refreshDashboard();
-  refreshLog();
-  alert('Dish added to today\'s log!');
+  if (document.getElementById('log').classList.contains('hidden') === false) refreshLog();
 }
 
-// Delete dish
-function deleteDish(dishIndex) {
-  if (confirm('Are you sure you want to delete this dish?')) {
-    state.dishes.splice(dishIndex, 1);
+function deleteDish(index) {
+  if (confirm('Delete this dish?')) {
+    state.dishes.splice(index, 1);
     save();
     refreshDishes();
   }
 }
 
-// ====== Init ======
-fillLangSelects();
-if(state.lang) setLang(state.lang); 
-else setLang('ar');
+// ====== Workout Database ======
+const EXERCISE_DB = {
+  // Push Exercises
+  "Bench Press": "https://youtu.be/gRVjAtPip0Y",
+  "Incline Dumbbell Press": "https://youtu.be/8iPEnn-ltC8",
+  "Dumbbell Fly": "https://youtu.be/eozdVDA78K0",
+  "Push Ups": "https://youtu.be/IODxDxX7oi4",
+  "Cable Crossover": "https://youtu.be/taI4XduLpTk",
+  "Overhead Shoulder Press": "https://youtu.be/qEwKCR5JCog",
+  "Dumbbell Lateral Raises": "https://youtu.be/3VcKaXpzqRo",
+  "Front Raises": "https://youtu.be/3YvfRx31xDE",
+  "Arnold Press": "https://youtu.be/3ml7BH7mNwQ",
+  "Upright Row": "https://youtu.be/JaAWdljhD5o",
+  "Tricep Pushdown": "https://youtu.be/2-LAMcpzODU",
+  "Overhead Tricep Extension": "https://youtu.be/YbX7Wd8jQ-Q",
+  "Close Grip Bench Press": "https://youtu.be/rT7DgCr-3pg",
+  "Dips": "https://youtu.be/2z8JmcrW-As",
+  "Cable Rope Overhead Extension": "https://youtu.be/nRiJVZDpdL0",
+  "Seated Dumbbell Press": "https://youtu.be/qEwKCR5JCog",
+  "Chest Press Machine": "https://youtu.be/OeG2V2mFtWg",
+  "Pec Deck": "https://youtu.be/f9d2HB1Fj6k",
+  "Dumbbell Shoulder Press": "https://youtu.be/B-aVuyhvLHU",
+  "Dumbbell Tricep Kickbacks": "https://youtu.be/6SS6K3lAwZ8",
 
-if(state.weight && state.goal){
-  document.getElementById('wizard').classList.add('hidden');
-  document.getElementById('nav').classList.remove('hidden');
-  showTab('home');
-  fillGoals();
-} else {
-  document.getElementById('wizard').classList.remove('hidden');
-  document.getElementById('nav').classList.add('hidden');
+  // Pull Exercises
+  "Deadlift": "https://youtu.be/op9kVnSso6Q",
+  "Pull Ups": "https://youtu.be/eGo4IYlbE5g",
+  "Lat Pulldown": "https://youtu.be/CAwf7n6Luuc",
+  "Seated Cable Row": "https://youtu.be/GZbfZ033f74",
+  "Barbell Row": "https://youtu.be/vT2GjY_Umpw",
+  "T-Bar Row": "https://youtu.be/vT2GjY_Umpw",
+  "Dumbbell Row": "https://youtu.be/pYcpY20QaE8",
+  "Face Pull": "https://youtu.be/rep-qVOkqgk",
+  "Rear Delt Fly": "https://youtu.be/wZnsLxTGd2M",
+  "Inverted Row": "https://youtu.be/w0nVlfhOVSY",
+  "Barbell Bicep Curl": "https://youtu.be/kwG2ipFRgfo",
+  "Dumbbell Bicep Curl": "https://youtu.be/ykJmrZ5v0Oo",
+  "Preacher Curl": "https://youtu.be/0AUGkch3tzc",
+  "Hammer Curl": "https://youtu.be/zC3nLlEvin4",
+  "Concentration Curl": "https://youtu.be/soxrZlIl35U",
+  "Cable Curl": "https://youtu.be/av7-8igSXTs",
+  "Chin Up": "https://youtu.be/bmEfxUHXZ9M",
+  "EZ Bar Curl": "https://youtu.be/xz5QHs1CVCU",
+  "Reverse Grip Row": "https://youtu.be/9efgcAjQe7E",
+  "Shrugs": "https://youtu.be/mz6zUKjhuDs",
+
+  // Leg Exercises
+  "Squats": "https://youtu.be/aclHkVaku9U",
+  "Leg Press": "https://youtu.be/IZxyjW7MPJQ",
+  "Lunges": "https://youtu.be/QOVaHwm-Q6U",
+  "Bulgarian Split Squat": "https://youtu.be/2C-uNgKwPLE",
+  "Leg Extension": "https://youtu.be/YyvSfVjQeL0",
+  "Leg Curl": "https://youtu.be/1Tq3QdYUuHs",
+  "Romanian Deadlift": "https://youtu.be/2SHsk9AzdjA",
+  "Hip Thrust": "https://youtu.be/LM8XHLYJoYs",
+  "Glute Bridge": "https://youtu.be/wPM8icPu6H8",
+  "Calf Raise": "https://youtu.be/4zH3U9-4zvM",
+  "Barbell Front Squat": "https://youtu.be/tlfahNdNPPI",
+  "Goblet Squat": "https://youtu.be/6xwYjGg1RQM",
+  "Sumo Deadlift": "https://youtu.be/4AObAU-EcYE",
+  "Step Ups": "https://youtu.be/dQqApCGd5Ss",
+  "Box Jump": "https://youtu.be/52r_Ul5k03g",
+  "Walking Lunges": "https://youtu.be/QOVaHwm-Q6U",
+  "Cable Kickbacks": "https://youtu.be/NB4hSPd08_k",
+  "Single Leg Press": "https://youtu.be/3-7xyyE73RQ",
+  "Seated Calf Raise": "https://youtu.be/3ZBfj8Lxw3U",
+  "Hack Squat": "https://youtu.be/AoEwSPwG5YQ",
+
+  // Core/Ab Exercises
+  "Crunch": "https://youtu.be/Xyd_fa5zoEU",
+  "Plank": "https://youtu.be/pSHjTRCQxIw",
+  "Side Plank": "https://youtu.be/K2VljzCC16g",
+  "Hanging Leg Raise": "https://youtu.be/JB2oyawG9KI",
+  "Cable Crunch": "https://youtu.be/bwRPhTRwqcs",
+  "Bicycle Crunch": "https://youtu.be/9FGilxCbdz8",
+  "Mountain Climber": "https://youtu.be/nmwgirgXLYM",
+  "Flutter Kicks": "https://youtu.be/JkVHRN8_4KU",
+  "Ab Rollout": "https://youtu.be/MjPArXzYOLk",
+  "Russian Twist": "https://youtu.be/wkD8rjkodUI",
+  "Leg Raises": "https://youtu.be/JB2oyawG9KI",
+  "Sit Ups": "https://youtu.be/1fbU_MkV7NE",
+  "Toe Touches": "https://youtu.be/GS_z6FG_jqE",
+  "Reverse Crunch": "https://youtu.be/HyqC0vmjz4o",
+  "Cable Woodchopper": "https://youtu.be/E_xovGgr3N8",
+  "Stability Ball Crunch": "https://youtu.be/vkKCVCZe474",
+  "Hanging Knee Raise": "https://youtu.be/CtAAG_0LaJ0",
+  "Decline Sit Up": "https://youtu.be/6-8E7q3rA8E",
+  "Oblique Crunch": "https://youtu.be/WWtD07iyd0U",
+  "Weighted Plank": "https://youtu.be/Ep3ISAKQ3vM",
+
+  // Full Body/Extra
+  "Burpees": "https://youtu.be/dZgVxmf6jkA",
+  "Kettlebell Swing": "https://youtu.be/6uWZ0oQzKxg",
+  "Farmer's Carry": "https://youtu.be/26A3H6-gkvE",
+  "Clean and Press": "https://youtu.be/XxWcirHIwVo",
+  "Snatch": "https://youtu.be/nJKs8QJH6N0",
+  "Thrusters": "https://youtu.be/QKZFnNEDc1I",
+  "Battle Ropes": "https://youtu.be/m6X2JEx9Yxw",
+  "Jump Rope": "https://youtu.be/AWbP13YQW9g",
+  "Wall Sit": "https://youtu.be/-cdph8hv0O0",
+  "Sled Push": "https://youtu.be/KjYhxAao8rA"
+};
+
+const WORKOUT_PLANS = {
+  ppl: {
+    name: "PPL (Push/Pull/Legs)",
+    days: {
+      "Push Day": [
+        "Bench Press", "Overhead Shoulder Press", "Incline Dumbbell Press", 
+        "Lateral Raises", "Tricep Pushdown"
+      ],
+      "Pull Day": [
+        "Pull Ups", "Barbell Row", "Lat Pulldown", 
+        "Dumbbell Curl", "Face Pull"
+      ],
+      "Leg Day": [
+        "Squats", "Romanian Deadlift", "Leg Press", 
+        "Leg Curl", "Calf Raise"
+      ]
+    }
+  },
+  upperLower: {
+    name: "Upper/Lower Split",
+    days: {
+      "Upper Day": [
+        "Bench Press", "Pull Ups", "Overhead Press", 
+        "Barbell Row", "Lateral Raises"
+      ],
+      "Lower Day": [
+        "Squats", "Romanian Deadlift", "Leg Press", 
+        "Leg Curl", "Calf Raise"
+      ]
+    }
+  },
+  homePPL: {
+    name: "Home PPL with Weighted Bag",
+    days: {
+      "Push Day (Home)": [
+        "Push Ups", "Overhead Press", "Dumbbell Fly", 
+        "Lateral Raises", "Tricep Extension"
+      ],
+      "Pull Day (Home)": [
+        "Dumbbell Row", "Bicep Curl", "Reverse Fly", 
+        "Upright Row", "Face Pull"
+      ],
+      "Leg Day (Home)": [
+        "Squats", "Lunges", "Romanian Deadlift", 
+        "Calf Raise", "Glute Bridge"
+      ]
+    }
+  }
+};
+
+// ====== Workout Navigation ======
+let currentDayEditing = null;
+let selectedExercises = [];
+
+function refreshWorkoutUI() {
+  // Show main workout screen
+  showWorkoutSection('workoutMain');
+  
+  // Show current plan if exists
+  if (state.workoutPlan) {
+    document.getElementById('currentPlanDisplay').classList.remove('hidden');
+    const plan = state.workoutPlan;
+    document.getElementById('currentPlanInfo').innerHTML = `
+      <h4>${plan.name}</h4>
+      <p>${Object.keys(plan.days).length} days</p>
+    `;
+  } else {
+    document.getElementById('currentPlanDisplay').classList.add('hidden');
+  }
 }
 
-// Initialize food lists
-updateFoodLists();
+function showWorkoutSection(sectionId) {
+  // Hide all workout sections
+  const sections = ['workoutMain', 'workoutReady', 'workoutGym', 'workoutHome', 
+                   'workoutCustom', 'exerciseSelector', 'workoutPlanDisplay'];
+  sections.forEach(id => document.getElementById(id).classList.add('hidden'));
+  
+  // Show requested section
+  document.getElementById(sectionId).classList.remove('hidden');
+}
+
+function showWorkoutType(type) {
+  if (type === 'custom') {
+    showWorkoutSection('workoutCustom');
+    setupCustomPlan();
+  } else if (type === 'ready') {
+    showWorkoutSection('workoutReady');
+  }
+}
+
+function showWorkoutPlan(type) {
+  if (type === 'gym') {
+    showWorkoutSection('workoutGym');
+  } else if (type === 'home') {
+    showWorkoutSection('workoutHome');
+  }
+}
+
+function backToWorkoutMain() {
+  showWorkoutSection('workoutMain');
+}
+
+function backToReadyPlans() {
+  showWorkoutSection('workoutReady');
+}
+
+function backToCustomPlan() {
+  showWorkoutSection('workoutCustom');
+}
+
+// ====== Custom Plan Builder ======
+function setupCustomPlan() {
+  const daysContainer = document.getElementById('customDaysContainer');
+  daysContainer.innerHTML = '';
+  
+  const daysCount = parseInt(document.getElementById('customPlanDays').value);
+  
+  for (let i = 1; i <= daysCount; i++) {
+    const dayDiv = document.createElement('div');
+    dayDiv.className = 'workout-day';
+    dayDiv.innerHTML = `
+      <h4>Day ${i}</h4>
+      <div class="row">
+        <div class="col">
+          <label>Day Name</label>
+          <input type="text" class="dayName" placeholder="e.g., Chest Day" value="Day ${i}">
+        </div>
+        <div class="col">
+          <label>Exercises</label>
+          <div class="dayExercises" id="dayExercises${i}"></div>
+          <button type="button" class="ghost" onclick="openExerciseSelector(${i})">+ Add Exercises</button>
+        </div>
+      </div>
+    `;
+    daysContainer.appendChild(dayDiv);
+  }
+}
+
+function openExerciseSelector(dayNumber) {
+  currentDayEditing = dayNumber;
+  selectedExercises = [];
+  
+  // Populate exercise list
+  const exerciseList = document.getElementById('exerciseList');
+  exerciseList.innerHTML = '';
+  
+  Object.keys(EXERCISE_DB).forEach(exercise => {
+    const exerciseDiv = document.createElement('div');
+    exerciseDiv.className = 'exercise-option';
+    exerciseDiv.innerHTML = `
+      <div class="workout-exercise-name">${exercise}</div>
+      <div class="workout-exercise-meta">
+        <a href="${EXERCISE_DB[exercise]}" target="_blank" class="exercise-tutorial">Tutorial</a>
+      </div>
+    `;
+    exerciseDiv.onclick = () => {
+      exerciseDiv.classList.toggle('selected');
+      const index = selectedExercises.indexOf(exercise);
+      if (index > -1) {
+        selectedExercises.splice(index, 1);
+      } else {
+        selectedExercises.push(exercise);
+      }
+    };
+    exerciseList.appendChild(exerciseDiv);
+  });
+  
+  showWorkoutSection('exerciseSelector');
+}
+
+function addSelectedExercises() {
+  if (currentDayEditing && selectedExercises.length > 0) {
+    const dayExercisesDiv = document.getElementById(`dayExercises${currentDayEditing}`);
+    
+    selectedExercises.forEach(exercise => {
+      const exerciseDiv = document.createElement('div');
+      exerciseDiv.className = 'workout-exercise';
+      exerciseDiv.innerHTML = `
+        <div class="workout-exercise-info">
+          <div class="workout-exercise-name">${exercise}</div>
+          <div class="workout-exercise-meta">
+            <a href="${EXERCISE_DB[exercise]}" target="_blank" class="exercise-tutorial">Tutorial</a>
+          </div>
+        </div>
+        <button class="danger" onclick="this.parentElement.remove()">×</button>
+      `;
+      dayExercisesDiv.appendChild(exerciseDiv);
+    });
+  }
+  
+  backToCustomPlan();
+}
+
+function saveCustomPlan() {
+  const planName = document.getElementById('customPlanName').value.trim();
+  if (!planName) {
+    alert('Please enter a plan name');
+    return;
+  }
+  
+  const days = [];
+  const dayElements = document.querySelectorAll('.workout-day');
+  
+  dayElements.forEach(dayElement => {
+    const dayName = dayElement.querySelector('.dayName').value;
+    const exercises = [];
+    
+    dayElement.querySelectorAll('.workout-exercise .workout-exercise-name').forEach(exerciseElement => {
+      exercises.push(exerciseElement.textContent);
+    });
+    
+    if (exercises.length > 0) {
+      days.push({ name: dayName, exercises: exercises });
+    }
+  });
+  
+  if (days.length === 0) {
+    alert('Please add exercises to at least one day');
+    return;
+  }
+  
+  // Convert to plan format
+  const plan = {
+    name: planName,
+    days: {}
+  };
+  
+  days.forEach(day => {
+    plan.days[day.name] = day.exercises;
+  });
+  
+  state.workoutPlan = plan;
+  save();
+  alert('Custom plan saved!');
+  refreshWorkoutUI();
+}
+
+// ====== Ready-Made Plans ======
+function selectReadyPlan(planId) {
+  const plan = WORKOUT_PLANS[planId];
+  state.workoutPlan = {
+    name: plan.name,
+    days: plan.days
+  };
+  save();
+  alert(`${plan.name} selected!`);
+  showCurrentPlan();
+}
+
+function showCurrentPlan() {
+  if (!state.workoutPlan) return;
+  
+  const plan = state.workoutPlan;
+  document.getElementById('planDisplayTitle').textContent = plan.name;
+  
+  let content = '';
+  Object.keys(plan.days).forEach(dayName => {
+    content += `<div class="workout-day"><h4>${dayName}</h4>`;
+    plan.days[dayName].forEach(exercise => {
+      const tutorial = EXERCISE_DB[exercise] || '#';
+      content += `
+        <div class="workout-exercise">
+          <div class="workout-exercise-info">
+            <div class="workout-exercise-name">${exercise}</div>
+            <div class="workout-exercise-meta">
+              <a href="${tutorial}" target="_blank" class="exercise-tutorial">Tutorial</a>
+            </div>
+          </div>
+          <div class="workout-actions">
+            <button class="ok complete-exercise" data-exercise="${exercise}">Complete</button>
+          </div>
+        </div>
+      `;
+    });
+    content += '</div>';
+  });
+  
+  document.getElementById('planDisplayContent').innerHTML = content;
+  
+  // Add completion handlers
+  document.querySelectorAll('.complete-exercise').forEach(button => {
+    button.onclick = function() {
+      const exercise = this.dataset.exercise;
+      toggleExerciseCompletion(exercise);
+      this.textContent = this.textContent === 'Complete' ? 'Undo' : 'Complete';
+      this.parentElement.parentElement.classList.toggle('workout-completed');
+    };
+  });
+  
+  showWorkoutSection('workoutPlanDisplay');
+}
+
+function clearWorkoutPlan() {
+  if (confirm('Are you sure you want to clear your current workout plan?')) {
+    state.workoutPlan = null;
+    save();
+    refreshWorkoutUI();
+  }
+}
+
+function startWorkout() {
+  alert('Workout started! Track your progress by completing exercises.');
+}
+
+function toggleExerciseCompletion(exerciseName) {
+  const today = new Date().toDateString();
+  if (!state.workoutHistory[today]) {
+    state.workoutHistory[today] = [];
+  }
+  
+  const index = state.workoutHistory[today].indexOf(exerciseName);
+  if (index > -1) {
+    state.workoutHistory[today].splice(index, 1);
+  } else {
+    state.workoutHistory[today].push(exerciseName);
+  }
+  
+  save();
+}
+
+// ====== Water Tracker ======
+function refreshWaterUI(){
+  const today = new Date().toDateString();
+  if(!state.water) state.water = {};
+  if(!state.water[today]) state.water[today] = {current:0, target:2500, cup:250};
+  
+  const w = state.water[today];
+  document.getElementById('waterTarget').value = w.target;
+  document.getElementById('cupSize').value = w.cup;
+  
+  const progress = (w.current / w.target) * 100;
+  document.getElementById('waterProg').value = progress;
+  document.getElementById('waterProgTxt').textContent = `${w.current} / ${w.target} ml`;
+  
+  // Cups visualization
+  const cupsContainer = document.getElementById('cups');
+  cupsContainer.innerHTML = '';
+  const cupsCount = Math.ceil(w.target / w.cup);
+  
+  for(let i=0; i<cupsCount; i++){
+    const cup = document.createElement('div');
+    cup.className = 'cup' + (i < Math.floor(w.current / w.cup) ? ' fill' : '');
+    cup.onclick = ()=> drinkWater(w.cup);
+    cupsContainer.appendChild(cup);
+  }
+}
+
+document.getElementById('saveWater').onclick = ()=>{
+  const today = new Date().toDateString();
+  if(!state.water) state.water = {};
+  if(!state.water[today]) state.water[today] = {current:0, target:2500, cup:250};
+  
+  state.water[today].target = +document.getElementById('waterTarget').value;
+  state.water[today].cup = +document.getElementById('cupSize').value;
+  save();
+  refreshWaterUI();
+};
+
+document.getElementById('drink').onclick = ()=> drinkWater();
+
+function drinkWater(amount){
+  const today = new Date().toDateString();
+  if(!state.water) state.water = {};
+  if(!state.water[today]) state.water[today] = {current:0, target:2500, cup:250};
+  
+  if(!amount) amount = state.water[today].cup;
+  state.water[today].current = Math.min(state.water[today].current + amount, state.water[today].target);
+  save();
+  refreshWaterUI();
+}
+
+document.getElementById('resetWater').onclick = ()=>{
+  const today = new Date().toDateString();
+  if(state.water && state.water[today]) state.water[today].current = 0;
+  save();
+  refreshWaterUI();
+};
+
+// ====== Profile ======
+function renderProfile(){
+  const s = state;
+  const html = `
+    <div class="row">
+      <div class="col"><label>Sex</label><div>${s.sex||'Not set'}</div></div>
+      <div class="col"><label>Age</label><div>${s.age||'Not set'}</div></div>
+      <div class="col"><label>Height</label><div>${s.height||'Not set'} cm</div></div>
+      <div class="col"><label>Weight</label><div>${s.weight||'Not set'} kg</div></div>
+    </div>
+    <div class="row">
+      <div class="col"><label>Workout days</label><div>${s.days||'Not set'}/week</div></div>
+      <div class="col"><label>Goal</label><div>${s.goal||'Not set'}</div></div>
+      <div class="col"><label>TDEE</label><div>${calcTDEE()} kcal</div></div>
+    </div>
+  `;
+  document.getElementById('profSummary').innerHTML = html;
+}
+
+document.getElementById('restart').onclick = ()=>{
+  if(confirm('Reset all data and restart wizard?')){
+    localStorage.removeItem(SKEY);
+    location.reload();
+  }
+};
+
+// ====== Init ======
+function init(){
+  fillLangSelects();
+  
+  if(state.lang) setLang(state.lang);
+  else setLang('ar');
+  
+  if(state.age){ // Wizard completed
+    document.getElementById('wizard').classList.add('hidden');
+    document.getElementById('nav').classList.remove('hidden');
+    showTab('home');
+    fillGoals();
+  }
+  
+  // Load AI model in background
+  loadModel();
+  
+  // Initialize food lists
+  updateFoodLists();
+  
+  // Initialize workout UI
+  refreshWorkoutUI();
+}
+
+// Update custom plan days when changed
+document.getElementById('customPlanDays').onchange = setupCustomPlan;
+
+init();
 </script>
 </body>
 </html>
