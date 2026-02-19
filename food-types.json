@@ -1,0 +1,7002 @@
+{
+  "rice": {
+    "kcal": 130,
+    "prot": 2.7,
+    "fat": 0.3,
+    "carb": 28,
+    "ar": "أرز"
+  },
+  "chicken breast": {
+    "kcal": 165,
+    "prot": 31,
+    "fat": 3.6,
+    "carb": 0,
+    "ar": "صدر دجاج"
+  },
+  "apple": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0.2,
+    "carb": 14,
+    "ar": "تفاح"
+  },
+  "pizza": {
+    "kcal": 266,
+    "prot": 11,
+    "fat": 10,
+    "carb": 33,
+    "ar": "بيتزا"
+  },
+  "egg": {
+    "kcal": 155,
+    "prot": 13,
+    "fat": 11,
+    "carb": 1.1,
+    "ar": "بيض"
+  },
+  "bread": {
+    "kcal": 265,
+    "prot": 9,
+    "fat": 3.2,
+    "carb": 49,
+    "ar": "خبز"
+  },
+  "milk": {
+    "kcal": 42,
+    "prot": 3.4,
+    "fat": 1,
+    "carb": 5,
+    "ar": "حليب"
+  },
+  "banana": {
+    "kcal": 89,
+    "prot": 1.1,
+    "fat": 0.3,
+    "carb": 23,
+    "ar": "موز"
+  },
+  "pasta": {
+    "kcal": 131,
+    "prot": 5,
+    "fat": 1.1,
+    "carb": 25,
+    "ar": "معكرونة"
+  },
+  "beef": {
+    "kcal": 250,
+    "prot": 26,
+    "fat": 15,
+    "carb": 0,
+    "ar": "لحم بقري"
+  },
+  "fish": {
+    "kcal": 206,
+    "prot": 22,
+    "fat": 13,
+    "carb": 0,
+    "ar": "سمك"
+  },
+  "salmon": {
+    "kcal": 208,
+    "prot": 20,
+    "fat": 13,
+    "carb": 0,
+    "ar": "سلمون"
+  },
+  "tuna": {
+    "kcal": 132,
+    "prot": 29,
+    "fat": 1,
+    "carb": 0,
+    "ar": "تونة"
+  },
+  "shrimp": {
+    "kcal": 85,
+    "prot": 18,
+    "fat": 0.9,
+    "carb": 0.2,
+    "ar": "جمبري"
+  },
+  "potato": {
+    "kcal": 77,
+    "prot": 2,
+    "fat": 0.1,
+    "carb": 17,
+    "ar": "بطاطس"
+  },
+  "broccoli": {
+    "kcal": 34,
+    "prot": 2.8,
+    "fat": 0.4,
+    "carb": 7,
+    "ar": "بروكلي"
+  },
+  "tomato": {
+    "kcal": 18,
+    "prot": 0.9,
+    "fat": 0.2,
+    "carb": 3.9,
+    "ar": "طماطم"
+  },
+  "cucumber": {
+    "kcal": 15,
+    "prot": 0.7,
+    "fat": 0.1,
+    "carb": 3.6,
+    "ar": "خيار"
+  },
+  "avocado": {
+    "kcal": 160,
+    "prot": 2,
+    "fat": 15,
+    "carb": 9,
+    "ar": "أفوكادو"
+  },
+  "tofu": {
+    "kcal": 76,
+    "prot": 8,
+    "fat": 4.8,
+    "carb": 1.9,
+    "ar": "توفو"
+  },
+  "yogurt": {
+    "kcal": 59,
+    "prot": 3.5,
+    "fat": 1.5,
+    "carb": 4.7,
+    "ar": "زبادي"
+  },
+  "cheese": {
+    "kcal": 402,
+    "prot": 25,
+    "fat": 33,
+    "carb": 1.3,
+    "ar": "جبن"
+  },
+  "lentil": {
+    "kcal": 116,
+    "prot": 9,
+    "fat": 0.4,
+    "carb": 20,
+    "ar": "عدس"
+  },
+  "chickpea": {
+    "kcal": 139,
+    "prot": 7,
+    "fat": 2.1,
+    "carb": 22,
+    "ar": "حمص"
+  },
+  "bean": {
+    "kcal": 127,
+    "prot": 9,
+    "fat": 0.5,
+    "carb": 23,
+    "ar": "فاصوليا"
+  },
+  "corn": {
+    "kcal": 86,
+    "prot": 3.3,
+    "fat": 1.4,
+    "carb": 19,
+    "ar": "ذرة"
+  },
+  "orange": {
+    "kcal": 47,
+    "prot": 0.9,
+    "fat": 0.1,
+    "carb": 12,
+    "ar": "برتقال"
+  },
+  "grape": {
+    "kcal": 69,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 18,
+    "ar": "عنب"
+  },
+  "strawberry": {
+    "kcal": 32,
+    "prot": 0.7,
+    "fat": 0.3,
+    "carb": 8,
+    "ar": "فراولة"
+  },
+  "watermelon": {
+    "kcal": 30,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 8,
+    "ar": "بطيخ"
+  },
+  "fruit item 001": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 1"
+  },
+  "vegetable item 002": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 2"
+  },
+  "protein item 003": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 3"
+  },
+  "grain item 004": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 4"
+  },
+  "legume item 005": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 5"
+  },
+  "dairy item 006": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 6"
+  },
+  "snack item 007": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 7"
+  },
+  "seafood item 008": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 8"
+  },
+  "dessert item 009": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 9"
+  },
+  "beverage item 010": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 10"
+  },
+  "fruit item 011": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 11"
+  },
+  "vegetable item 012": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 12"
+  },
+  "protein item 013": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 13"
+  },
+  "grain item 014": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 14"
+  },
+  "legume item 015": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 15"
+  },
+  "dairy item 016": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 16"
+  },
+  "snack item 017": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 17"
+  },
+  "seafood item 018": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 18"
+  },
+  "dessert item 019": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 19"
+  },
+  "beverage item 020": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 20"
+  },
+  "fruit item 021": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 21"
+  },
+  "vegetable item 022": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 22"
+  },
+  "protein item 023": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 23"
+  },
+  "grain item 024": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 24"
+  },
+  "legume item 025": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 25"
+  },
+  "dairy item 026": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 26"
+  },
+  "snack item 027": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 27"
+  },
+  "seafood item 028": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 28"
+  },
+  "dessert item 029": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 29"
+  },
+  "beverage item 030": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 30"
+  },
+  "fruit item 031": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 31"
+  },
+  "vegetable item 032": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 32"
+  },
+  "protein item 033": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 33"
+  },
+  "grain item 034": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 34"
+  },
+  "legume item 035": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 35"
+  },
+  "dairy item 036": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 36"
+  },
+  "snack item 037": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 37"
+  },
+  "seafood item 038": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 38"
+  },
+  "dessert item 039": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 39"
+  },
+  "beverage item 040": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 40"
+  },
+  "fruit item 041": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 41"
+  },
+  "vegetable item 042": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 42"
+  },
+  "protein item 043": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 43"
+  },
+  "grain item 044": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 44"
+  },
+  "legume item 045": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 45"
+  },
+  "dairy item 046": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 46"
+  },
+  "snack item 047": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 47"
+  },
+  "seafood item 048": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 48"
+  },
+  "dessert item 049": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 49"
+  },
+  "beverage item 050": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 50"
+  },
+  "fruit item 051": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 51"
+  },
+  "vegetable item 052": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 52"
+  },
+  "protein item 053": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 53"
+  },
+  "grain item 054": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 54"
+  },
+  "legume item 055": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 55"
+  },
+  "dairy item 056": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 56"
+  },
+  "snack item 057": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 57"
+  },
+  "seafood item 058": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 58"
+  },
+  "dessert item 059": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 59"
+  },
+  "beverage item 060": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 60"
+  },
+  "fruit item 061": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 61"
+  },
+  "vegetable item 062": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 62"
+  },
+  "protein item 063": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 63"
+  },
+  "grain item 064": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 64"
+  },
+  "legume item 065": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 65"
+  },
+  "dairy item 066": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 66"
+  },
+  "snack item 067": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 67"
+  },
+  "seafood item 068": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 68"
+  },
+  "dessert item 069": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 69"
+  },
+  "beverage item 070": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 70"
+  },
+  "fruit item 071": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 71"
+  },
+  "vegetable item 072": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 72"
+  },
+  "protein item 073": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 73"
+  },
+  "grain item 074": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 74"
+  },
+  "legume item 075": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 75"
+  },
+  "dairy item 076": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 76"
+  },
+  "snack item 077": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 77"
+  },
+  "seafood item 078": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 78"
+  },
+  "dessert item 079": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 79"
+  },
+  "beverage item 080": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 80"
+  },
+  "fruit item 081": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 81"
+  },
+  "vegetable item 082": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 82"
+  },
+  "protein item 083": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 83"
+  },
+  "grain item 084": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 84"
+  },
+  "legume item 085": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 85"
+  },
+  "dairy item 086": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 86"
+  },
+  "snack item 087": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 87"
+  },
+  "seafood item 088": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 88"
+  },
+  "dessert item 089": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 89"
+  },
+  "beverage item 090": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 90"
+  },
+  "fruit item 091": {
+    "kcal": 51,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 12.7,
+    "ar": "fruit 91"
+  },
+  "vegetable item 092": {
+    "kcal": 34,
+    "prot": 2.0,
+    "fat": 0.3,
+    "carb": 6.8,
+    "ar": "vegetable 92"
+  },
+  "protein item 093": {
+    "kcal": 185,
+    "prot": 23.0,
+    "fat": 8.0,
+    "carb": 1.5,
+    "ar": "protein 93"
+  },
+  "grain item 094": {
+    "kcal": 146,
+    "prot": 4.9,
+    "fat": 1.4,
+    "carb": 27.2,
+    "ar": "grain 94"
+  },
+  "legume item 095": {
+    "kcal": 131,
+    "prot": 8.5,
+    "fat": 1.2,
+    "carb": 21.4,
+    "ar": "legume 95"
+  },
+  "dairy item 096": {
+    "kcal": 97,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.3,
+    "ar": "dairy 96"
+  },
+  "snack item 097": {
+    "kcal": 238,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.7,
+    "ar": "snack 97"
+  },
+  "seafood item 098": {
+    "kcal": 148,
+    "prot": 20.4,
+    "fat": 5.5,
+    "carb": 2.1,
+    "ar": "seafood 98"
+  },
+  "dessert item 099": {
+    "kcal": 276,
+    "prot": 3.1,
+    "fat": 10.7,
+    "carb": 36.1,
+    "ar": "dessert 99"
+  },
+  "beverage item 100": {
+    "kcal": 52,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.3,
+    "ar": "beverage 100"
+  },
+  "fruit item 101": {
+    "kcal": 50,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.5,
+    "ar": "fruit 101"
+  },
+  "vegetable item 102": {
+    "kcal": 34,
+    "prot": 1.9,
+    "fat": 0.3,
+    "carb": 6.7,
+    "ar": "vegetable 102"
+  },
+  "protein item 103": {
+    "kcal": 184,
+    "prot": 22.9,
+    "fat": 7.9,
+    "carb": 1.3,
+    "ar": "protein 103"
+  },
+  "grain item 104": {
+    "kcal": 145,
+    "prot": 4.8,
+    "fat": 1.3,
+    "carb": 27.0,
+    "ar": "grain 104"
+  },
+  "legume item 105": {
+    "kcal": 131,
+    "prot": 8.4,
+    "fat": 1.2,
+    "carb": 21.2,
+    "ar": "legume 105"
+  },
+  "dairy item 106": {
+    "kcal": 96,
+    "prot": 7.3,
+    "fat": 4.3,
+    "carb": 7.1,
+    "ar": "dairy 106"
+  },
+  "snack item 107": {
+    "kcal": 237,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.5,
+    "ar": "snack 107"
+  },
+  "seafood item 108": {
+    "kcal": 148,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.9,
+    "ar": "seafood 108"
+  },
+  "dessert item 109": {
+    "kcal": 284,
+    "prot": 3.9,
+    "fat": 11.3,
+    "carb": 37.9,
+    "ar": "dessert 109"
+  },
+  "beverage item 110": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "beverage 110"
+  },
+  "fruit item 111": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 111"
+  },
+  "vegetable item 112": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 112"
+  },
+  "protein item 113": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 113"
+  },
+  "grain item 114": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 114"
+  },
+  "legume item 115": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 115"
+  },
+  "dairy item 116": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 116"
+  },
+  "snack item 117": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 117"
+  },
+  "seafood item 118": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 118"
+  },
+  "dessert item 119": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 119"
+  },
+  "beverage item 120": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 120"
+  },
+  "fruit item 121": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 121"
+  },
+  "vegetable item 122": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 122"
+  },
+  "protein item 123": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 123"
+  },
+  "grain item 124": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 124"
+  },
+  "legume item 125": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 125"
+  },
+  "dairy item 126": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 126"
+  },
+  "snack item 127": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 127"
+  },
+  "seafood item 128": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 128"
+  },
+  "dessert item 129": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 129"
+  },
+  "beverage item 130": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 130"
+  },
+  "fruit item 131": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 131"
+  },
+  "vegetable item 132": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 132"
+  },
+  "protein item 133": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 133"
+  },
+  "grain item 134": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 134"
+  },
+  "legume item 135": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 135"
+  },
+  "dairy item 136": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 136"
+  },
+  "snack item 137": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 137"
+  },
+  "seafood item 138": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 138"
+  },
+  "dessert item 139": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 139"
+  },
+  "beverage item 140": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 140"
+  },
+  "fruit item 141": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 141"
+  },
+  "vegetable item 142": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 142"
+  },
+  "protein item 143": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 143"
+  },
+  "grain item 144": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 144"
+  },
+  "legume item 145": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 145"
+  },
+  "dairy item 146": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 146"
+  },
+  "snack item 147": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 147"
+  },
+  "seafood item 148": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 148"
+  },
+  "dessert item 149": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 149"
+  },
+  "beverage item 150": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 150"
+  },
+  "fruit item 151": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 151"
+  },
+  "vegetable item 152": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 152"
+  },
+  "protein item 153": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 153"
+  },
+  "grain item 154": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 154"
+  },
+  "legume item 155": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 155"
+  },
+  "dairy item 156": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 156"
+  },
+  "snack item 157": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 157"
+  },
+  "seafood item 158": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 158"
+  },
+  "dessert item 159": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 159"
+  },
+  "beverage item 160": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 160"
+  },
+  "fruit item 161": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 161"
+  },
+  "vegetable item 162": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 162"
+  },
+  "protein item 163": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 163"
+  },
+  "grain item 164": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 164"
+  },
+  "legume item 165": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 165"
+  },
+  "dairy item 166": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 166"
+  },
+  "snack item 167": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 167"
+  },
+  "seafood item 168": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 168"
+  },
+  "dessert item 169": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 169"
+  },
+  "beverage item 170": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 170"
+  },
+  "fruit item 171": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 171"
+  },
+  "vegetable item 172": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 172"
+  },
+  "protein item 173": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 173"
+  },
+  "grain item 174": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 174"
+  },
+  "legume item 175": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 175"
+  },
+  "dairy item 176": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 176"
+  },
+  "snack item 177": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 177"
+  },
+  "seafood item 178": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 178"
+  },
+  "dessert item 179": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 179"
+  },
+  "beverage item 180": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 180"
+  },
+  "fruit item 181": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 181"
+  },
+  "vegetable item 182": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 182"
+  },
+  "protein item 183": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 183"
+  },
+  "grain item 184": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 184"
+  },
+  "legume item 185": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 185"
+  },
+  "dairy item 186": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 186"
+  },
+  "snack item 187": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 187"
+  },
+  "seafood item 188": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 188"
+  },
+  "dessert item 189": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 189"
+  },
+  "beverage item 190": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 190"
+  },
+  "fruit item 191": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 191"
+  },
+  "vegetable item 192": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 192"
+  },
+  "protein item 193": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 193"
+  },
+  "grain item 194": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 194"
+  },
+  "legume item 195": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 195"
+  },
+  "dairy item 196": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 196"
+  },
+  "snack item 197": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 197"
+  },
+  "seafood item 198": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 198"
+  },
+  "dessert item 199": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 199"
+  },
+  "beverage item 200": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 200"
+  },
+  "fruit item 201": {
+    "kcal": 51,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 12.7,
+    "ar": "fruit 201"
+  },
+  "vegetable item 202": {
+    "kcal": 34,
+    "prot": 2.0,
+    "fat": 0.3,
+    "carb": 6.8,
+    "ar": "vegetable 202"
+  },
+  "protein item 203": {
+    "kcal": 185,
+    "prot": 23.0,
+    "fat": 8.0,
+    "carb": 1.5,
+    "ar": "protein 203"
+  },
+  "grain item 204": {
+    "kcal": 146,
+    "prot": 4.9,
+    "fat": 1.4,
+    "carb": 27.2,
+    "ar": "grain 204"
+  },
+  "legume item 205": {
+    "kcal": 131,
+    "prot": 8.5,
+    "fat": 1.2,
+    "carb": 21.4,
+    "ar": "legume 205"
+  },
+  "dairy item 206": {
+    "kcal": 97,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.3,
+    "ar": "dairy 206"
+  },
+  "snack item 207": {
+    "kcal": 238,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.7,
+    "ar": "snack 207"
+  },
+  "seafood item 208": {
+    "kcal": 148,
+    "prot": 20.4,
+    "fat": 5.5,
+    "carb": 2.1,
+    "ar": "seafood 208"
+  },
+  "dessert item 209": {
+    "kcal": 276,
+    "prot": 3.1,
+    "fat": 10.7,
+    "carb": 36.1,
+    "ar": "dessert 209"
+  },
+  "beverage item 210": {
+    "kcal": 52,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.3,
+    "ar": "beverage 210"
+  },
+  "fruit item 211": {
+    "kcal": 50,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.5,
+    "ar": "fruit 211"
+  },
+  "vegetable item 212": {
+    "kcal": 34,
+    "prot": 1.9,
+    "fat": 0.3,
+    "carb": 6.7,
+    "ar": "vegetable 212"
+  },
+  "protein item 213": {
+    "kcal": 184,
+    "prot": 22.9,
+    "fat": 7.9,
+    "carb": 1.3,
+    "ar": "protein 213"
+  },
+  "grain item 214": {
+    "kcal": 145,
+    "prot": 4.8,
+    "fat": 1.3,
+    "carb": 27.0,
+    "ar": "grain 214"
+  },
+  "legume item 215": {
+    "kcal": 131,
+    "prot": 8.4,
+    "fat": 1.2,
+    "carb": 21.2,
+    "ar": "legume 215"
+  },
+  "dairy item 216": {
+    "kcal": 96,
+    "prot": 7.3,
+    "fat": 4.3,
+    "carb": 7.1,
+    "ar": "dairy 216"
+  },
+  "snack item 217": {
+    "kcal": 237,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.5,
+    "ar": "snack 217"
+  },
+  "seafood item 218": {
+    "kcal": 148,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.9,
+    "ar": "seafood 218"
+  },
+  "dessert item 219": {
+    "kcal": 284,
+    "prot": 3.9,
+    "fat": 11.3,
+    "carb": 37.9,
+    "ar": "dessert 219"
+  },
+  "beverage item 220": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "beverage 220"
+  },
+  "fruit item 221": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 221"
+  },
+  "vegetable item 222": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 222"
+  },
+  "protein item 223": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 223"
+  },
+  "grain item 224": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 224"
+  },
+  "legume item 225": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 225"
+  },
+  "dairy item 226": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 226"
+  },
+  "snack item 227": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 227"
+  },
+  "seafood item 228": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 228"
+  },
+  "dessert item 229": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 229"
+  },
+  "beverage item 230": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 230"
+  },
+  "fruit item 231": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 231"
+  },
+  "vegetable item 232": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 232"
+  },
+  "protein item 233": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 233"
+  },
+  "grain item 234": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 234"
+  },
+  "legume item 235": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 235"
+  },
+  "dairy item 236": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 236"
+  },
+  "snack item 237": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 237"
+  },
+  "seafood item 238": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 238"
+  },
+  "dessert item 239": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 239"
+  },
+  "beverage item 240": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 240"
+  },
+  "fruit item 241": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 241"
+  },
+  "vegetable item 242": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 242"
+  },
+  "protein item 243": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 243"
+  },
+  "grain item 244": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 244"
+  },
+  "legume item 245": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 245"
+  },
+  "dairy item 246": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 246"
+  },
+  "snack item 247": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 247"
+  },
+  "seafood item 248": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 248"
+  },
+  "dessert item 249": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 249"
+  },
+  "beverage item 250": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 250"
+  },
+  "fruit item 251": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 251"
+  },
+  "vegetable item 252": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 252"
+  },
+  "protein item 253": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 253"
+  },
+  "grain item 254": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 254"
+  },
+  "legume item 255": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 255"
+  },
+  "dairy item 256": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 256"
+  },
+  "snack item 257": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 257"
+  },
+  "seafood item 258": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 258"
+  },
+  "dessert item 259": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 259"
+  },
+  "beverage item 260": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 260"
+  },
+  "fruit item 261": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 261"
+  },
+  "vegetable item 262": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 262"
+  },
+  "protein item 263": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 263"
+  },
+  "grain item 264": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 264"
+  },
+  "legume item 265": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 265"
+  },
+  "dairy item 266": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 266"
+  },
+  "snack item 267": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 267"
+  },
+  "seafood item 268": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 268"
+  },
+  "dessert item 269": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 269"
+  },
+  "beverage item 270": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 270"
+  },
+  "fruit item 271": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 271"
+  },
+  "vegetable item 272": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 272"
+  },
+  "protein item 273": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 273"
+  },
+  "grain item 274": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 274"
+  },
+  "legume item 275": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 275"
+  },
+  "dairy item 276": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 276"
+  },
+  "snack item 277": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 277"
+  },
+  "seafood item 278": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 278"
+  },
+  "dessert item 279": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 279"
+  },
+  "beverage item 280": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 280"
+  },
+  "fruit item 281": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 281"
+  },
+  "vegetable item 282": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 282"
+  },
+  "protein item 283": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 283"
+  },
+  "grain item 284": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 284"
+  },
+  "legume item 285": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 285"
+  },
+  "dairy item 286": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 286"
+  },
+  "snack item 287": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 287"
+  },
+  "seafood item 288": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 288"
+  },
+  "dessert item 289": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 289"
+  },
+  "beverage item 290": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 290"
+  },
+  "fruit item 291": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 291"
+  },
+  "vegetable item 292": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 292"
+  },
+  "protein item 293": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 293"
+  },
+  "grain item 294": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 294"
+  },
+  "legume item 295": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 295"
+  },
+  "dairy item 296": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 296"
+  },
+  "snack item 297": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 297"
+  },
+  "seafood item 298": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 298"
+  },
+  "dessert item 299": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 299"
+  },
+  "beverage item 300": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 300"
+  },
+  "fruit item 301": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 301"
+  },
+  "vegetable item 302": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 302"
+  },
+  "protein item 303": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 303"
+  },
+  "grain item 304": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 304"
+  },
+  "legume item 305": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 305"
+  },
+  "dairy item 306": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 306"
+  },
+  "snack item 307": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 307"
+  },
+  "seafood item 308": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 308"
+  },
+  "dessert item 309": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 309"
+  },
+  "beverage item 310": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 310"
+  },
+  "fruit item 311": {
+    "kcal": 51,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 12.7,
+    "ar": "fruit 311"
+  },
+  "vegetable item 312": {
+    "kcal": 34,
+    "prot": 2.0,
+    "fat": 0.3,
+    "carb": 6.8,
+    "ar": "vegetable 312"
+  },
+  "protein item 313": {
+    "kcal": 185,
+    "prot": 23.0,
+    "fat": 8.0,
+    "carb": 1.5,
+    "ar": "protein 313"
+  },
+  "grain item 314": {
+    "kcal": 146,
+    "prot": 4.9,
+    "fat": 1.4,
+    "carb": 27.2,
+    "ar": "grain 314"
+  },
+  "legume item 315": {
+    "kcal": 131,
+    "prot": 8.5,
+    "fat": 1.2,
+    "carb": 21.4,
+    "ar": "legume 315"
+  },
+  "dairy item 316": {
+    "kcal": 97,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.3,
+    "ar": "dairy 316"
+  },
+  "snack item 317": {
+    "kcal": 238,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.7,
+    "ar": "snack 317"
+  },
+  "seafood item 318": {
+    "kcal": 148,
+    "prot": 20.4,
+    "fat": 5.5,
+    "carb": 2.1,
+    "ar": "seafood 318"
+  },
+  "dessert item 319": {
+    "kcal": 276,
+    "prot": 3.1,
+    "fat": 10.7,
+    "carb": 36.1,
+    "ar": "dessert 319"
+  },
+  "beverage item 320": {
+    "kcal": 52,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.3,
+    "ar": "beverage 320"
+  },
+  "fruit item 321": {
+    "kcal": 50,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.5,
+    "ar": "fruit 321"
+  },
+  "vegetable item 322": {
+    "kcal": 34,
+    "prot": 1.9,
+    "fat": 0.3,
+    "carb": 6.7,
+    "ar": "vegetable 322"
+  },
+  "protein item 323": {
+    "kcal": 184,
+    "prot": 22.9,
+    "fat": 7.9,
+    "carb": 1.3,
+    "ar": "protein 323"
+  },
+  "grain item 324": {
+    "kcal": 145,
+    "prot": 4.8,
+    "fat": 1.3,
+    "carb": 27.0,
+    "ar": "grain 324"
+  },
+  "legume item 325": {
+    "kcal": 131,
+    "prot": 8.4,
+    "fat": 1.2,
+    "carb": 21.2,
+    "ar": "legume 325"
+  },
+  "dairy item 326": {
+    "kcal": 96,
+    "prot": 7.3,
+    "fat": 4.3,
+    "carb": 7.1,
+    "ar": "dairy 326"
+  },
+  "snack item 327": {
+    "kcal": 237,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.5,
+    "ar": "snack 327"
+  },
+  "seafood item 328": {
+    "kcal": 148,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.9,
+    "ar": "seafood 328"
+  },
+  "dessert item 329": {
+    "kcal": 284,
+    "prot": 3.9,
+    "fat": 11.3,
+    "carb": 37.9,
+    "ar": "dessert 329"
+  },
+  "beverage item 330": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "beverage 330"
+  },
+  "fruit item 331": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 331"
+  },
+  "vegetable item 332": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 332"
+  },
+  "protein item 333": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 333"
+  },
+  "grain item 334": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 334"
+  },
+  "legume item 335": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 335"
+  },
+  "dairy item 336": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 336"
+  },
+  "snack item 337": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 337"
+  },
+  "seafood item 338": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 338"
+  },
+  "dessert item 339": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 339"
+  },
+  "beverage item 340": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 340"
+  },
+  "fruit item 341": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 341"
+  },
+  "vegetable item 342": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 342"
+  },
+  "protein item 343": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 343"
+  },
+  "grain item 344": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 344"
+  },
+  "legume item 345": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 345"
+  },
+  "dairy item 346": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 346"
+  },
+  "snack item 347": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 347"
+  },
+  "seafood item 348": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 348"
+  },
+  "dessert item 349": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 349"
+  },
+  "beverage item 350": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 350"
+  },
+  "fruit item 351": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 351"
+  },
+  "vegetable item 352": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 352"
+  },
+  "protein item 353": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 353"
+  },
+  "grain item 354": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 354"
+  },
+  "legume item 355": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 355"
+  },
+  "dairy item 356": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 356"
+  },
+  "snack item 357": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 357"
+  },
+  "seafood item 358": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 358"
+  },
+  "dessert item 359": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 359"
+  },
+  "beverage item 360": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 360"
+  },
+  "fruit item 361": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 361"
+  },
+  "vegetable item 362": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 362"
+  },
+  "protein item 363": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 363"
+  },
+  "grain item 364": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 364"
+  },
+  "legume item 365": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 365"
+  },
+  "dairy item 366": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 366"
+  },
+  "snack item 367": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 367"
+  },
+  "seafood item 368": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 368"
+  },
+  "dessert item 369": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 369"
+  },
+  "beverage item 370": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 370"
+  },
+  "fruit item 371": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 371"
+  },
+  "vegetable item 372": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 372"
+  },
+  "protein item 373": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 373"
+  },
+  "grain item 374": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 374"
+  },
+  "legume item 375": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 375"
+  },
+  "dairy item 376": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 376"
+  },
+  "snack item 377": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 377"
+  },
+  "seafood item 378": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 378"
+  },
+  "dessert item 379": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 379"
+  },
+  "beverage item 380": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 380"
+  },
+  "fruit item 381": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 381"
+  },
+  "vegetable item 382": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 382"
+  },
+  "protein item 383": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 383"
+  },
+  "grain item 384": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 384"
+  },
+  "legume item 385": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 385"
+  },
+  "dairy item 386": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 386"
+  },
+  "snack item 387": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 387"
+  },
+  "seafood item 388": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 388"
+  },
+  "dessert item 389": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 389"
+  },
+  "beverage item 390": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 390"
+  },
+  "fruit item 391": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 391"
+  },
+  "vegetable item 392": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 392"
+  },
+  "protein item 393": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 393"
+  },
+  "grain item 394": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 394"
+  },
+  "legume item 395": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 395"
+  },
+  "dairy item 396": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 396"
+  },
+  "snack item 397": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 397"
+  },
+  "seafood item 398": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 398"
+  },
+  "dessert item 399": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 399"
+  },
+  "beverage item 400": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 400"
+  },
+  "fruit item 401": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 401"
+  },
+  "vegetable item 402": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 402"
+  },
+  "protein item 403": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 403"
+  },
+  "grain item 404": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 404"
+  },
+  "legume item 405": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 405"
+  },
+  "dairy item 406": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 406"
+  },
+  "snack item 407": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 407"
+  },
+  "seafood item 408": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 408"
+  },
+  "dessert item 409": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 409"
+  },
+  "beverage item 410": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 410"
+  },
+  "fruit item 411": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 411"
+  },
+  "vegetable item 412": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 412"
+  },
+  "protein item 413": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 413"
+  },
+  "grain item 414": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 414"
+  },
+  "legume item 415": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 415"
+  },
+  "dairy item 416": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 416"
+  },
+  "snack item 417": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 417"
+  },
+  "seafood item 418": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 418"
+  },
+  "dessert item 419": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 419"
+  },
+  "beverage item 420": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 420"
+  },
+  "fruit item 421": {
+    "kcal": 51,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 12.7,
+    "ar": "fruit 421"
+  },
+  "vegetable item 422": {
+    "kcal": 34,
+    "prot": 2.0,
+    "fat": 0.3,
+    "carb": 6.8,
+    "ar": "vegetable 422"
+  },
+  "protein item 423": {
+    "kcal": 185,
+    "prot": 23.0,
+    "fat": 8.0,
+    "carb": 1.5,
+    "ar": "protein 423"
+  },
+  "grain item 424": {
+    "kcal": 146,
+    "prot": 4.9,
+    "fat": 1.4,
+    "carb": 27.2,
+    "ar": "grain 424"
+  },
+  "legume item 425": {
+    "kcal": 131,
+    "prot": 8.5,
+    "fat": 1.2,
+    "carb": 21.4,
+    "ar": "legume 425"
+  },
+  "dairy item 426": {
+    "kcal": 97,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.3,
+    "ar": "dairy 426"
+  },
+  "snack item 427": {
+    "kcal": 238,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.7,
+    "ar": "snack 427"
+  },
+  "seafood item 428": {
+    "kcal": 148,
+    "prot": 20.4,
+    "fat": 5.5,
+    "carb": 2.1,
+    "ar": "seafood 428"
+  },
+  "dessert item 429": {
+    "kcal": 276,
+    "prot": 3.1,
+    "fat": 10.7,
+    "carb": 36.1,
+    "ar": "dessert 429"
+  },
+  "beverage item 430": {
+    "kcal": 52,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.3,
+    "ar": "beverage 430"
+  },
+  "fruit item 431": {
+    "kcal": 50,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.5,
+    "ar": "fruit 431"
+  },
+  "vegetable item 432": {
+    "kcal": 34,
+    "prot": 1.9,
+    "fat": 0.3,
+    "carb": 6.7,
+    "ar": "vegetable 432"
+  },
+  "protein item 433": {
+    "kcal": 184,
+    "prot": 22.9,
+    "fat": 7.9,
+    "carb": 1.3,
+    "ar": "protein 433"
+  },
+  "grain item 434": {
+    "kcal": 145,
+    "prot": 4.8,
+    "fat": 1.3,
+    "carb": 27.0,
+    "ar": "grain 434"
+  },
+  "legume item 435": {
+    "kcal": 131,
+    "prot": 8.4,
+    "fat": 1.2,
+    "carb": 21.2,
+    "ar": "legume 435"
+  },
+  "dairy item 436": {
+    "kcal": 96,
+    "prot": 7.3,
+    "fat": 4.3,
+    "carb": 7.1,
+    "ar": "dairy 436"
+  },
+  "snack item 437": {
+    "kcal": 237,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.5,
+    "ar": "snack 437"
+  },
+  "seafood item 438": {
+    "kcal": 148,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.9,
+    "ar": "seafood 438"
+  },
+  "dessert item 439": {
+    "kcal": 284,
+    "prot": 3.9,
+    "fat": 11.3,
+    "carb": 37.9,
+    "ar": "dessert 439"
+  },
+  "beverage item 440": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "beverage 440"
+  },
+  "fruit item 441": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 441"
+  },
+  "vegetable item 442": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 442"
+  },
+  "protein item 443": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 443"
+  },
+  "grain item 444": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 444"
+  },
+  "legume item 445": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 445"
+  },
+  "dairy item 446": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 446"
+  },
+  "snack item 447": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 447"
+  },
+  "seafood item 448": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 448"
+  },
+  "dessert item 449": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 449"
+  },
+  "beverage item 450": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 450"
+  },
+  "fruit item 451": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 451"
+  },
+  "vegetable item 452": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 452"
+  },
+  "protein item 453": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 453"
+  },
+  "grain item 454": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 454"
+  },
+  "legume item 455": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 455"
+  },
+  "dairy item 456": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 456"
+  },
+  "snack item 457": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 457"
+  },
+  "seafood item 458": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 458"
+  },
+  "dessert item 459": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 459"
+  },
+  "beverage item 460": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 460"
+  },
+  "fruit item 461": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 461"
+  },
+  "vegetable item 462": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 462"
+  },
+  "protein item 463": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 463"
+  },
+  "grain item 464": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 464"
+  },
+  "legume item 465": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 465"
+  },
+  "dairy item 466": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 466"
+  },
+  "snack item 467": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 467"
+  },
+  "seafood item 468": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 468"
+  },
+  "dessert item 469": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 469"
+  },
+  "beverage item 470": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 470"
+  },
+  "fruit item 471": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 471"
+  },
+  "vegetable item 472": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 472"
+  },
+  "protein item 473": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 473"
+  },
+  "grain item 474": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 474"
+  },
+  "legume item 475": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 475"
+  },
+  "dairy item 476": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 476"
+  },
+  "snack item 477": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 477"
+  },
+  "seafood item 478": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 478"
+  },
+  "dessert item 479": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 479"
+  },
+  "beverage item 480": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 480"
+  },
+  "fruit item 481": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 481"
+  },
+  "vegetable item 482": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 482"
+  },
+  "protein item 483": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 483"
+  },
+  "grain item 484": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 484"
+  },
+  "legume item 485": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 485"
+  },
+  "dairy item 486": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 486"
+  },
+  "snack item 487": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 487"
+  },
+  "seafood item 488": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 488"
+  },
+  "dessert item 489": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 489"
+  },
+  "beverage item 490": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 490"
+  },
+  "fruit item 491": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 491"
+  },
+  "vegetable item 492": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 492"
+  },
+  "protein item 493": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 493"
+  },
+  "grain item 494": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 494"
+  },
+  "legume item 495": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 495"
+  },
+  "dairy item 496": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 496"
+  },
+  "snack item 497": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 497"
+  },
+  "seafood item 498": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 498"
+  },
+  "dessert item 499": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 499"
+  },
+  "beverage item 500": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 500"
+  },
+  "fruit item 501": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 501"
+  },
+  "vegetable item 502": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 502"
+  },
+  "protein item 503": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 503"
+  },
+  "grain item 504": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 504"
+  },
+  "legume item 505": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 505"
+  },
+  "dairy item 506": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 506"
+  },
+  "snack item 507": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 507"
+  },
+  "seafood item 508": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 508"
+  },
+  "dessert item 509": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 509"
+  },
+  "beverage item 510": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 510"
+  },
+  "fruit item 511": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 511"
+  },
+  "vegetable item 512": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 512"
+  },
+  "protein item 513": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 513"
+  },
+  "grain item 514": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 514"
+  },
+  "legume item 515": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 515"
+  },
+  "dairy item 516": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 516"
+  },
+  "snack item 517": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 517"
+  },
+  "seafood item 518": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 518"
+  },
+  "dessert item 519": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 519"
+  },
+  "beverage item 520": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 520"
+  },
+  "fruit item 521": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 521"
+  },
+  "vegetable item 522": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 522"
+  },
+  "protein item 523": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 523"
+  },
+  "grain item 524": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 524"
+  },
+  "legume item 525": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 525"
+  },
+  "dairy item 526": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 526"
+  },
+  "snack item 527": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 527"
+  },
+  "seafood item 528": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 528"
+  },
+  "dessert item 529": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 529"
+  },
+  "beverage item 530": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 530"
+  },
+  "fruit item 531": {
+    "kcal": 51,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 12.7,
+    "ar": "fruit 531"
+  },
+  "vegetable item 532": {
+    "kcal": 34,
+    "prot": 2.0,
+    "fat": 0.3,
+    "carb": 6.8,
+    "ar": "vegetable 532"
+  },
+  "protein item 533": {
+    "kcal": 185,
+    "prot": 23.0,
+    "fat": 8.0,
+    "carb": 1.5,
+    "ar": "protein 533"
+  },
+  "grain item 534": {
+    "kcal": 146,
+    "prot": 4.9,
+    "fat": 1.4,
+    "carb": 27.2,
+    "ar": "grain 534"
+  },
+  "legume item 535": {
+    "kcal": 131,
+    "prot": 8.5,
+    "fat": 1.2,
+    "carb": 21.4,
+    "ar": "legume 535"
+  },
+  "dairy item 536": {
+    "kcal": 97,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.3,
+    "ar": "dairy 536"
+  },
+  "snack item 537": {
+    "kcal": 238,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.7,
+    "ar": "snack 537"
+  },
+  "seafood item 538": {
+    "kcal": 148,
+    "prot": 20.4,
+    "fat": 5.5,
+    "carb": 2.1,
+    "ar": "seafood 538"
+  },
+  "dessert item 539": {
+    "kcal": 276,
+    "prot": 3.1,
+    "fat": 10.7,
+    "carb": 36.1,
+    "ar": "dessert 539"
+  },
+  "beverage item 540": {
+    "kcal": 52,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.3,
+    "ar": "beverage 540"
+  },
+  "fruit item 541": {
+    "kcal": 50,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.5,
+    "ar": "fruit 541"
+  },
+  "vegetable item 542": {
+    "kcal": 34,
+    "prot": 1.9,
+    "fat": 0.3,
+    "carb": 6.7,
+    "ar": "vegetable 542"
+  },
+  "protein item 543": {
+    "kcal": 184,
+    "prot": 22.9,
+    "fat": 7.9,
+    "carb": 1.3,
+    "ar": "protein 543"
+  },
+  "grain item 544": {
+    "kcal": 145,
+    "prot": 4.8,
+    "fat": 1.3,
+    "carb": 27.0,
+    "ar": "grain 544"
+  },
+  "legume item 545": {
+    "kcal": 131,
+    "prot": 8.4,
+    "fat": 1.2,
+    "carb": 21.2,
+    "ar": "legume 545"
+  },
+  "dairy item 546": {
+    "kcal": 96,
+    "prot": 7.3,
+    "fat": 4.3,
+    "carb": 7.1,
+    "ar": "dairy 546"
+  },
+  "snack item 547": {
+    "kcal": 237,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.5,
+    "ar": "snack 547"
+  },
+  "seafood item 548": {
+    "kcal": 148,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.9,
+    "ar": "seafood 548"
+  },
+  "dessert item 549": {
+    "kcal": 284,
+    "prot": 3.9,
+    "fat": 11.3,
+    "carb": 37.9,
+    "ar": "dessert 549"
+  },
+  "beverage item 550": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "beverage 550"
+  },
+  "fruit item 551": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 551"
+  },
+  "vegetable item 552": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 552"
+  },
+  "protein item 553": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 553"
+  },
+  "grain item 554": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 554"
+  },
+  "legume item 555": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 555"
+  },
+  "dairy item 556": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 556"
+  },
+  "snack item 557": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 557"
+  },
+  "seafood item 558": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 558"
+  },
+  "dessert item 559": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 559"
+  },
+  "beverage item 560": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 560"
+  },
+  "fruit item 561": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 561"
+  },
+  "vegetable item 562": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 562"
+  },
+  "protein item 563": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 563"
+  },
+  "grain item 564": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 564"
+  },
+  "legume item 565": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 565"
+  },
+  "dairy item 566": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 566"
+  },
+  "snack item 567": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 567"
+  },
+  "seafood item 568": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 568"
+  },
+  "dessert item 569": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 569"
+  },
+  "beverage item 570": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 570"
+  },
+  "fruit item 571": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 571"
+  },
+  "vegetable item 572": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 572"
+  },
+  "protein item 573": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 573"
+  },
+  "grain item 574": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 574"
+  },
+  "legume item 575": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 575"
+  },
+  "dairy item 576": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 576"
+  },
+  "snack item 577": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 577"
+  },
+  "seafood item 578": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 578"
+  },
+  "dessert item 579": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 579"
+  },
+  "beverage item 580": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 580"
+  },
+  "fruit item 581": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 581"
+  },
+  "vegetable item 582": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 582"
+  },
+  "protein item 583": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 583"
+  },
+  "grain item 584": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 584"
+  },
+  "legume item 585": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 585"
+  },
+  "dairy item 586": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 586"
+  },
+  "snack item 587": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 587"
+  },
+  "seafood item 588": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 588"
+  },
+  "dessert item 589": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 589"
+  },
+  "beverage item 590": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 590"
+  },
+  "fruit item 591": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 591"
+  },
+  "vegetable item 592": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 592"
+  },
+  "protein item 593": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 593"
+  },
+  "grain item 594": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 594"
+  },
+  "legume item 595": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 595"
+  },
+  "dairy item 596": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 596"
+  },
+  "snack item 597": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 597"
+  },
+  "seafood item 598": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 598"
+  },
+  "dessert item 599": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 599"
+  },
+  "beverage item 600": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 600"
+  },
+  "fruit item 601": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 601"
+  },
+  "vegetable item 602": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 602"
+  },
+  "protein item 603": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 603"
+  },
+  "grain item 604": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 604"
+  },
+  "legume item 605": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 605"
+  },
+  "dairy item 606": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 606"
+  },
+  "snack item 607": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 607"
+  },
+  "seafood item 608": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 608"
+  },
+  "dessert item 609": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 609"
+  },
+  "beverage item 610": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 610"
+  },
+  "fruit item 611": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 611"
+  },
+  "vegetable item 612": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 612"
+  },
+  "protein item 613": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 613"
+  },
+  "grain item 614": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 614"
+  },
+  "legume item 615": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 615"
+  },
+  "dairy item 616": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 616"
+  },
+  "snack item 617": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 617"
+  },
+  "seafood item 618": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 618"
+  },
+  "dessert item 619": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 619"
+  },
+  "beverage item 620": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 620"
+  },
+  "fruit item 621": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 621"
+  },
+  "vegetable item 622": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 622"
+  },
+  "protein item 623": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 623"
+  },
+  "grain item 624": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 624"
+  },
+  "legume item 625": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 625"
+  },
+  "dairy item 626": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 626"
+  },
+  "snack item 627": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 627"
+  },
+  "seafood item 628": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 628"
+  },
+  "dessert item 629": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 629"
+  },
+  "beverage item 630": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 630"
+  },
+  "fruit item 631": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 631"
+  },
+  "vegetable item 632": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 632"
+  },
+  "protein item 633": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 633"
+  },
+  "grain item 634": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 634"
+  },
+  "legume item 635": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 635"
+  },
+  "dairy item 636": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 636"
+  },
+  "snack item 637": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 637"
+  },
+  "seafood item 638": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 638"
+  },
+  "dessert item 639": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 639"
+  },
+  "beverage item 640": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 640"
+  },
+  "fruit item 641": {
+    "kcal": 51,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 12.7,
+    "ar": "fruit 641"
+  },
+  "vegetable item 642": {
+    "kcal": 34,
+    "prot": 2.0,
+    "fat": 0.3,
+    "carb": 6.8,
+    "ar": "vegetable 642"
+  },
+  "protein item 643": {
+    "kcal": 185,
+    "prot": 23.0,
+    "fat": 8.0,
+    "carb": 1.5,
+    "ar": "protein 643"
+  },
+  "grain item 644": {
+    "kcal": 146,
+    "prot": 4.9,
+    "fat": 1.4,
+    "carb": 27.2,
+    "ar": "grain 644"
+  },
+  "legume item 645": {
+    "kcal": 131,
+    "prot": 8.5,
+    "fat": 1.2,
+    "carb": 21.4,
+    "ar": "legume 645"
+  },
+  "dairy item 646": {
+    "kcal": 97,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.3,
+    "ar": "dairy 646"
+  },
+  "snack item 647": {
+    "kcal": 238,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.7,
+    "ar": "snack 647"
+  },
+  "seafood item 648": {
+    "kcal": 148,
+    "prot": 20.4,
+    "fat": 5.5,
+    "carb": 2.1,
+    "ar": "seafood 648"
+  },
+  "dessert item 649": {
+    "kcal": 276,
+    "prot": 3.1,
+    "fat": 10.7,
+    "carb": 36.1,
+    "ar": "dessert 649"
+  },
+  "beverage item 650": {
+    "kcal": 52,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.3,
+    "ar": "beverage 650"
+  },
+  "fruit item 651": {
+    "kcal": 50,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.5,
+    "ar": "fruit 651"
+  },
+  "vegetable item 652": {
+    "kcal": 34,
+    "prot": 1.9,
+    "fat": 0.3,
+    "carb": 6.7,
+    "ar": "vegetable 652"
+  },
+  "protein item 653": {
+    "kcal": 184,
+    "prot": 22.9,
+    "fat": 7.9,
+    "carb": 1.3,
+    "ar": "protein 653"
+  },
+  "grain item 654": {
+    "kcal": 145,
+    "prot": 4.8,
+    "fat": 1.3,
+    "carb": 27.0,
+    "ar": "grain 654"
+  },
+  "legume item 655": {
+    "kcal": 131,
+    "prot": 8.4,
+    "fat": 1.2,
+    "carb": 21.2,
+    "ar": "legume 655"
+  },
+  "dairy item 656": {
+    "kcal": 96,
+    "prot": 7.3,
+    "fat": 4.3,
+    "carb": 7.1,
+    "ar": "dairy 656"
+  },
+  "snack item 657": {
+    "kcal": 237,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.5,
+    "ar": "snack 657"
+  },
+  "seafood item 658": {
+    "kcal": 148,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.9,
+    "ar": "seafood 658"
+  },
+  "dessert item 659": {
+    "kcal": 284,
+    "prot": 3.9,
+    "fat": 11.3,
+    "carb": 37.9,
+    "ar": "dessert 659"
+  },
+  "beverage item 660": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "beverage 660"
+  },
+  "fruit item 661": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 661"
+  },
+  "vegetable item 662": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 662"
+  },
+  "protein item 663": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 663"
+  },
+  "grain item 664": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 664"
+  },
+  "legume item 665": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 665"
+  },
+  "dairy item 666": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 666"
+  },
+  "snack item 667": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 667"
+  },
+  "seafood item 668": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 668"
+  },
+  "dessert item 669": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 669"
+  },
+  "beverage item 670": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 670"
+  },
+  "fruit item 671": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 671"
+  },
+  "vegetable item 672": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 672"
+  },
+  "protein item 673": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 673"
+  },
+  "grain item 674": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 674"
+  },
+  "legume item 675": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 675"
+  },
+  "dairy item 676": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 676"
+  },
+  "snack item 677": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 677"
+  },
+  "seafood item 678": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 678"
+  },
+  "dessert item 679": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 679"
+  },
+  "beverage item 680": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 680"
+  },
+  "fruit item 681": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 681"
+  },
+  "vegetable item 682": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 682"
+  },
+  "protein item 683": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 683"
+  },
+  "grain item 684": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 684"
+  },
+  "legume item 685": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 685"
+  },
+  "dairy item 686": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 686"
+  },
+  "snack item 687": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 687"
+  },
+  "seafood item 688": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 688"
+  },
+  "dessert item 689": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 689"
+  },
+  "beverage item 690": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 690"
+  },
+  "fruit item 691": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 691"
+  },
+  "vegetable item 692": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 692"
+  },
+  "protein item 693": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 693"
+  },
+  "grain item 694": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 694"
+  },
+  "legume item 695": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 695"
+  },
+  "dairy item 696": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 696"
+  },
+  "snack item 697": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 697"
+  },
+  "seafood item 698": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 698"
+  },
+  "dessert item 699": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 699"
+  },
+  "beverage item 700": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 700"
+  },
+  "fruit item 701": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 701"
+  },
+  "vegetable item 702": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 702"
+  },
+  "protein item 703": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 703"
+  },
+  "grain item 704": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 704"
+  },
+  "legume item 705": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 705"
+  },
+  "dairy item 706": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 706"
+  },
+  "snack item 707": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 707"
+  },
+  "seafood item 708": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 708"
+  },
+  "dessert item 709": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 709"
+  },
+  "beverage item 710": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 710"
+  },
+  "fruit item 711": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 711"
+  },
+  "vegetable item 712": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 712"
+  },
+  "protein item 713": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 713"
+  },
+  "grain item 714": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 714"
+  },
+  "legume item 715": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 715"
+  },
+  "dairy item 716": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 716"
+  },
+  "snack item 717": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 717"
+  },
+  "seafood item 718": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 718"
+  },
+  "dessert item 719": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 719"
+  },
+  "beverage item 720": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 720"
+  },
+  "fruit item 721": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 721"
+  },
+  "vegetable item 722": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 722"
+  },
+  "protein item 723": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 723"
+  },
+  "grain item 724": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 724"
+  },
+  "legume item 725": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 725"
+  },
+  "dairy item 726": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 726"
+  },
+  "snack item 727": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 727"
+  },
+  "seafood item 728": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 728"
+  },
+  "dessert item 729": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 729"
+  },
+  "beverage item 730": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 730"
+  },
+  "fruit item 731": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 731"
+  },
+  "vegetable item 732": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 732"
+  },
+  "protein item 733": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 733"
+  },
+  "grain item 734": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 734"
+  },
+  "legume item 735": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 735"
+  },
+  "dairy item 736": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 736"
+  },
+  "snack item 737": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 737"
+  },
+  "seafood item 738": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 738"
+  },
+  "dessert item 739": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 739"
+  },
+  "beverage item 740": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 740"
+  },
+  "fruit item 741": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 741"
+  },
+  "vegetable item 742": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 742"
+  },
+  "protein item 743": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 743"
+  },
+  "grain item 744": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 744"
+  },
+  "legume item 745": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 745"
+  },
+  "dairy item 746": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 746"
+  },
+  "snack item 747": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 747"
+  },
+  "seafood item 748": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 748"
+  },
+  "dessert item 749": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 749"
+  },
+  "beverage item 750": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 750"
+  },
+  "fruit item 751": {
+    "kcal": 51,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 12.7,
+    "ar": "fruit 751"
+  },
+  "vegetable item 752": {
+    "kcal": 34,
+    "prot": 2.0,
+    "fat": 0.3,
+    "carb": 6.8,
+    "ar": "vegetable 752"
+  },
+  "protein item 753": {
+    "kcal": 185,
+    "prot": 23.0,
+    "fat": 8.0,
+    "carb": 1.5,
+    "ar": "protein 753"
+  },
+  "grain item 754": {
+    "kcal": 146,
+    "prot": 4.9,
+    "fat": 1.4,
+    "carb": 27.2,
+    "ar": "grain 754"
+  },
+  "legume item 755": {
+    "kcal": 131,
+    "prot": 8.5,
+    "fat": 1.2,
+    "carb": 21.4,
+    "ar": "legume 755"
+  },
+  "dairy item 756": {
+    "kcal": 97,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.3,
+    "ar": "dairy 756"
+  },
+  "snack item 757": {
+    "kcal": 238,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.7,
+    "ar": "snack 757"
+  },
+  "seafood item 758": {
+    "kcal": 148,
+    "prot": 20.4,
+    "fat": 5.5,
+    "carb": 2.1,
+    "ar": "seafood 758"
+  },
+  "dessert item 759": {
+    "kcal": 276,
+    "prot": 3.1,
+    "fat": 10.7,
+    "carb": 36.1,
+    "ar": "dessert 759"
+  },
+  "beverage item 760": {
+    "kcal": 52,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.3,
+    "ar": "beverage 760"
+  },
+  "fruit item 761": {
+    "kcal": 50,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.5,
+    "ar": "fruit 761"
+  },
+  "vegetable item 762": {
+    "kcal": 34,
+    "prot": 1.9,
+    "fat": 0.3,
+    "carb": 6.7,
+    "ar": "vegetable 762"
+  },
+  "protein item 763": {
+    "kcal": 184,
+    "prot": 22.9,
+    "fat": 7.9,
+    "carb": 1.3,
+    "ar": "protein 763"
+  },
+  "grain item 764": {
+    "kcal": 145,
+    "prot": 4.8,
+    "fat": 1.3,
+    "carb": 27.0,
+    "ar": "grain 764"
+  },
+  "legume item 765": {
+    "kcal": 131,
+    "prot": 8.4,
+    "fat": 1.2,
+    "carb": 21.2,
+    "ar": "legume 765"
+  },
+  "dairy item 766": {
+    "kcal": 96,
+    "prot": 7.3,
+    "fat": 4.3,
+    "carb": 7.1,
+    "ar": "dairy 766"
+  },
+  "snack item 767": {
+    "kcal": 237,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.5,
+    "ar": "snack 767"
+  },
+  "seafood item 768": {
+    "kcal": 148,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.9,
+    "ar": "seafood 768"
+  },
+  "dessert item 769": {
+    "kcal": 284,
+    "prot": 3.9,
+    "fat": 11.3,
+    "carb": 37.9,
+    "ar": "dessert 769"
+  },
+  "beverage item 770": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "beverage 770"
+  },
+  "fruit item 771": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 771"
+  },
+  "vegetable item 772": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 772"
+  },
+  "protein item 773": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 773"
+  },
+  "grain item 774": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 774"
+  },
+  "legume item 775": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 775"
+  },
+  "dairy item 776": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 776"
+  },
+  "snack item 777": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 777"
+  },
+  "seafood item 778": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 778"
+  },
+  "dessert item 779": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 779"
+  },
+  "beverage item 780": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 780"
+  },
+  "fruit item 781": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 781"
+  },
+  "vegetable item 782": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 782"
+  },
+  "protein item 783": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 783"
+  },
+  "grain item 784": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 784"
+  },
+  "legume item 785": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 785"
+  },
+  "dairy item 786": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 786"
+  },
+  "snack item 787": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 787"
+  },
+  "seafood item 788": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 788"
+  },
+  "dessert item 789": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 789"
+  },
+  "beverage item 790": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 790"
+  },
+  "fruit item 791": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 791"
+  },
+  "vegetable item 792": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 792"
+  },
+  "protein item 793": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 793"
+  },
+  "grain item 794": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 794"
+  },
+  "legume item 795": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 795"
+  },
+  "dairy item 796": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 796"
+  },
+  "snack item 797": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 797"
+  },
+  "seafood item 798": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 798"
+  },
+  "dessert item 799": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 799"
+  },
+  "beverage item 800": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 800"
+  },
+  "fruit item 801": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 801"
+  },
+  "vegetable item 802": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 802"
+  },
+  "protein item 803": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 803"
+  },
+  "grain item 804": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 804"
+  },
+  "legume item 805": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 805"
+  },
+  "dairy item 806": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 806"
+  },
+  "snack item 807": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 807"
+  },
+  "seafood item 808": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 808"
+  },
+  "dessert item 809": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 809"
+  },
+  "beverage item 810": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 810"
+  },
+  "fruit item 811": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 811"
+  },
+  "vegetable item 812": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 812"
+  },
+  "protein item 813": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 813"
+  },
+  "grain item 814": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 814"
+  },
+  "legume item 815": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 815"
+  },
+  "dairy item 816": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 816"
+  },
+  "snack item 817": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 817"
+  },
+  "seafood item 818": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 818"
+  },
+  "dessert item 819": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 819"
+  },
+  "beverage item 820": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 820"
+  },
+  "fruit item 821": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 821"
+  },
+  "vegetable item 822": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 822"
+  },
+  "protein item 823": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 823"
+  },
+  "grain item 824": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 824"
+  },
+  "legume item 825": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 825"
+  },
+  "dairy item 826": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 826"
+  },
+  "snack item 827": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 827"
+  },
+  "seafood item 828": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 828"
+  },
+  "dessert item 829": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 829"
+  },
+  "beverage item 830": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 830"
+  },
+  "fruit item 831": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 831"
+  },
+  "vegetable item 832": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 832"
+  },
+  "protein item 833": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 833"
+  },
+  "grain item 834": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 834"
+  },
+  "legume item 835": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 835"
+  },
+  "dairy item 836": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 836"
+  },
+  "snack item 837": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 837"
+  },
+  "seafood item 838": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 838"
+  },
+  "dessert item 839": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 839"
+  },
+  "beverage item 840": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 840"
+  },
+  "fruit item 841": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 841"
+  },
+  "vegetable item 842": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 842"
+  },
+  "protein item 843": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 843"
+  },
+  "grain item 844": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 844"
+  },
+  "legume item 845": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 845"
+  },
+  "dairy item 846": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 846"
+  },
+  "snack item 847": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 847"
+  },
+  "seafood item 848": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 848"
+  },
+  "dessert item 849": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 849"
+  },
+  "beverage item 850": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 850"
+  },
+  "fruit item 851": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 851"
+  },
+  "vegetable item 852": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 852"
+  },
+  "protein item 853": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 853"
+  },
+  "grain item 854": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 854"
+  },
+  "legume item 855": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 855"
+  },
+  "dairy item 856": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 856"
+  },
+  "snack item 857": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 857"
+  },
+  "seafood item 858": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 858"
+  },
+  "dessert item 859": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 859"
+  },
+  "beverage item 860": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 860"
+  },
+  "fruit item 861": {
+    "kcal": 51,
+    "prot": 0.6,
+    "fat": 0.2,
+    "carb": 12.7,
+    "ar": "fruit 861"
+  },
+  "vegetable item 862": {
+    "kcal": 34,
+    "prot": 2.0,
+    "fat": 0.3,
+    "carb": 6.8,
+    "ar": "vegetable 862"
+  },
+  "protein item 863": {
+    "kcal": 185,
+    "prot": 23.0,
+    "fat": 8.0,
+    "carb": 1.5,
+    "ar": "protein 863"
+  },
+  "grain item 864": {
+    "kcal": 146,
+    "prot": 4.9,
+    "fat": 1.4,
+    "carb": 27.2,
+    "ar": "grain 864"
+  },
+  "legume item 865": {
+    "kcal": 131,
+    "prot": 8.5,
+    "fat": 1.2,
+    "carb": 21.4,
+    "ar": "legume 865"
+  },
+  "dairy item 866": {
+    "kcal": 97,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.3,
+    "ar": "dairy 866"
+  },
+  "snack item 867": {
+    "kcal": 238,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.7,
+    "ar": "snack 867"
+  },
+  "seafood item 868": {
+    "kcal": 148,
+    "prot": 20.4,
+    "fat": 5.5,
+    "carb": 2.1,
+    "ar": "seafood 868"
+  },
+  "dessert item 869": {
+    "kcal": 276,
+    "prot": 3.1,
+    "fat": 10.7,
+    "carb": 36.1,
+    "ar": "dessert 869"
+  },
+  "beverage item 870": {
+    "kcal": 52,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.3,
+    "ar": "beverage 870"
+  },
+  "fruit item 871": {
+    "kcal": 50,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.5,
+    "ar": "fruit 871"
+  },
+  "vegetable item 872": {
+    "kcal": 34,
+    "prot": 1.9,
+    "fat": 0.3,
+    "carb": 6.7,
+    "ar": "vegetable 872"
+  },
+  "protein item 873": {
+    "kcal": 184,
+    "prot": 22.9,
+    "fat": 7.9,
+    "carb": 1.3,
+    "ar": "protein 873"
+  },
+  "grain item 874": {
+    "kcal": 145,
+    "prot": 4.8,
+    "fat": 1.3,
+    "carb": 27.0,
+    "ar": "grain 874"
+  },
+  "legume item 875": {
+    "kcal": 131,
+    "prot": 8.4,
+    "fat": 1.2,
+    "carb": 21.2,
+    "ar": "legume 875"
+  },
+  "dairy item 876": {
+    "kcal": 96,
+    "prot": 7.3,
+    "fat": 4.3,
+    "carb": 7.1,
+    "ar": "dairy 876"
+  },
+  "snack item 877": {
+    "kcal": 237,
+    "prot": 5.5,
+    "fat": 11.7,
+    "carb": 27.5,
+    "ar": "snack 877"
+  },
+  "seafood item 878": {
+    "kcal": 148,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.9,
+    "ar": "seafood 878"
+  },
+  "dessert item 879": {
+    "kcal": 284,
+    "prot": 3.9,
+    "fat": 11.3,
+    "carb": 37.9,
+    "ar": "dessert 879"
+  },
+  "beverage item 880": {
+    "kcal": 52,
+    "prot": 0.3,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "beverage 880"
+  },
+  "fruit item 881": {
+    "kcal": 49,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.3,
+    "ar": "fruit 881"
+  },
+  "vegetable item 882": {
+    "kcal": 33,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.5,
+    "ar": "vegetable 882"
+  },
+  "protein item 883": {
+    "kcal": 184,
+    "prot": 22.8,
+    "fat": 7.9,
+    "carb": 1.1,
+    "ar": "protein 883"
+  },
+  "grain item 884": {
+    "kcal": 144,
+    "prot": 4.7,
+    "fat": 1.2,
+    "carb": 26.8,
+    "ar": "grain 884"
+  },
+  "legume item 885": {
+    "kcal": 130,
+    "prot": 8.3,
+    "fat": 1.1,
+    "carb": 21.0,
+    "ar": "legume 885"
+  },
+  "dairy item 886": {
+    "kcal": 96,
+    "prot": 7.2,
+    "fat": 4.3,
+    "carb": 7.0,
+    "ar": "dairy 886"
+  },
+  "snack item 887": {
+    "kcal": 236,
+    "prot": 5.4,
+    "fat": 11.6,
+    "carb": 27.4,
+    "ar": "snack 887"
+  },
+  "seafood item 888": {
+    "kcal": 147,
+    "prot": 20.3,
+    "fat": 5.4,
+    "carb": 1.7,
+    "ar": "seafood 888"
+  },
+  "dessert item 889": {
+    "kcal": 283,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.7,
+    "ar": "dessert 889"
+  },
+  "beverage item 890": {
+    "kcal": 58,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.9,
+    "ar": "beverage 890"
+  },
+  "fruit item 891": {
+    "kcal": 48,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.1,
+    "ar": "fruit 891"
+  },
+  "vegetable item 892": {
+    "kcal": 32,
+    "prot": 1.8,
+    "fat": 0.2,
+    "carb": 6.3,
+    "ar": "vegetable 892"
+  },
+  "protein item 893": {
+    "kcal": 183,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 1.0,
+    "ar": "protein 893"
+  },
+  "grain item 894": {
+    "kcal": 144,
+    "prot": 4.6,
+    "fat": 1.2,
+    "carb": 26.6,
+    "ar": "grain 894"
+  },
+  "legume item 895": {
+    "kcal": 129,
+    "prot": 8.2,
+    "fat": 1.0,
+    "carb": 20.8,
+    "ar": "legume 895"
+  },
+  "dairy item 896": {
+    "kcal": 95,
+    "prot": 7.1,
+    "fat": 4.2,
+    "carb": 6.8,
+    "ar": "dairy 896"
+  },
+  "snack item 897": {
+    "kcal": 236,
+    "prot": 5.3,
+    "fat": 11.6,
+    "carb": 27.2,
+    "ar": "snack 897"
+  },
+  "seafood item 898": {
+    "kcal": 146,
+    "prot": 20.2,
+    "fat": 5.3,
+    "carb": 1.5,
+    "ar": "seafood 898"
+  },
+  "dessert item 899": {
+    "kcal": 282,
+    "prot": 3.8,
+    "fat": 11.2,
+    "carb": 37.5,
+    "ar": "dessert 899"
+  },
+  "beverage item 900": {
+    "kcal": 58,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.7,
+    "ar": "beverage 900"
+  },
+  "fruit item 901": {
+    "kcal": 56,
+    "prot": 1.2,
+    "fat": 0.6,
+    "carb": 13.9,
+    "ar": "fruit 901"
+  },
+  "vegetable item 902": {
+    "kcal": 32,
+    "prot": 1.7,
+    "fat": 0.1,
+    "carb": 6.1,
+    "ar": "vegetable 902"
+  },
+  "protein item 903": {
+    "kcal": 182,
+    "prot": 22.7,
+    "fat": 7.8,
+    "carb": 0.8,
+    "ar": "protein 903"
+  },
+  "grain item 904": {
+    "kcal": 143,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.5,
+    "ar": "grain 904"
+  },
+  "legume item 905": {
+    "kcal": 129,
+    "prot": 8.1,
+    "fat": 1.0,
+    "carb": 20.6,
+    "ar": "legume 905"
+  },
+  "dairy item 906": {
+    "kcal": 94,
+    "prot": 7.0,
+    "fat": 4.1,
+    "carb": 6.6,
+    "ar": "dairy 906"
+  },
+  "snack item 907": {
+    "kcal": 235,
+    "prot": 5.2,
+    "fat": 11.5,
+    "carb": 27.0,
+    "ar": "snack 907"
+  },
+  "seafood item 908": {
+    "kcal": 146,
+    "prot": 20.1,
+    "fat": 5.3,
+    "carb": 1.4,
+    "ar": "seafood 908"
+  },
+  "dessert item 909": {
+    "kcal": 281,
+    "prot": 3.7,
+    "fat": 11.1,
+    "carb": 37.4,
+    "ar": "dessert 909"
+  },
+  "beverage item 910": {
+    "kcal": 57,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.5,
+    "ar": "beverage 910"
+  },
+  "fruit item 911": {
+    "kcal": 55,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.7,
+    "ar": "fruit 911"
+  },
+  "vegetable item 912": {
+    "kcal": 38,
+    "prot": 2.5,
+    "fat": 0.7,
+    "carb": 7.9,
+    "ar": "vegetable 912"
+  },
+  "protein item 913": {
+    "kcal": 182,
+    "prot": 22.6,
+    "fat": 7.7,
+    "carb": 0.6,
+    "ar": "protein 913"
+  },
+  "grain item 914": {
+    "kcal": 142,
+    "prot": 4.5,
+    "fat": 1.1,
+    "carb": 26.3,
+    "ar": "grain 914"
+  },
+  "legume item 915": {
+    "kcal": 128,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.5,
+    "ar": "legume 915"
+  },
+  "dairy item 916": {
+    "kcal": 94,
+    "prot": 6.9,
+    "fat": 4.1,
+    "carb": 6.5,
+    "ar": "dairy 916"
+  },
+  "snack item 917": {
+    "kcal": 234,
+    "prot": 5.1,
+    "fat": 11.4,
+    "carb": 26.8,
+    "ar": "snack 917"
+  },
+  "seafood item 918": {
+    "kcal": 145,
+    "prot": 20.0,
+    "fat": 5.2,
+    "carb": 1.2,
+    "ar": "seafood 918"
+  },
+  "dessert item 919": {
+    "kcal": 281,
+    "prot": 3.6,
+    "fat": 11.1,
+    "carb": 37.2,
+    "ar": "dessert 919"
+  },
+  "beverage item 920": {
+    "kcal": 56,
+    "prot": 0.9,
+    "fat": 0.3,
+    "carb": 13.3,
+    "ar": "beverage 920"
+  },
+  "fruit item 921": {
+    "kcal": 54,
+    "prot": 1.1,
+    "fat": 0.5,
+    "carb": 13.5,
+    "ar": "fruit 921"
+  },
+  "vegetable item 922": {
+    "kcal": 38,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.7,
+    "ar": "vegetable 922"
+  },
+  "protein item 923": {
+    "kcal": 188,
+    "prot": 23.4,
+    "fat": 8.3,
+    "carb": 2.4,
+    "ar": "protein 923"
+  },
+  "grain item 924": {
+    "kcal": 142,
+    "prot": 4.4,
+    "fat": 1.0,
+    "carb": 26.1,
+    "ar": "grain 924"
+  },
+  "legume item 925": {
+    "kcal": 127,
+    "prot": 8.0,
+    "fat": 0.9,
+    "carb": 20.3,
+    "ar": "legume 925"
+  },
+  "dairy item 926": {
+    "kcal": 93,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.3,
+    "ar": "dairy 926"
+  },
+  "snack item 927": {
+    "kcal": 234,
+    "prot": 5.0,
+    "fat": 11.4,
+    "carb": 26.6,
+    "ar": "snack 927"
+  },
+  "seafood item 928": {
+    "kcal": 144,
+    "prot": 19.9,
+    "fat": 5.1,
+    "carb": 1.0,
+    "ar": "seafood 928"
+  },
+  "dessert item 929": {
+    "kcal": 280,
+    "prot": 3.5,
+    "fat": 11.0,
+    "carb": 37.0,
+    "ar": "dessert 929"
+  },
+  "beverage item 930": {
+    "kcal": 56,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.2,
+    "ar": "beverage 930"
+  },
+  "fruit item 931": {
+    "kcal": 53,
+    "prot": 1.0,
+    "fat": 0.4,
+    "carb": 13.3,
+    "ar": "fruit 931"
+  },
+  "vegetable item 932": {
+    "kcal": 37,
+    "prot": 2.4,
+    "fat": 0.6,
+    "carb": 7.5,
+    "ar": "vegetable 932"
+  },
+  "protein item 933": {
+    "kcal": 188,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.2,
+    "ar": "protein 933"
+  },
+  "grain item 934": {
+    "kcal": 148,
+    "prot": 5.2,
+    "fat": 1.6,
+    "carb": 27.9,
+    "ar": "grain 934"
+  },
+  "legume item 935": {
+    "kcal": 126,
+    "prot": 7.9,
+    "fat": 0.8,
+    "carb": 20.1,
+    "ar": "legume 935"
+  },
+  "dairy item 936": {
+    "kcal": 92,
+    "prot": 6.8,
+    "fat": 4.0,
+    "carb": 6.1,
+    "ar": "dairy 936"
+  },
+  "snack item 937": {
+    "kcal": 233,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.5,
+    "ar": "snack 937"
+  },
+  "seafood item 938": {
+    "kcal": 144,
+    "prot": 19.8,
+    "fat": 5.1,
+    "carb": 0.8,
+    "ar": "seafood 938"
+  },
+  "dessert item 939": {
+    "kcal": 279,
+    "prot": 3.4,
+    "fat": 10.9,
+    "carb": 36.8,
+    "ar": "dessert 939"
+  },
+  "beverage item 940": {
+    "kcal": 55,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 13.0,
+    "ar": "beverage 940"
+  },
+  "fruit item 941": {
+    "kcal": 53,
+    "prot": 0.9,
+    "fat": 0.4,
+    "carb": 13.2,
+    "ar": "fruit 941"
+  },
+  "vegetable item 942": {
+    "kcal": 36,
+    "prot": 2.3,
+    "fat": 0.5,
+    "carb": 7.3,
+    "ar": "vegetable 942"
+  },
+  "protein item 943": {
+    "kcal": 187,
+    "prot": 23.3,
+    "fat": 8.2,
+    "carb": 2.0,
+    "ar": "protein 943"
+  },
+  "grain item 944": {
+    "kcal": 148,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.7,
+    "ar": "grain 944"
+  },
+  "legume item 945": {
+    "kcal": 134,
+    "prot": 8.7,
+    "fat": 1.4,
+    "carb": 21.9,
+    "ar": "legume 945"
+  },
+  "dairy item 946": {
+    "kcal": 92,
+    "prot": 6.7,
+    "fat": 3.9,
+    "carb": 5.9,
+    "ar": "dairy 946"
+  },
+  "snack item 947": {
+    "kcal": 232,
+    "prot": 4.9,
+    "fat": 11.3,
+    "carb": 26.3,
+    "ar": "snack 947"
+  },
+  "seafood item 948": {
+    "kcal": 143,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.7,
+    "ar": "seafood 948"
+  },
+  "dessert item 949": {
+    "kcal": 279,
+    "prot": 3.3,
+    "fat": 10.9,
+    "carb": 36.6,
+    "ar": "dessert 949"
+  },
+  "beverage item 950": {
+    "kcal": 54,
+    "prot": 0.6,
+    "fat": 0.1,
+    "carb": 12.8,
+    "ar": "beverage 950"
+  },
+  "fruit item 951": {
+    "kcal": 52,
+    "prot": 0.8,
+    "fat": 0.3,
+    "carb": 13.0,
+    "ar": "fruit 951"
+  },
+  "vegetable item 952": {
+    "kcal": 36,
+    "prot": 2.2,
+    "fat": 0.5,
+    "carb": 7.2,
+    "ar": "vegetable 952"
+  },
+  "protein item 953": {
+    "kcal": 186,
+    "prot": 23.2,
+    "fat": 8.1,
+    "carb": 1.9,
+    "ar": "protein 953"
+  },
+  "grain item 954": {
+    "kcal": 147,
+    "prot": 5.1,
+    "fat": 1.5,
+    "carb": 27.5,
+    "ar": "grain 954"
+  },
+  "legume item 955": {
+    "kcal": 133,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.7,
+    "ar": "legume 955"
+  },
+  "dairy item 956": {
+    "kcal": 98,
+    "prot": 7.5,
+    "fat": 4.5,
+    "carb": 7.7,
+    "ar": "dairy 956"
+  },
+  "snack item 957": {
+    "kcal": 232,
+    "prot": 4.8,
+    "fat": 11.2,
+    "carb": 26.1,
+    "ar": "snack 957"
+  },
+  "seafood item 958": {
+    "kcal": 142,
+    "prot": 19.7,
+    "fat": 5.0,
+    "carb": 0.5,
+    "ar": "seafood 958"
+  },
+  "dessert item 959": {
+    "kcal": 278,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.5,
+    "ar": "dessert 959"
+  },
+  "beverage item 960": {
+    "kcal": 54,
+    "prot": 0.5,
+    "fat": 0.1,
+    "carb": 12.7,
+    "ar": "beverage 960"
+  },
+  "fruit item 961": {
+    "kcal": 51,
+    "prot": 0.7,
+    "fat": 0.2,
+    "carb": 12.8,
+    "ar": "fruit 961"
+  },
+  "vegetable item 962": {
+    "kcal": 35,
+    "prot": 2.1,
+    "fat": 0.4,
+    "carb": 7.0,
+    "ar": "vegetable 962"
+  },
+  "protein item 963": {
+    "kcal": 186,
+    "prot": 23.1,
+    "fat": 8.1,
+    "carb": 1.7,
+    "ar": "protein 963"
+  },
+  "grain item 964": {
+    "kcal": 146,
+    "prot": 5.0,
+    "fat": 1.4,
+    "carb": 27.4,
+    "ar": "grain 964"
+  },
+  "legume item 965": {
+    "kcal": 132,
+    "prot": 8.6,
+    "fat": 1.3,
+    "carb": 21.5,
+    "ar": "legume 965"
+  },
+  "dairy item 966": {
+    "kcal": 98,
+    "prot": 7.4,
+    "fat": 4.4,
+    "carb": 7.5,
+    "ar": "dairy 966"
+  },
+  "snack item 967": {
+    "kcal": 238,
+    "prot": 5.6,
+    "fat": 11.8,
+    "carb": 27.9,
+    "ar": "snack 967"
+  },
+  "seafood item 968": {
+    "kcal": 142,
+    "prot": 19.6,
+    "fat": 4.9,
+    "carb": 0.3,
+    "ar": "seafood 968"
+  },
+  "dessert item 969": {
+    "kcal": 277,
+    "prot": 3.2,
+    "fat": 10.8,
+    "carb": 36.3,
+    "ar": "dessert 969"
+  },
+  "beverage item 970": {
+    "kcal": 53,
+    "prot": 0.4,
+    "fat": 0,
+    "carb": 12.5,
+    "ar": "beverage 970"
+  }
+}

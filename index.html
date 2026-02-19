@@ -289,10 +289,11 @@ video,canvas{width:100%;border-radius:12px;background:#000}
         <button id="startCam">Start Camera</button>
         <button id="stopCam" class="ghost hidden">Stop Camera</button>
         <button id="snap" class="ghost">Capture</button>
-        <button id="classify" class="ok">AI Guess</button>
+        <button id="classify" class="ok">AI Detect Food</button>
       </div>
       <canvas id="frame" class="hidden"></canvas>
       <div class="pred" id="pred"></div>
+      <div class="small" id="aiSummary">AI ready. It will detect food type only.</div>
     </div>
     <hr>
     <h3>Portion Estimation</h3>
@@ -626,7 +627,17 @@ function setLang(k){
 
 // ====== State & Storage ======
 const SKEY = 'mvp_tracker_state_v2_mono';
-let state = JSON.parse(localStorage.getItem(SKEY) || '{}');
+function loadState(){
+  try{
+    const raw = localStorage.getItem(SKEY);
+    return raw ? JSON.parse(raw) : {};
+  }catch(e){
+    console.error('State parse failed, resetting saved data:', e);
+    localStorage.removeItem(SKEY);
+    return {};
+  }
+}
+let state = loadState();
 
 if (!state.daysData) state.daysData = {};
 if (!state.foods) state.foods = [];
@@ -913,7 +924,7 @@ function refreshDashboard(){
 }
 
 // ====== Food Database ======
-const FOOD_DB = {
+const DEFAULT_FOOD_DB = {
   "rice": {kcal:130, prot:2.7, fat:0.3, carb:28, ar:"أرز"},
   "chicken breast": {kcal:165, prot:31, fat:3.6, carb:0, ar:"صدر دجاج"},
   "apple": {kcal:52, prot:0.3, fat:0.2, carb:14, ar:"تفاح"},
@@ -923,101 +934,49 @@ const FOOD_DB = {
   "milk": {kcal:42, prot:3.4, fat:1, carb:5, ar:"حليب"},
   "banana": {kcal:89, prot:1.1, fat:0.3, carb:23, ar:"موز"},
   "pasta": {kcal:131, prot:5, fat:1.1, carb:25, ar:"معكرونة"},
-  "beef": {kcal:250, prot:26, fat:15, carb:0, ar:"لحم بقري"},
-  "fish": {kcal:206, prot:22, fat:13, carb:0, ar:"سمك"},
-  "cheese": {kcal:402, prot:25, fat:33, carb:1.3, ar:"جبن"},
-  "yogurt": {kcal:59, prot:3.5, fat:1.5, carb:4.7, ar:"زبادي"},
-  "potato": {kcal:77, prot:2, fat:0.1, carb:17, ar:"بطاطس"},
-  "tomato": {kcal:18, prot:0.9, fat:0.2, carb:3.9, ar:"طماطم"},
-  "cucumber": {kcal:15, prot:0.7, fat:0.1, carb:3.6, ar:"خيار"},
-  "carrot": {kcal:41, prot:0.9, fat:0.2, carb:10, ar:"جزر"},
-  "onion": {kcal:40, prot:1.1, fat:0.1, carb:9, ar:"بصل"},
-  "orange": {kcal:47, prot:0.9, fat:0.1, carb:12, ar:"برتقال"},
-  "strawberry": {kcal:32, prot:0.7, fat:0.3, carb:8, ar:"فراولة"},
-  "watermelon": {kcal:30, prot:0.6, fat:0.2, carb:8, ar:"بطيخ"},
-  "grape": {kcal:69, prot:0.7, fat:0.2, carb:18, ar:"عنب"},
-  "peach": {kcal:39, prot:0.9, fat:0.3, carb:10, ar:"خوخ"},
-  "pear": {kcal:57, prot:0.4, fat:0.1, carb:15, ar:"كمثرى"},
-  "avocado": {kcal:160, prot:2, fat:15, carb:9, ar:"أفوكادو"},
-  "broccoli": {kcal:34, prot:2.8, fat:0.4, carb:7, ar:"بروكلي"},
-  "spinach": {kcal:23, prot:2.9, fat:0.4, carb:3.6, ar:"سبانخ"},
-  "lettuce": {kcal:15, prot:1.4, fat:0.2, carb:2.9, ar:"خس"},
-  "olive oil": {kcal:884, prot:0, fat:100, carb:0, ar:"زيت زيتون"},
-  "butter": {kcal:717, prot:0.9, fat:81, carb:0.1, ar:"زبدة"},
-  "sugar": {kcal:387, prot:0, fat:0, carb:100, ar:"سكر"},
-  "honey": {kcal:304, prot:0.3, fat:0, carb:82, ar:"عسل"},
-  "almond": {kcal:579, prot:21, fat:50, carb:22, ar:"لوز"},
-  "peanut": {kcal:567, prot:26, fat:49, carb:16, ar:"فول سوداني"},
-  "walnut": {kcal:654, prot:15, fat:65, carb:14, ar:"جوز"},
-  "chicken thigh": {kcal:209, prot:26, fat:11, carb:0, ar:"فخذ دجاج"},
-  "salmon": {kcal:208, prot:20, fat:13, carb:0, ar:"سلمون"},
-  "tuna": {kcal:132, prot:29, fat:1, carb:0, ar:"تونة"},
-  "shrimp": {kcal:85, prot:18, fat:0.9, carb:0.2, ar:"جمبري"},
-  "lamb": {kcal:294, prot:25, fat:21, carb:0, ar:"لحم ضأن"},
-  "pork": {kcal:242, prot:25, fat:14, carb:0, ar:"لحم خنزير"},
-  "tofu": {kcal:76, prot:8, fat:4.8, carb:1.9, ar:"توفو"},
-  "lentil": {kcal:116, prot:9, fat:0.4, carb:20, ar:"عدس"},
-  "chickpea": {kcal:139, prot:7, fat:2.1, carb:22, ar:"حمص"},
-  "bean": {kcal:127, prot:9, fat:0.5, carb:23, ar:"فاصوليا"},
-  "corn": {kcal:86, prot:3.3, fat:1.4, carb:19, ar:"ذرة"},
-  "pea": {kcal:81, prot:5, fat:0.4, carb:14, ar:"بازلاء"},
-  "bell pepper": {kcal:31, prot:1, fat:0.3, carb:6, ar:"فلفل رومي"},
-  "mushroom": {kcal:22, prot:3.1, fat:0.3, carb:3.3, ar:"فطر"},
-  "garlic": {kcal:149, prot:6.4, fat:0.5, carb:33, ar:"ثوم"},
-  "ginger": {kcal:80, prot:1.8, fat:0.8, carb:18, ar:"زنجبيل"},
-  "lemon": {kcal:29, prot:1.1, fat:0.3, carb:9, ar:"ليمون"},
-  "pineapple": {kcal:50, prot:0.5, fat:0.1, carb:13, ar:"أناناس"},
-  "mango": {kcal:60, prot:0.8, fat:0.4, carb:15, ar:"مانجو"},
-  "kiwi": {kcal:61, prot:1.1, fat:0.5, carb:15, ar:"كيوي"},
-  "pomegranate": {kcal:83, prot:1.7, fat:1.2, carb:19, ar:"رمان"},
-  "fig": {kcal:74, prot:0.8, fat:0.3, carb:19, ar:"تين"},
-  "date": {kcal:282, prot:2.5, fat:0.4, carb:75, ar:"تمر"},
-  "coconut": {kcal:354, prot:3.3, fat:33, carb:15, ar:"جوز الهند"},
-  "cashew": {kcal:553, prot:18, fat:44, carb:30, ar:"كاجو"},
-  "pistachio": {kcal:562, prot:20, fat:45, carb:28, ar:"فستق"},
-  "sunflower seed": {kcal:584, prot:21, fat:51, carb:20, ar:"بذور دوار الشمس"},
-  "pumpkin seed": {kcal:559, prot:30, fat:49, carb:11, ar:"بذور قرع"},
-  "flax seed": {kcal:534, prot:18, fat:42, carb:29, ar:"بذور الكتان"},
-  "chia seed": {kcal:486, prot:17, fat:31, carb:42, ar:"بذور الشيا"},
-  "quinoa": {kcal:120, prot:4.4, fat:1.9, carb:21, ar:"كينوا"},
-  "oatmeal": {kcal:68, prot:2.4, fat:1.4, carb:12, ar:"شوفان"},
-  "couscous": {kcal:112, prot:4, fat:0.2, carb:23, ar:"كسكس"},
-  "bulgur": {kcal:83, prot:3.1, fat:0.2, carb:18, ar:"برغل"},
-  "soy milk": {kcal:54, prot:3.3, fat:1.8, carb:6, ar:"حليب الصويا"},
-  "almond milk": {kcal:17, prot:0.6, fat:1.5, carb:0.6, ar:"حليب اللوز"},
-  "coconut milk": {kcal:230, prot:2.3, fat:24, carb:6, ar:"حليب جوز الهند"},
-  "yogurt greek": {kcal:59, prot:10, fat:0.4, carb:3.6, ar:"زبادي يوناني"},
-  "cottage cheese": {kcal:98, prot:11, fat:4.3, carb:3.4, ar:"جبنة قريش"},
-  "mozzarella": {kcal:280, prot:28, fat:17, carb:3.1, ar:"موزاريلا"},
-  "parmesan": {kcal:431, prot:38, fat:29, carb:4.1, ar:"بارميزان"},
-  "feta": {kcal:264, prot:14, fat:21, carb:4.1, ar:"جبنة فيتا"},
-  "cream cheese": {kcal:342, prot:6, fat:34, carb:4.1, ar:"جبنة كريمية"},
-  "sour cream": {kcal:198, prot:2.1, fat:20, carb:4.1, ar:"قشدة حامضة"},
-  "mayonnaise": {kcal:700, prot:1, fat:77, carb:2.6, ar:"مايونيز"},
-  "ketchup": {kcal:101, prot:1, fat:0.1, carb:25, ar:"كاتشب"},
-  "mustard": {kcal:66, prot:4.4, fat:3.3, carb:6, ar:"خردل"},
-  "soy sauce": {kcal:53, prot:8, fat:0.1, carb:5, ar:"صلصة الصويا"},
-  "vinegar": {kcal:18, prot:0, fat:0, carb:0.9, ar:"خل"},
-  "salt": {kcal:0, prot:0, fat:0, carb:0, ar:"ملح"},
-  "pepper": {kcal:251, prot:10, fat:3.3, carb:64, ar:"فلفل أسود"},
-  "paprika": {kcal:282, prot:14, fat:13, carb:54, ar:"بابريكا"},
-  "cinnamon": {kcal:247, prot:4, fat:1.2, carb:81, ar:"قرفة"},
-  "turmeric": {kcal:354, prot:8, fat:10, carb:65, ar:"كركم"},
-  "cumin": {kcal:375, prot:18, fat:22, carb:44, ar:"كمون"},
-  "coriander": {kcal:23, prot:2.1, fat:0.5, carb:4, ar:"كزبرة"},
-  "basil": {kcal:22, prot:3.2, fat:0.6, carb:3, ar:"ريحان"},
-  "parsley": {kcal:36, prot:3, fat:0.8, carb:6, ar:"بقدونس"},
-  "mint": {kcal:44, prot:3.3, fat:0.7, carb:8, ar:"نعناع"},
-  "thyme": {kcal:101, prot:5.6, fat:1.7, carb:24, ar:"زعتر"},
-  "rosemary": {kcal:131, prot:3.3, fat:5.9, carb:21, ar:"إكليل الجبل"},
-  "oregano": {kcal:265, prot:9, fat:4.3, carb:69, ar:"أوريجانو"},
-  "sage": {kcal:315, prot:11, fat:13, carb:61, ar:"المريمية"},
-  "dill": {kcal:43, prot:3.5, fat:1.1, carb:7, ar:"شبت"},
-  "chive": {kcal:30, prot:3.3, fat:0.7, carb:4.4, ar:"الثوم المعمر"},
-  "shallot": {kcal:72, prot:2.5, fat:0.1, carb:17, ar:"كراث"}
+  "beef": {kcal:250, prot:26, fat:15, carb:0, ar:"لحم بقري"}
 };
 
+let FOOD_DB = {...DEFAULT_FOOD_DB};
+
+const FOOD_KEYWORD_MAP = {
+  banana: "banana", apple: "apple", orange: "orange", strawberry: "strawberry", grape: "grape",
+  pineapple: "pineapple", mango: "mango", kiwi: "kiwi", watermelon: "watermelon", peach: "peach",
+  pear: "pear", broccoli: "broccoli", carrot: "carrot", cucumber: "cucumber", tomato: "tomato",
+  pizza: "pizza", bread: "bread", rice: "rice", pasta: "pasta", noodle: "pasta",
+  chicken: "chicken breast", beef: "beef", steak: "beef", fish: "fish", salmon: "salmon",
+  tuna: "tuna", shrimp: "shrimp", egg: "egg", milk: "milk", yogurt: "yogurt",
+  cheese: "cheese", potato: "potato", corn: "corn", bean: "bean", lentil: "lentil",
+  chickpea: "chickpea", avocado: "avocado", mushroom: "mushroom", tofu: "tofu", peanut: "peanut"
+};
+
+async function loadFoodDatabase(){
+  // Always keep the app usable even if JSON fails to load
+  FOOD_DB = {...DEFAULT_FOOD_DB};
+  updateFoodLists();
+
+  try{
+    const res = await fetch('./food-types.json');
+    if(!res.ok) throw new Error('Failed to fetch food-types.json');
+    FOOD_DB = await res.json();
+    updateFoodLists();
+  }catch(e){
+    console.error('Food database load failed:', e);
+    console.info('Using built-in fallback food list. Serve over HTTP to load food-types.json.');
+  }
+}
+
+function normalizeFoodLabel(label){
+  const clean = (label||'').toLowerCase().trim();
+  if(FOOD_DB[clean]) return clean;
+  for(const [keyword, mapped] of Object.entries(FOOD_KEYWORD_MAP)){
+    if(clean.includes(keyword) && FOOD_DB[mapped]) return mapped;
+  }
+  return '';
+}
+
 function updateFoodLists() {
+
   const foodList = document.getElementById('foodList');
   foodList.innerHTML = '';
   
@@ -1087,19 +1046,47 @@ document.getElementById('snap').onclick = ()=>{
 
 document.getElementById('classify').onclick = async ()=>{
   if(!model) await loadModel();
-  if(!video.srcObject) return alert('Start camera first');
-  
+  if(!video?.srcObject) return alert('Start camera first');
+
   const preds = await model.classify(video);
   const container = document.getElementById('pred');
+  const summary = document.getElementById('aiSummary');
   container.innerHTML = '';
-  
+
+  let bestFood = '';
+
   preds.forEach(p=>{
+    const mappedFood = normalizeFoodLabel(p.className);
     const btn = document.createElement('button');
     btn.className = 'ghost';
-    btn.textContent = `${p.className} (${Math.round(p.probability*100)}%)`;
-    btn.onclick = ()=> document.getElementById('foodSearch').value = p.className;
+    btn.textContent = mappedFood
+      ? `${mappedFood} • ${Math.round(p.probability*100)}%`
+      : `${p.className} (${Math.round(p.probability*100)}%)`;
+
+    btn.onclick = ()=>{
+      const chosen = mappedFood || bestFood || '';
+      if(!chosen) return;
+      document.getElementById('foodSearch').value = chosen;
+      summary.textContent = `Detected food: ${chosen}`;
+    };
+
+    if(mappedFood && !bestFood){
+      bestFood = mappedFood;
+    }
+
     container.appendChild(btn);
   });
+
+  if(!bestFood && preds.length){
+    bestFood = normalizeFoodLabel(preds[0].className);
+  }
+
+  if(bestFood){
+    document.getElementById('foodSearch').value = bestFood;
+    summary.textContent = `Detected food: ${bestFood}`;
+  }else{
+    summary.textContent = 'No known food detected. Choose from the food list.';
+  }
 };
 
 // Portion estimation based on food size
@@ -1911,8 +1898,8 @@ function init(){
   // Load AI model in background
   loadModel();
   
-  // Initialize food lists
-  updateFoodLists();
+  // Initialize food lists from external file
+  loadFoodDatabase();
   
   // Initialize workout UI
   refreshWorkoutUI();
