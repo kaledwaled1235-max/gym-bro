@@ -1,0 +1,6 @@
+# Reduce recurring manual merge conflicts in the single-file app.
+# For index.html, keep both sides on merge instead of conflict markers.
+index.html merge=union
+
+# Keep the large generated food dataset merge-friendly as plain text.
+food-types.json text
