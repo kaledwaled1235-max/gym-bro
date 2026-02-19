@@ -289,7 +289,15 @@ video,canvas{width:100%;border-radius:12px;background:#000}
         <button id="startCam">Start Camera</button>
         <button id="stopCam" class="ghost hidden">Stop Camera</button>
         <button id="snap" class="ghost">Capture</button>
+ codex/add-ai-for-food-type-detection-hdiojy
+        <button id="classify" class="ok">AI Detect Food</button>
+      </div>
+      <canvas id="frame" class="hidden"></canvas>
+      <div class="pred" id="pred"></div>
+      <div class="small" id="aiSummary">AI ready. It will detect food type only.</div>
 
+
+ main
     </div>
     <hr>
     <h3>Portion Estimation</h3>
@@ -910,6 +918,48 @@ function refreshDashboard(){
 }
 
 // ====== Food Database ======
+ codex/add-ai-for-food-type-detection-hdiojy
+const DEFAULT_FOOD_DB = {
+  "rice": {kcal:130, prot:2.7, fat:0.3, carb:28, ar:"أرز"},
+  "chicken breast": {kcal:165, prot:31, fat:3.6, carb:0, ar:"صدر دجاج"},
+  "apple": {kcal:52, prot:0.3, fat:0.2, carb:14, ar:"تفاح"},
+  "pizza": {kcal:266, prot:11, fat:10, carb:33, ar:"بيتزا"},
+  "egg": {kcal:155, prot:13, fat:11, carb:1.1, ar:"بيض"},
+  "bread": {kcal:265, prot:9, fat:3.2, carb:49, ar:"خبز"},
+  "milk": {kcal:42, prot:3.4, fat:1, carb:5, ar:"حليب"},
+  "banana": {kcal:89, prot:1.1, fat:0.3, carb:23, ar:"موز"},
+  "pasta": {kcal:131, prot:5, fat:1.1, carb:25, ar:"معكرونة"},
+  "beef": {kcal:250, prot:26, fat:15, carb:0, ar:"لحم بقري"}
+};
+
+let FOOD_DB = {...DEFAULT_FOOD_DB};
+
+const FOOD_KEYWORD_MAP = {
+  banana: "banana", apple: "apple", orange: "orange", strawberry: "strawberry", grape: "grape",
+  pineapple: "pineapple", mango: "mango", kiwi: "kiwi", watermelon: "watermelon", peach: "peach",
+  pear: "pear", broccoli: "broccoli", carrot: "carrot", cucumber: "cucumber", tomato: "tomato",
+  pizza: "pizza", bread: "bread", rice: "rice", pasta: "pasta", noodle: "pasta",
+  chicken: "chicken breast", beef: "beef", steak: "beef", fish: "fish", salmon: "salmon",
+  tuna: "tuna", shrimp: "shrimp", egg: "egg", milk: "milk", yogurt: "yogurt",
+  cheese: "cheese", potato: "potato", corn: "corn", bean: "bean", lentil: "lentil",
+  chickpea: "chickpea", avocado: "avocado", mushroom: "mushroom", tofu: "tofu", peanut: "peanut"
+};
+
+async function loadFoodDatabase(){
+  // Always keep the app usable even if JSON fails to load
+  FOOD_DB = {...DEFAULT_FOOD_DB};
+  updateFoodLists();
+
+  try{
+    const res = await fetch('./food-types.json');
+    if(!res.ok) throw new Error('Failed to fetch food-types.json');
+    FOOD_DB = await res.json();
+    updateFoodLists();
+  }catch(e){
+    console.error('Food database load failed:', e);
+    console.info('Using built-in fallback food list. Serve over HTTP to load food-types.json.');
+  }
+}
 let FOOD_DB = {};
 
 const FOOD_KEYWORD_MAP = {
@@ -924,17 +974,25 @@ const FOOD_KEYWORD_MAP = {
 };
 
 
+ main
 
 function normalizeFoodLabel(label){
   const clean = (label||'').toLowerCase().trim();
   if(FOOD_DB[clean]) return clean;
   for(const [keyword, mapped] of Object.entries(FOOD_KEYWORD_MAP)){
+ codex/add-ai-for-food-type-detection-hdiojy
+    if(clean.includes(keyword) && FOOD_DB[mapped]) return mapped;
 
+
+ main
   }
   return '';
 }
 
+ codex/add-ai-for-food-type-detection-hdiojy
+
 <
+ main
 function updateFoodLists() {
 
   const foodList = document.getElementById('foodList');
@@ -1015,7 +1073,10 @@ document.getElementById('classify').onclick = async ()=>{
 
   let bestFood = '';
 
+ codex/add-ai-for-food-type-detection-hdiojy
 
+
+ main
   preds.forEach(p=>{
     const mappedFood = normalizeFoodLabel(p.className);
     const btn = document.createElement('button');
@@ -1025,14 +1086,37 @@ document.getElementById('classify').onclick = async ()=>{
       : `${p.className} (${Math.round(p.probability*100)}%)`;
 
     btn.onclick = ()=>{
+ codex/add-ai-for-food-type-detection-hdiojy
+      const chosen = mappedFood || bestFood || '';
+      if(!chosen) return;
+      document.getElementById('foodSearch').value = chosen;
+      summary.textContent = `Detected food: ${chosen}`;
+    };
 
+    if(mappedFood && !bestFood){
+      bestFood = mappedFood;
+
+
+ main
     }
 
     container.appendChild(btn);
   });
 
   if(!bestFood && preds.length){
+ codex/add-ai-for-food-type-detection-hdiojy
+    bestFood = normalizeFoodLabel(preds[0].className);
+  }
 
+  if(bestFood){
+    document.getElementById('foodSearch').value = bestFood;
+    summary.textContent = `Detected food: ${bestFood}`;
+  }else{
+    summary.textContent = 'No known food detected. Choose from the food list.';
+  }
+
+
+ main
 };
 
 // Portion estimation based on food size
@@ -1844,7 +1928,12 @@ function init(){
   // Load AI model in background
   loadModel();
   
+ codex/add-ai-for-food-type-detection-hdiojy
+  // Initialize food lists from external file
+  loadFoodDatabase();
 
+
+ main
   
   // Initialize workout UI
   refreshWorkoutUI();
