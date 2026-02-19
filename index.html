@@ -289,11 +289,15 @@ video,canvas{width:100%;border-radius:12px;background:#000}
         <button id="startCam">Start Camera</button>
         <button id="stopCam" class="ghost hidden">Stop Camera</button>
         <button id="snap" class="ghost">Capture</button>
+ codex/add-ai-for-food-type-detection-hdiojy
         <button id="classify" class="ok">AI Detect Food</button>
       </div>
       <canvas id="frame" class="hidden"></canvas>
       <div class="pred" id="pred"></div>
       <div class="small" id="aiSummary">AI ready. It will detect food type only.</div>
+
+
+ main
     </div>
     <hr>
     <h3>Portion Estimation</h3>
@@ -914,6 +918,7 @@ function refreshDashboard(){
 }
 
 // ====== Food Database ======
+ codex/add-ai-for-food-type-detection-hdiojy
 const DEFAULT_FOOD_DB = {
   "rice": {kcal:130, prot:2.7, fat:0.3, carb:28, ar:"أرز"},
   "chicken breast": {kcal:165, prot:31, fat:3.6, carb:0, ar:"صدر دجاج"},
@@ -955,16 +960,39 @@ async function loadFoodDatabase(){
     console.info('Using built-in fallback food list. Serve over HTTP to load food-types.json.');
   }
 }
+let FOOD_DB = {};
+
+const FOOD_KEYWORD_MAP = {
+  banana: "banana", apple: "apple", orange: "orange", strawberry: "strawberry", grape: "grape",
+  pineapple: "pineapple", mango: "mango", kiwi: "kiwi", watermelon: "watermelon", peach: "peach",
+  pear: "pear", broccoli: "broccoli", carrot: "carrot", cucumber: "cucumber", tomato: "tomato",
+  pizza: "pizza", bread: "bread", rice: "rice", pasta: "pasta", noodle: "pasta",
+  chicken: "chicken breast", beef: "beef", steak: "beef", fish: "fish", salmon: "salmon",
+  tuna: "tuna", shrimp: "shrimp", egg: "egg", milk: "milk", yogurt: "yogurt",
+  cheese: "cheese", potato: "potato", corn: "corn", bean: "bean", lentil: "lentil",
+  chickpea: "chickpea", avocado: "avocado", mushroom: "mushroom", tofu: "tofu", peanut: "peanut"
+};
+
+
+ main
 
 function normalizeFoodLabel(label){
   const clean = (label||'').toLowerCase().trim();
   if(FOOD_DB[clean]) return clean;
   for(const [keyword, mapped] of Object.entries(FOOD_KEYWORD_MAP)){
+ codex/add-ai-for-food-type-detection-hdiojy
     if(clean.includes(keyword) && FOOD_DB[mapped]) return mapped;
+
+
+ main
   }
   return '';
 }
 
+ codex/add-ai-for-food-type-detection-hdiojy
+
+<
+ main
 function updateFoodLists() {
 
   const foodList = document.getElementById('foodList');
@@ -1045,6 +1073,10 @@ document.getElementById('classify').onclick = async ()=>{
 
   let bestFood = '';
 
+ codex/add-ai-for-food-type-detection-hdiojy
+
+
+ main
   preds.forEach(p=>{
     const mappedFood = normalizeFoodLabel(p.className);
     const btn = document.createElement('button');
@@ -1054,6 +1086,7 @@ document.getElementById('classify').onclick = async ()=>{
       : `${p.className} (${Math.round(p.probability*100)}%)`;
 
     btn.onclick = ()=>{
+ codex/add-ai-for-food-type-detection-hdiojy
       const chosen = mappedFood || bestFood || '';
       if(!chosen) return;
       document.getElementById('foodSearch').value = chosen;
@@ -1062,12 +1095,16 @@ document.getElementById('classify').onclick = async ()=>{
 
     if(mappedFood && !bestFood){
       bestFood = mappedFood;
+
+
+ main
     }
 
     container.appendChild(btn);
   });
 
   if(!bestFood && preds.length){
+ codex/add-ai-for-food-type-detection-hdiojy
     bestFood = normalizeFoodLabel(preds[0].className);
   }
 
@@ -1077,6 +1114,9 @@ document.getElementById('classify').onclick = async ()=>{
   }else{
     summary.textContent = 'No known food detected. Choose from the food list.';
   }
+
+
+ main
 };
 
 // Portion estimation based on food size
@@ -1888,8 +1928,12 @@ function init(){
   // Load AI model in background
   loadModel();
   
+ codex/add-ai-for-food-type-detection-hdiojy
   // Initialize food lists from external file
   loadFoodDatabase();
+
+
+ main
   
   // Initialize workout UI
   refreshWorkoutUI();
