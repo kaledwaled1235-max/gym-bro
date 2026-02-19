@@ -289,11 +289,7 @@ video,canvas{width:100%;border-radius:12px;background:#000}
         <button id="startCam">Start Camera</button>
         <button id="stopCam" class="ghost hidden">Stop Camera</button>
         <button id="snap" class="ghost">Capture</button>
-        <button id="classify" class="ok">AI Detect Food</button>
-      </div>
-      <canvas id="frame" class="hidden"></canvas>
-      <div class="pred" id="pred"></div>
-      <div class="small" id="aiSummary">AI ready. It will detect food type only.</div>
+
     </div>
     <hr>
     <h3>Portion Estimation</h3>
@@ -927,27 +923,18 @@ const FOOD_KEYWORD_MAP = {
   chickpea: "chickpea", avocado: "avocado", mushroom: "mushroom", tofu: "tofu", peanut: "peanut"
 };
 
-async function loadFoodDatabase(){
-  try{
-    const res = await fetch('./food-types.json');
-    if(!res.ok) throw new Error('Failed to fetch food-types.json');
-    FOOD_DB = await res.json();
-    updateFoodLists();
-  }catch(e){
-    console.error('Food database load failed:', e);
-    alert('Could not load food database file (food-types.json).');
-  }
-}
+
 
 function normalizeFoodLabel(label){
   const clean = (label||'').toLowerCase().trim();
   if(FOOD_DB[clean]) return clean;
   for(const [keyword, mapped] of Object.entries(FOOD_KEYWORD_MAP)){
-    if(clean.includes(keyword) && FOOD_DB[mapped]) return mapped;
+
   }
   return '';
 }
 
+<
 function updateFoodLists() {
 
   const foodList = document.getElementById('foodList');
@@ -1028,6 +1015,7 @@ document.getElementById('classify').onclick = async ()=>{
 
   let bestFood = '';
 
+
   preds.forEach(p=>{
     const mappedFood = normalizeFoodLabel(p.className);
     const btn = document.createElement('button');
@@ -1037,29 +1025,14 @@ document.getElementById('classify').onclick = async ()=>{
       : `${p.className} (${Math.round(p.probability*100)}%)`;
 
     btn.onclick = ()=>{
-      const chosen = mappedFood || bestFood || '';
-      if(!chosen) return;
-      document.getElementById('foodSearch').value = chosen;
-      summary.textContent = `Detected food: ${chosen}`;
-    };
 
-    if(mappedFood && !bestFood){
-      bestFood = mappedFood;
     }
 
     container.appendChild(btn);
   });
 
   if(!bestFood && preds.length){
-    bestFood = normalizeFoodLabel(preds[0].className);
-  }
 
-  if(bestFood){
-    document.getElementById('foodSearch').value = bestFood;
-    summary.textContent = `Detected food: ${bestFood}`;
-  }else{
-    summary.textContent = 'No known food detected. Choose from the food list.';
-  }
 };
 
 // Portion estimation based on food size
@@ -1871,8 +1844,7 @@ function init(){
   // Load AI model in background
   loadModel();
   
-  // Initialize food lists from external file
-  loadFoodDatabase();
+
   
   // Initialize workout UI
   refreshWorkoutUI();
