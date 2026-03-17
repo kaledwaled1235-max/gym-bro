@@ -616,13 +616,62 @@
       grid-column: 1;
       margin-left: 0;
       width: 100%;
+      padding-bottom: 80px;
     }
     .voice-btn {
-      bottom: 1rem;
+      bottom: 5rem;
       right: 1rem;
     }
     .plan-selection {
       grid-template-columns: 1fr;
+    }
+  }
+
+  /* ===== Mobile Bottom Navigation Bar ===== */
+  .mobile-nav {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-nav {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border-light);
+      z-index: 200;
+      box-shadow: 0 -4px 12px rgb(0 0 0 / 0.1);
+      padding: 0;
+      height: 64px;
+    }
+    .mobile-nav-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      cursor: pointer;
+      color: var(--text-secondary);
+      font-size: 0.6rem;
+      font-weight: 600;
+      padding: 6px 2px;
+      transition: color 0.2s;
+      border: none;
+      background: none;
+      border-radius: 0;
+    }
+    .mobile-nav-item i {
+      font-size: 1.2rem;
+    }
+    .mobile-nav-item.active {
+      color: var(--accent-green);
+    }
+    .mobile-nav-item span {
+      font-size: 0.6rem;
+      white-space: nowrap;
     }
   }
 </style>
@@ -1244,6 +1293,34 @@
   <div class="voice-btn" id="voiceBtn">
     <i class="fas fa-microphone"></i>
   </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-item active" data-page="dashboard" onclick="showPage('dashboard')">
+      <i class="fas fa-chart-pie"></i>
+      <span id="mobileNavDashboard">الرئيسية</span>
+    </button>
+    <button class="mobile-nav-item" data-page="food" onclick="showPage('food')">
+      <i class="fas fa-utensils"></i>
+      <span id="mobileNavFood">الأكل</span>
+    </button>
+    <button class="mobile-nav-item" data-page="water" onclick="showPage('water')">
+      <i class="fas fa-tint"></i>
+      <span id="mobileNavWater">المياه</span>
+    </button>
+    <button class="mobile-nav-item" data-page="workout" onclick="showPage('workout')">
+      <i class="fas fa-running"></i>
+      <span id="mobileNavWorkout">التمارين</span>
+    </button>
+    <button class="mobile-nav-item" data-page="history" onclick="showPage('history')">
+      <i class="fas fa-history"></i>
+      <span id="mobileNavHistory">التاريخ</span>
+    </button>
+    <button class="mobile-nav-item" data-page="settings" onclick="showPage('settings')">
+      <i class="fas fa-cog"></i>
+      <span id="mobileNavSettings">الإعدادات</span>
+    </button>
+  </nav>
 </div>
 
 <script>
@@ -2371,6 +2448,14 @@
     }
     
     document.querySelectorAll('.nav-item').forEach(item => {
+      item.classList.remove('active');
+      if(item.dataset.page === pageId) {
+        item.classList.add('active');
+      }
+    });
+
+    // Sync mobile bottom nav
+    document.querySelectorAll('.mobile-nav-item').forEach(item => {
       item.classList.remove('active');
       if(item.dataset.page === pageId) {
         item.classList.add('active');
